@@ -233,3 +233,14 @@ There's a lot of jargon in these lessons, so take a minute to review [this list]
 ## Assignment 
 
 [Parameter play](assignment.md)
+
+## Applied lab: confusion matrix and the zero-denominator case
+
+A small local example computes TP/FN/FP/TN, precision and recall and shows
+what happens when a denominator is zero. It uses hand-written labels
+(simulation, not a trained model), so it says nothing about real model
+performance. See [applied-labs/r37-t032](./applied-labs/r37-t032/README.md).
+
+Run: `python3 4-Classification/3-Classifiers-2/applied-labs/r37-t032/example.py`
+Fixture: `y_true=[1,1,0,0]`, `y_pred=[1,0,1,0]`
+Expected: `TP=1 FN=1 FP=1 TN=1`, `precision=0.5 recall=0.5`

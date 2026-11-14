@@ -1,0 +1,22 @@
+........F
+======================================================================
+FAIL: test_smallest_valid_case (test_example.TestConfusionMatrix.test_smallest_valid_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/saucestick/Documents/ML-For-Beginners/4-Classification/3-Classifiers-2/applied-labs/r37-t032/test_example.py", line 8, in test_smallest_valid_case
+    self.assertEqual(confusion_matrix([1, 1, 0, 0], [1, 0, 1, 0]), (2, 0, 0, 2))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, 1, 1, 1) != (2, 0, 0, 2)
+
+First differing element 0:
+1
+2
+
+- (1, 1, 1, 1)
++ (2, 0, 0, 2)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1)
+exit=1

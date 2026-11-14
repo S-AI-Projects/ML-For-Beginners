@@ -1,0 +1,15 @@
+test_argument_order_matters (test_example.TestConfusionMatrix.test_argument_order_matters) ... ok
+test_boundary_no_actual_positives (test_example.TestConfusionMatrix.test_boundary_no_actual_positives) ... ok
+test_boundary_no_positive_predictions (test_example.TestConfusionMatrix.test_boundary_no_positive_predictions) ... ok
+test_deliberate_wrong_result_is_detected (test_example.TestConfusionMatrix.test_deliberate_wrong_result_is_detected) ... ok
+test_invalid_empty (test_example.TestConfusionMatrix.test_invalid_empty) ... ok
+test_invalid_label_value (test_example.TestConfusionMatrix.test_invalid_label_value) ... ok
+test_invalid_length_mismatch (test_example.TestConfusionMatrix.test_invalid_length_mismatch) ... ok
+test_single_sample (test_example.TestConfusionMatrix.test_single_sample) ... ok
+test_smallest_valid_case (test_example.TestConfusionMatrix.test_smallest_valid_case) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK
+exit=0
