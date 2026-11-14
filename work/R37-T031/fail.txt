@@ -1,0 +1,24 @@
+....FF..
+======================================================================
+FAIL: test_no_actual_positives_gives_zero_recall (test_example.TestEvaluation.test_no_actual_positives_gives_zero_recall)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/saucestick/Documents/ML-For-Beginners/4-Classification/1-Introduction/applied-labs/r37-t031/test_example.py", line 20, in test_no_actual_positives_gives_zero_recall
+    self.assertEqual(r["recall"], 0.0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 != 0.0
+
+======================================================================
+FAIL: test_no_positive_predictions_gives_zero_precision (test_example.TestEvaluation.test_no_positive_predictions_gives_zero_precision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/saucestick/Documents/ML-For-Beginners/4-Classification/1-Introduction/applied-labs/r37-t031/test_example.py", line 15, in test_no_positive_predictions_gives_zero_precision
+    self.assertEqual(r["precision"], 0.0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 != 0.0
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=2)
+exit code: 1
