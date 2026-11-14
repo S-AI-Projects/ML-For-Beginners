@@ -1,0 +1,17 @@
+test_contract_example (test_example.TestAssign.test_contract_example) ... ok
+test_deliberate_wrong_result_is_detected (test_example.TestAssign.test_deliberate_wrong_result_is_detected) ... ok
+test_invalid_centroid_dimension (test_example.TestAssign.test_invalid_centroid_dimension) ... ok
+test_invalid_point_dimension (test_example.TestAssign.test_invalid_point_dimension) ... ok
+test_invalid_values (test_example.TestAssign.test_invalid_values) ... ok
+test_matches_expected_table (test_example.TestAssign.test_matches_expected_table) ... ok
+test_matches_independent_calculation (test_example.TestAssign.test_matches_independent_calculation) ... ok
+test_matches_independent_on_more_points (test_example.TestAssign.test_matches_independent_on_more_points) ... ok
+test_no_centroids (test_example.TestAssign.test_no_centroids) ... ok
+test_single_centroid_and_no_points (test_example.TestAssign.test_single_centroid_and_no_points) ... ok
+test_tie_goes_to_first_centroid (test_example.TestAssign.test_tie_goes_to_first_centroid) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.000s
+
+OK
+exit=0

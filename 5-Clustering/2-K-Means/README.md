@@ -245,3 +245,16 @@ Also, take a look at [this handout on K-Means](https://stanford.edu/~cpiech/cs22
 ## Assignment
 
 [Try different clustering methods](assignment.md)
+
+## Applied lab: assigning points to centroids with a declared tie rule
+
+A small local example performs the K-Means assignment step for 2D points
+using squared Euclidean distance, with ties going to the first centroid, and
+checks it against a hand-made expected-result table and an independent
+calculation. Centroids are fixed by hand (simulation, not a trained model),
+so it says nothing about real K-Means performance. See
+[applied-labs/r37-t033](./applied-labs/r37-t033/README.md).
+
+Run: `python3 5-Clustering/2-K-Means/applied-labs/r37-t033/example.py`
+Fixture: centroids `(0,0)`, `(4,0)`; points `(1,0)`, `(3,0)`, `(2,0)`
+Expected: `labels=[0, 1, 0]`
