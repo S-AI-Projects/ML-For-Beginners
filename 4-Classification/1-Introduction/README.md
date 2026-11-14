@@ -293,7 +293,23 @@ This curriculum contains several interesting datasets. Dig through the `data` fo
 ## Review & Self Study
 
 Explore SMOTE's API. What use cases is it best used for? What problems does it solve?
+## Applied lab: evaluating a binary classifier
 
+See [R37-T031: confusion matrix, precision and recall](applied-labs/r37-t031/README.md) for a small local example. It uses fixed labels, so it is not a trained model and says nothing about real model performance.
+
+Run it from the repository root:
+
+```bash
+python3 4-Classification/1-Introduction/applied-labs/r37-t031/example.py
+```
+
+Fixture: `y_true=[1,1,0,0]`, `y_pred=[1,0,1,0]`. Expected output:
+
+```
+TP=1 FN=1 FP=1 TN=1 precision=0.5 recall=0.5
+```
+
+Prerequisite: Python 3 (standard library only). If there are no positive predictions, precision is defined as 0.0 (see the lab README for the full policy).
 ## Assignment 
 
 [Explore classification methods](assignment.md)
