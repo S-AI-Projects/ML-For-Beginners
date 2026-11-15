@@ -297,3 +297,15 @@ Explore SMOTE's API. What use cases is it best used for? What problems does it s
 ## Assignment 
 
 [Explore classification methods](assignment.md)
+
+## Applied lab: worked confusion matrix, precision and recall
+
+A small local example works through a confusion matrix, precision and recall
+for fixed labels, step by step, and states a policy for zero denominators. The
+exact example is executed as a regression test. It uses hand-written labels
+(simulation, not a trained model), so it says nothing about real classifier
+performance. See [applied-labs/r37-t037](./applied-labs/r37-t037/README.md).
+
+Run: `python3 4-Classification/1-Introduction/applied-labs/r37-t037/example.py`
+Fixture: `y_true=[1,1,0,0]`, `y_pred=[1,0,1,0]`
+Expected: `TP=1 FN=1 FP=1 TN=1`, `precision=0.5 recall=0.5`
