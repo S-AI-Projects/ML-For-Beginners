@@ -1,0 +1,13 @@
+case | input | expected | actual | result
+empty memory | [] | [] | [] | PASS
+one record | A | [A] | [A] | PASS
+two records | A,B | [A,B] | [A,B] | PASS
+three records | A,B,C | [A,B,C] | [A,B,C] | PASS
+four records (worked example) | A,B,C,D | [B,C,D] | [B,C,D] | PASS
+seven records | A..G | [E,F,G] | [E,F,G] | PASS
+arrival order | C,A,B | [C,A,B] | [C,A,B] | PASS
+mutate copy: append | A,B,C,D | [B,C,D] | [B,C,D] | PASS
+mutate copy: remove | A,B,C,D | [B,C,D] | [B,C,D] | PASS
+mutate copy: clear | A,B,C,D | [B,C,D] | [B,C,D] | PASS
+two copies independent | A | [A] | [A] | PASS
+total: 11/11 PASS

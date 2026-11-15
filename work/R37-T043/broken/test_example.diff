@@ -1,0 +1,11 @@
+--- 7-TimeSeries/2-ARIMA/applied-labs/r37-t043/test_example.py	2026-11-15 12:45:42
++++ work/R37-T043/broken/test_example.py	2026-11-15 12:48:52
+@@ -11,7 +11,7 @@
+         memory = BoundedMemory()
+         for record in ["A", "B", "C", "D"]:
+             memory.add(record)
+-        self.assertEqual(memory.records(), ["B", "C", "D"])
++        self.assertEqual(memory.records(), ["A", "B", "C"])
+         returned = memory.records()
+         returned.append("X")
+         returned.remove("B")

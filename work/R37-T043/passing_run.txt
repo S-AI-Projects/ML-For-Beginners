@@ -1,0 +1,18 @@
+note: this is the required command with -v added; -v is the only difference
+command: python3 -m unittest discover -s 7-TimeSeries/2-ARIMA/applied-labs/r37-t043 -p "test_*.py" -v
+output:
+test_arrival_order_is_preserved (test_example.TestBoundedMemory.test_arrival_order_is_preserved) ... ok
+test_empty_memory_returns_empty_list (test_example.TestBoundedMemory.test_empty_memory_returns_empty_list) ... ok
+test_exactly_three_records_evicts_nothing (test_example.TestBoundedMemory.test_exactly_three_records_evicts_nothing) ... ok
+test_fourth_record_evicts_only_the_oldest (test_example.TestBoundedMemory.test_fourth_record_evicts_only_the_oldest) ... ok
+test_longer_stream_keeps_last_three (test_example.TestBoundedMemory.test_longer_stream_keeps_last_three) ... ok
+test_mutating_returned_list_does_not_alter_memory (test_example.TestBoundedMemory.test_mutating_returned_list_does_not_alter_memory) ... ok
+test_one_to_three_records_retained_in_order (test_example.TestBoundedMemory.test_one_to_three_records_retained_in_order) ... ok
+test_two_calls_return_independent_copies (test_example.TestBoundedMemory.test_two_calls_return_independent_copies) ... ok
+test_worked_example_add_a_to_d_then_mutate_copy (test_example.TestBoundedMemory.test_worked_example_add_a_to_d_then_mutate_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK
+exit code: 0
