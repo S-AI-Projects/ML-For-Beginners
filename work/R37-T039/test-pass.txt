@@ -1,0 +1,18 @@
+test_deliberate_wrong_result_is_detected (test_example.TestComparison.test_deliberate_wrong_result_is_detected) ... ok
+test_deterministic (test_example.TestComparison.test_deterministic) ... ok
+test_invariant_retained_plus_removed_is_total (test_example.TestComparison.test_invariant_retained_plus_removed_is_total) ... ok
+test_observed_trade_off_is_monotonic (test_example.TestComparison.test_observed_trade_off_is_monotonic) ... ok
+test_retained_is_always_a_prefix_in_order (test_example.TestComparison.test_retained_is_always_a_prefix_in_order) ... ok
+test_three_budgets_on_fixed_text (test_example.TestComparison.test_three_budgets_on_fixed_text) ... ok
+test_at_and_under_budget (test_example.TestContract.test_at_and_under_budget) ... ok
+test_budget_3_example (test_example.TestContract.test_budget_3_example) ... ok
+test_budget_zero (test_example.TestContract.test_budget_zero) ... ok
+test_empty_input_retains_none (test_example.TestContract.test_empty_input_retains_none) ... ok
+test_invalid_types_rejected (test_example.TestContract.test_invalid_types_rejected) ... ok
+test_negative_budget_rejected (test_example.TestContract.test_negative_budget_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+exit=0

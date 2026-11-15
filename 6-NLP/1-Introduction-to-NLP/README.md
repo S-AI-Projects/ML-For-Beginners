@@ -163,3 +163,17 @@ Take a look at the references below as further reading opportunities.
 ## Assignment 
 
 [Search for a bot](assignment.md)
+
+## Applied lab: token budget check and a three-budget comparison
+
+A small local example splits text on whitespace, keeps the first N tokens
+under a configured budget, and reports what was retained and removed. It then
+compares three budgets on one fixed text using coverage (share of the text
+kept). The whitespace tokenizer is a teaching approximation, not any real
+model's tokenizer, and no model is involved (simulation), so it says nothing
+about real token counts, cost or accuracy. See
+[applied-labs/r37-t039](./applied-labs/r37-t039/README.md).
+
+Run: `python3 6-NLP/1-Introduction-to-NLP/applied-labs/r37-t039/example.py`
+Fixture: `"one two three four"` with budget `3`; and `"the room was clean and quiet"` with budgets `2, 4, 8`
+Expected: `retained=['one', 'two', 'three'] removed_count=1 truncated=True`; coverage `0.333, 0.667, 1.000`
