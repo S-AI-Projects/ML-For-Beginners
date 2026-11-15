@@ -1,0 +1,20 @@
+test_deliberate_wrong_result_is_detected (test_example.TestBeforeAfterEquivalence.test_deliberate_wrong_result_is_detected) ... ok
+test_equivalent_on_fixture (test_example.TestBeforeAfterEquivalence.test_equivalent_on_fixture) ... ok
+test_equivalent_when_control_target_changes (test_example.TestBeforeAfterEquivalence.test_equivalent_when_control_target_changes) ... ok
+test_equivalent_when_each_field_is_removed_or_blanked (test_example.TestBeforeAfterEquivalence.test_equivalent_when_each_field_is_removed_or_blanked) ... ok
+test_extracted_function_is_what_produces_problems (test_example.TestBeforeAfterEquivalence.test_extracted_function_is_what_produces_problems) ... ok
+test_complete_scenario_passes (test_example.TestRubric.test_complete_scenario_passes) ... ok
+test_fixture_has_three_scenarios (test_example.TestRubric.test_fixture_has_three_scenarios) ... ok
+test_invalid_risk_level_fails (test_example.TestRubric.test_invalid_risk_level_fails) ... ok
+test_missing_whole_sections_fail (test_example.TestRubric.test_missing_whole_sections_fail) ... ok
+test_non_dict_rejected (test_example.TestRubric.test_non_dict_rejected) ... ok
+test_problem_beats_flag (test_example.TestRubric.test_problem_beats_flag) ... ok
+test_scenario_without_asset_fails (test_example.TestRubric.test_scenario_without_asset_fails) ... ok
+test_unrelated_control_is_flagged_for_review (test_example.TestRubric.test_unrelated_control_is_flagged_for_review) ... ok
+test_whitespace_only_field_counts_as_missing (test_example.TestRubric.test_whitespace_only_field_counts_as_missing) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK
+exit=0
