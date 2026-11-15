@@ -1,0 +1,6 @@
+valid: MAE=0.6667 RMSE=0.8165
+missing value: ERROR prediction[1] is missing (None)
+recovery: valid again: MAE=0.6667 RMSE=0.8165
+identical: MAE=0.0000 RMSE=0.0000
+length mismatch: ERROR length mismatch: truth has 3 values, prediction has 2
+empty: ERROR inputs must not be empty
