@@ -1,0 +1,19 @@
+Inputs for R37-T043 evidence (fixture: local teaching fixture, not a real chat-model memory implementation)
+
+Worked example (example.py main):
+  add A, add B, add C, add D (in that order)
+  then take records(), append X, remove B, clear it
+
+Regression cases (test_example.py and expected_vs_actual.txt):
+  empty memory
+  [A]
+  [A,B]
+  [A,B,C]
+  [A,B,C,D]
+  [A,B,C,D,E,F,G]
+  [C,A,B] (arrival order check)
+  [A,B,C,D] then mutate a copy by append, remove or clear
+  two separate records() calls on the same memory
+
+Required check:
+  python3 -m unittest discover -s 7-TimeSeries/2-ARIMA/applied-labs/r37-t043 -p "test_*.py"

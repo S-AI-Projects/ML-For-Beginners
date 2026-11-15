@@ -1,0 +1,34 @@
+note: same command as passing_run.txt, with -v added, pointed at the broken copy (work/R37-T043/broken); the lab files are untouched
+command: python3 -m unittest discover -s work/R37-T043/broken -p "test_*.py" -v
+output:
+test_arrival_order_is_preserved (test_example.TestBoundedMemory.test_arrival_order_is_preserved) ... ok
+test_empty_memory_returns_empty_list (test_example.TestBoundedMemory.test_empty_memory_returns_empty_list) ... ok
+test_exactly_three_records_evicts_nothing (test_example.TestBoundedMemory.test_exactly_three_records_evicts_nothing) ... ok
+test_fourth_record_evicts_only_the_oldest (test_example.TestBoundedMemory.test_fourth_record_evicts_only_the_oldest) ... ok
+test_longer_stream_keeps_last_three (test_example.TestBoundedMemory.test_longer_stream_keeps_last_three) ... ok
+test_mutating_returned_list_does_not_alter_memory (test_example.TestBoundedMemory.test_mutating_returned_list_does_not_alter_memory) ... ok
+test_one_to_three_records_retained_in_order (test_example.TestBoundedMemory.test_one_to_three_records_retained_in_order) ... ok
+test_two_calls_return_independent_copies (test_example.TestBoundedMemory.test_two_calls_return_independent_copies) ... ok
+test_worked_example_add_a_to_d_then_mutate_copy (test_example.TestBoundedMemory.test_worked_example_add_a_to_d_then_mutate_copy) ... FAIL
+
+======================================================================
+FAIL: test_worked_example_add_a_to_d_then_mutate_copy (test_example.TestBoundedMemory.test_worked_example_add_a_to_d_then_mutate_copy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T043/broken/test_example.py", line 14, in test_worked_example_add_a_to_d_then_mutate_copy
+    self.assertEqual(memory.records(), ["A", "B", "C"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['B', 'C', 'D'] != ['A', 'B', 'C']
+
+First differing element 0:
+'B'
+'A'
+
+- ['B', 'C', 'D']
++ ['A', 'B', 'C']
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1

@@ -1,0 +1,6 @@
+add A -> [A]
+add B -> [A,B]
+add C -> [A,B,C]
+add D -> [B,C,D]
+mutate returned list -> copy []
+stored memory -> [B,C,D]
