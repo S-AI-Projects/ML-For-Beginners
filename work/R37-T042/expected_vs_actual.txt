@@ -1,0 +1,77 @@
+case 01
+  input:    {"tool": "add", "args": {"a": 2, "b": 3}}
+  expected: {"ok": true, "result": 5}
+  actual:   {"ok": true, "result": 5}
+  result:   PASS
+
+case 02
+  input:    {"tool": "multiply", "args": {"a": 2, "b": 3}}
+  expected: {"ok": true, "result": 6}
+  actual:   {"ok": true, "result": 6}
+  result:   PASS
+
+case 03
+  input:    {"tool": "add", "args": {"a": -1, "b": 1.5}}
+  expected: {"ok": true, "result": 0.5}
+  actual:   {"ok": true, "result": 0.5}
+  result:   PASS
+
+case 04
+  input:    {"tool": "multiply", "args": {"a": 0, "b": 7}}
+  expected: {"ok": true, "result": 0}
+  actual:   {"ok": true, "result": 0}
+  result:   PASS
+
+case 05
+  input:    {"tool": "add", "args": {"a": 0, "b": 0}}
+  expected: {"ok": true, "result": 0}
+  actual:   {"ok": true, "result": 0}
+  result:   PASS
+
+case 06
+  input:    {"tool": "multiply", "args": {"a": 2.5, "b": 4}}
+  expected: {"ok": true, "result": 10.0}
+  actual:   {"ok": true, "result": 10.0}
+  result:   PASS
+
+case 07
+  input:    {"tool": "subtract", "args": {"a": 2, "b": 3}}
+  expected: error code unknown_tool
+  actual:   {"ok": false, "error": {"code": "unknown_tool", "message": "unknown tool: 'subtract'"}}
+  result:   PASS
+
+case 08
+  input:    {"tool": "add", "args": {"a": "a", "b": 3}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "argument 'a' must be a number"}}
+  result:   PASS
+
+case 09
+  input:    {"tool": "add", "args": {"a": true, "b": 3}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "argument 'a' must be a number"}}
+  result:   PASS
+
+case 10
+  input:    {"tool": "add", "args": {"a": 1, "b": false}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "argument 'b' must be a number"}}
+  result:   PASS
+
+case 11
+  input:    {"tool": "add", "args": {"a": null, "b": 3}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "argument 'a' must be a number"}}
+  result:   PASS
+
+case 12
+  input:    {"tool": "add", "args": {"a": 1}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "args must be exactly {a, b}"}}
+  result:   PASS
+
+case 13
+  input:    {"tool": "add", "args": {"a": 1, "b": 2, "c": 3}}
+  expected: error code invalid_argument
+  actual:   {"ok": false, "error": {"code": "invalid_argument", "message": "args must be exactly {a, b}"}}
+  result:   PASS

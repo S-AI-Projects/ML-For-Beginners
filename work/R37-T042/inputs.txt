@@ -1,0 +1,13 @@
+{"tool": "add", "args": {"a": 2, "b": 3}}
+{"tool": "multiply", "args": {"a": 2, "b": 3}}
+{"tool": "add", "args": {"a": -1, "b": 1.5}}
+{"tool": "multiply", "args": {"a": 0, "b": 7}}
+{"tool": "add", "args": {"a": 0, "b": 0}}
+{"tool": "multiply", "args": {"a": 2.5, "b": 4}}
+{"tool": "subtract", "args": {"a": 2, "b": 3}}
+{"tool": "add", "args": {"a": "a", "b": 3}}
+{"tool": "add", "args": {"a": true, "b": 3}}
+{"tool": "add", "args": {"a": 1, "b": false}}
+{"tool": "add", "args": {"a": null, "b": 3}}
+{"tool": "add", "args": {"a": 1}}
+{"tool": "add", "args": {"a": 1, "b": 2, "c": 3}}

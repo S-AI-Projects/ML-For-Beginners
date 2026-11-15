@@ -1,0 +1,55 @@
+Local contract fixture, not a full MCP transport implementation.
+[
+  {
+    "tool": "add",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  },
+  {
+    "tool": "multiply",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  },
+  {
+    "tool": "add",
+    "args": {
+      "a": "a",
+      "b": 3
+    }
+  },
+  {
+    "tool": "multiply",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  }
+]
+[
+  {
+    "ok": true,
+    "result": 5
+  },
+  {
+    "ok": true,
+    "result": 6
+  },
+  {
+    "ok": false,
+    "error": {
+      "code": "invalid_argument",
+      "message": "argument 'a' must be a number"
+    }
+  },
+  {
+    "ok": false,
+    "error": {
+      "code": "not_executed",
+      "message": "not run: an earlier call failed"
+    }
+  }
+]
