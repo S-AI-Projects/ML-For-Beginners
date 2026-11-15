@@ -389,6 +389,40 @@ Dig into the ways to test the accuracy of a Time Series Model. We touch on MAPE 
 
 This lesson touches on only the basics of Time Series Forecasting with ARIMA. Take some time to deepen your knowledge by digging into [this repository](https://microsoft.github.io/forecasting/) and its various model types to learn other ways to build Time Series models.
 
+## Applied lab: bounded conversation memory
+
+The [bounded conversation memory lab](applied-labs/r37-t043/README.md) is a standalone analogy for ordered observations kept in a fixed-size window. It is **not ARIMA** and does **no forecasting**.
+
+Invocation:
+
+```bash
+python3 7-TimeSeries/2-ARIMA/applied-labs/r37-t043/example.py
+```
+
+Fixture: `BoundedMemory` stores at most 3 string records, oldest first. `records()` returns a shallow copy, so changing the copy does not change the stored memory.
+
+Expected output:
+
+```text
+add A -> [A]
+add B -> [A,B]
+add C -> [A,B,C]
+add D -> [B,C,D]
+mutate returned list -> copy []
+stored memory -> [B,C,D]
+```
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Label: local teaching fixture, not a real chat-model memory implementation
+
+Limitations:
+
+- Records are plain strings; no values, timestamps or statistics are stored.
+- No differencing, fitting or forecasting is done.
+- Capacity is fixed at 3, with no validation beyond the stated contract.
+- The copy is shallow; it protects the memory only because the records are immutable strings.
+
 ## Assignment
 
 [A new ARIMA model](assignment.md)
