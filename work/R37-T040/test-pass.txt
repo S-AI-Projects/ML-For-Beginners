@@ -1,0 +1,18 @@
+test_deliberate_wrong_answers_are_detected (test_example.TestAppliedQuestions.test_deliberate_wrong_answers_are_detected) ... ok
+test_each_answer_check_passes (test_example.TestAppliedQuestions.test_each_answer_check_passes) ... ok
+test_each_question_has_answer_rationale_and_check (test_example.TestAppliedQuestions.test_each_question_has_answer_rationale_and_check) ... ok
+test_q1_prediction_is_exactly_review (test_example.TestAppliedQuestions.test_q1_prediction_is_exactly_review) ... ok
+test_three_questions_of_the_required_kinds (test_example.TestAppliedQuestions.test_three_questions_of_the_required_kinds) ... ok
+test_blank_and_invalid_fields (test_example.TestRubric.test_blank_and_invalid_fields) ... ok
+test_complete_scenario_passes (test_example.TestRubric.test_complete_scenario_passes) ... ok
+test_missing_sections_fail (test_example.TestRubric.test_missing_sections_fail) ... ok
+test_non_dict_rejected (test_example.TestRubric.test_non_dict_rejected) ... ok
+test_scenario_without_asset_fails (test_example.TestRubric.test_scenario_without_asset_fails) ... ok
+test_three_scenarios (test_example.TestRubric.test_three_scenarios) ... ok
+test_unrelated_control_is_flagged_for_review (test_example.TestRubric.test_unrelated_control_is_flagged_for_review) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+exit=0

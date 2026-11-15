@@ -1,0 +1,6 @@
+complete: status=pass problems=[] flags=[]
+no_asset: status=fail problems=['missing asset'] flags=[]
+unrelated_control: status=review problems=[] flags=["control mitigates 'T9', not threat 'T3': needs human review"]
+Q1 (predict an output): check=OK
+Q2 (diagnose a failure): check=OK
+Q3 (choose a boundary policy): check=OK
