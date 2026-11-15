@@ -330,3 +330,17 @@ Before you apply clustering algorithms, as we have learned, it's a good idea to 
 ## Assignment
 
 [Research other visualizations for clustering](assignment.md)
+
+## Applied lab: point assignment behind a callable interface
+
+A small local example assigns 2D points to two fixed centroids using squared
+Euclidean distance (ties go to the first centroid), with the "nearest
+centroid" decision placed behind a callable interface and answered by a
+deterministic local adapter. The adapter is a mock (simulation): it does not
+establish real-service behaviour such as network failures, rate limits or
+the service's own tie-breaking, and it says nothing about real clustering
+quality. See [applied-labs/r37-t035](./applied-labs/r37-t035/README.md).
+
+Run: `python3 5-Clustering/1-Visualize/applied-labs/r37-t035/example.py`
+Fixture: centroids `(0,0)`, `(4,0)`; points `(1,0)`, `(3,0)`, `(2,0)`
+Expected: `labels=[0, 1, 0]`

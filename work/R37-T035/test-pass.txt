@@ -1,0 +1,17 @@
+test_any_callable_can_replace_the_adapter (test_example.TestAdapter.test_any_callable_can_replace_the_adapter) ... ok
+test_bad_service_answers_are_rejected (test_example.TestAdapter.test_bad_service_answers_are_rejected) ... ok
+test_contract_example (test_example.TestAdapter.test_contract_example) ... ok
+test_deliberate_wrong_result_is_detected (test_example.TestAdapter.test_deliberate_wrong_result_is_detected) ... ok
+test_dependency_is_called_through_the_interface (test_example.TestAdapter.test_dependency_is_called_through_the_interface) ... ok
+test_invalid_centroids_rejected (test_example.TestAdapter.test_invalid_centroids_rejected) ... ok
+test_invalid_points_rejected_before_service_is_called (test_example.TestAdapter.test_invalid_points_rejected_before_service_is_called) ... ok
+test_no_points (test_example.TestAdapter.test_no_points) ... ok
+test_non_callable_assigner_rejected (test_example.TestAdapter.test_non_callable_assigner_rejected) ... ok
+test_service_errors_propagate (test_example.TestAdapter.test_service_errors_propagate) ... ok
+test_tie_goes_to_first_centroid (test_example.TestAdapter.test_tie_goes_to_first_centroid) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.000s
+
+OK
+exit=0
