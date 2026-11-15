@@ -1,0 +1,10 @@
+input: "one two three four"
+budget: 3 (truncation case)
+input: "one two three four"
+budget: 4 (exact fit)
+input: ""
+budget: 3 (empty)
+input: "one two"
+budget: 0
+input: "one two"
+budget: -1 (expect ValueError)

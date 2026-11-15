@@ -1,0 +1,22 @@
+Note: -v is the only difference from the required command pattern; run on the broken copy.
+command: python3 -m unittest discover -s work/R37-T041/broken -p "test_*.py" -v
+test_budget_zero_retains_none (test_example.PreflightTokensTest.test_budget_zero_retains_none) ... ok
+test_empty_input (test_example.PreflightTokensTest.test_empty_input) ... ok
+test_exact_fit_not_truncated (test_example.PreflightTokensTest.test_exact_fit_not_truncated) ... ok
+test_negative_budget_raises (test_example.PreflightTokensTest.test_negative_budget_raises) ... ok
+test_truncates_over_budget (test_example.PreflightTokensTest.test_truncates_over_budget) ... FAIL
+
+======================================================================
+FAIL: test_truncates_over_budget (test_example.PreflightTokensTest.test_truncates_over_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T041/broken/test_example.py", line 10, in test_truncates_over_budget
+    self.assertEqual(r["removed_count"], 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+FAILED (failures=1)
+exit code: 1

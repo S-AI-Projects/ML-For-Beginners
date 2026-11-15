@@ -1,0 +1,7 @@
+tokenizer: whitespace split (teaching approximation, not a model tokenizer)
+input: 'one two three four'
+budget: 3
+retained: ['one', 'two', 'three']
+removed_count: 1
+truncated: True
+exit=0
