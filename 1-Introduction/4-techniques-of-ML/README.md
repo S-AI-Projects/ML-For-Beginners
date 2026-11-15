@@ -116,3 +116,18 @@ Search online for interviews with data scientists who discuss their daily work. 
 ## Assignment
 
 [Interview a data scientist](assignment.md)
+
+## Applied lab: risk scenarios, a structural rubric and three applied questions
+
+A small local example encodes three fictional scenarios as asset, threat,
+control and residual-risk fields and checks them against a structural rubric:
+a complete scenario passes, one without an asset fails, and a control that
+does not target the named threat is flagged for human review. The checker
+verifies structure only; a human judges the explanations. Three applied
+questions (predict an output, diagnose a failure, choose a boundary policy)
+each come with a rationale and an executable check. The scenarios are
+fictional (simulation); no model or real system is involved. See
+[applied-labs/r37-t040](./applied-labs/r37-t040/README.md).
+
+Run: `python3 1-Introduction/4-techniques-of-ML/applied-labs/r37-t040/example.py`
+Expected: `complete: status=pass`, `no_asset: status=fail`, `unrelated_control: status=review`, then `Q1`, `Q2`, `Q3` all `check=OK`
