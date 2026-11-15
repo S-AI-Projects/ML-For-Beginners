@@ -1,0 +1,15 @@
+headline | input=[(1, 0), (3, 0), (2, 0)] | expected=[0, 1, 0] | actual=[0, 1, 0] | PASS
+tie at (2,0) | input=[(1, 0), (3, 0), (2, 0)] | expected=[((4, 4), 0)] | actual=[((4, 4), 0)] | PASS
+squared distances | input=[(3, 0), (1, 2)] | expected=[((9, 1), 1), ((5, 13), 0)] | actual=[((9, 1), 1), ((5, 13), 0)] | PASS
+point equal to centroid | input=[(4, 0), (0, 0)] | expected=[((16, 0), 1), ((0, 16), 0)] | actual=[((16, 0), 1), ((0, 16), 0)] | PASS
+reject invalid | input=[()] | expected=ValueError | actual=ValueError | PASS
+reject invalid | input=[(1,)] | expected=ValueError | actual=ValueError | PASS
+reject invalid | input=[(1, 2, 3)] | expected=ValueError | actual=ValueError | PASS
+mixed list, one invalid | input=[(1, 0), (1,), (2, 0)] | expected=ValueError | actual=ValueError | PASS
+empty input | input=[] | expected=([], []) | actual=([], []) | PASS
+invariants | input=[(1, 0), (3, 0), (2, 0)] | expected=invariants hold | actual=invariants hold | PASS
+invariants | input=[(0, 0)] | expected=invariants hold | actual=invariants hold | PASS
+invariants | input=[(5, 5), (-1, 2), (2, 0), (4, 0)] | expected=invariants hold | actual=invariants hold | PASS
+invariants | input=[(-3, 1), (10, -2), (0.5, 0.5)] | expected=invariants hold | actual=invariants hold | PASS
+invariants | input=[] | expected=invariants hold | actual=invariants hold | PASS
+summary: 14 PASS, 0 FAIL

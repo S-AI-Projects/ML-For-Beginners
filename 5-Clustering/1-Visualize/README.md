@@ -313,6 +313,39 @@ Are these three genres significantly different in the perception of their dancea
 
 In general, for clustering, you can use scatterplots to show clusters of data, so mastering this type of visualization is very useful. In the next lesson, we will take this filtered data and use k-means clustering to discover groups in this data that seem to overlap in interesting ways.
 
+### Applied lab - nearest-centroid assignment trace
+
+A small linked fixture: [applied lab r37-t044](applied-labs/r37-t044/README.md). It assigns points to the nearest of two fixed centroids by squared Euclidean distance and records the state after each step.
+
+Invocation, from the repository root:
+
+```bash
+python3 5-Clustering/1-Visualize/applied-labs/r37-t044/example.py
+```
+
+Fixture: centroids `(0, 0)` and `(4, 0)`; points `(1, 0)`, `(3, 0)`, `(2, 0)`. The point `(2, 0)` ties (4 and 4), and the tie goes to the first centroid.
+
+Expected output:
+
+```output
+step 1: point=(1, 0) distances=(1, 9) chosen=0 assignments=[0]
+step 2: point=(3, 0) distances=(9, 1) chosen=1 assignments=[0, 1]
+step 3: point=(2, 0) distances=(4, 4) chosen=0 assignments=[0, 1, 0]
+final assignments: [0, 1, 0]
+invariant check (length and last entry): ok
+```
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+local teaching fixture, not a K-means training implementation
+
+Limitations:
+
+- The centroids are fixed and never updated, so there is no K-means training, convergence or learning.
+- There are only two centroids and two dimensions; no choice of k is made.
+- The 2-dimensional shape check is a guard added for this exercise, not part of the lesson.
+- The output is a text trace; it makes no claim about trained models, real hardware or cloud services.
+
 ---
 
 ## 🚀Challenge

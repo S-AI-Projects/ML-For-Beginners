@@ -1,0 +1,17 @@
+Command: python3 -m unittest discover -s 5-Clustering/1-Visualize/applied-labs/r37-t044 -p "test_*.py" -v
+Note: -v is the only difference from the required command.
+---
+test_empty_input (test_example.AssignWithTraceTests.test_empty_input) ... ok
+test_headline_assignment (test_example.AssignWithTraceTests.test_headline_assignment) ... ok
+test_invalid_points_rejected (test_example.AssignWithTraceTests.test_invalid_points_rejected) ... ok
+test_invariants_over_several_point_sets (test_example.AssignWithTraceTests.test_invariants_over_several_point_sets) ... ok
+test_mixed_list_rejected_up_front (test_example.AssignWithTraceTests.test_mixed_list_rejected_up_front) ... ok
+test_point_equal_to_centroid (test_example.AssignWithTraceTests.test_point_equal_to_centroid) ... ok
+test_squared_distances_not_square_roots (test_example.AssignWithTraceTests.test_squared_distances_not_square_roots) ... ok
+test_tie_goes_to_first_centroid (test_example.AssignWithTraceTests.test_tie_goes_to_first_centroid) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK
+exit code: 0

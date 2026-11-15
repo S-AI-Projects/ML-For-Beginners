@@ -1,0 +1,37 @@
+Command: python3 -m unittest discover -s work/R37-T044/broken -p "test_*.py" -v
+Note: broken copy of the test (one wrong expected element in the headline result); -v is the only difference from the required command.
+---
+test_empty_input (test_example.AssignWithTraceTests.test_empty_input) ... ok
+test_headline_assignment (test_example.AssignWithTraceTests.test_headline_assignment) ... FAIL
+test_invalid_points_rejected (test_example.AssignWithTraceTests.test_invalid_points_rejected) ... ok
+test_invariants_over_several_point_sets (test_example.AssignWithTraceTests.test_invariants_over_several_point_sets) ... ok
+test_mixed_list_rejected_up_front (test_example.AssignWithTraceTests.test_mixed_list_rejected_up_front) ... ok
+test_point_equal_to_centroid (test_example.AssignWithTraceTests.test_point_equal_to_centroid) ... ok
+test_squared_distances_not_square_roots (test_example.AssignWithTraceTests.test_squared_distances_not_square_roots) ... ok
+test_tie_goes_to_first_centroid (test_example.AssignWithTraceTests.test_tie_goes_to_first_centroid) ... ok
+
+======================================================================
+FAIL: test_headline_assignment (test_example.AssignWithTraceTests.test_headline_assignment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T044/broken/test_example.py", line 20, in test_headline_assignment
+    self.assertEqual(final, [0, 1, 1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [0, 1, 0] != [0, 1, 1]
+
+First differing element 2:
+0
+1
+
+- [0, 1, 0]
+?        ^
+
++ [0, 1, 1]
+?        ^
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+FAILED (failures=1)
+exit code: 1
