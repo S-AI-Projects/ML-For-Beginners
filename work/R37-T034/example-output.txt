@@ -1,0 +1,5 @@
+text="one two three four" budget=3  (whitespace tokens: teaching approximation)
+{'step': 'tokenize', 'tokens': ['one', 'two', 'three', 'four']}
+{'step': 'measure', 'token_count': 4, 'budget': 3, 'over_budget': True}
+{'step': 'truncate', 'retained': ['one', 'two', 'three'], 'removed_count': 1}
+retained=['one', 'two', 'three'] removed_count=1 truncated=True

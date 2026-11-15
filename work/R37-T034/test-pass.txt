@@ -1,0 +1,19 @@
+test_budget_zero_removes_everything (test_example.TestPreflight.test_budget_zero_removes_everything) ... ok
+test_contract_example (test_example.TestPreflight.test_contract_example) ... ok
+test_deliberate_wrong_result_is_detected (test_example.TestPreflight.test_deliberate_wrong_result_is_detected) ... ok
+test_empty_input_retains_none (test_example.TestPreflight.test_empty_input_retains_none) ... ok
+test_extra_whitespace_is_not_a_token (test_example.TestPreflight.test_extra_whitespace_is_not_a_token) ... ok
+test_invalid_types_rejected (test_example.TestPreflight.test_invalid_types_rejected) ... ok
+test_invariant_check_detects_corrupted_state (test_example.TestPreflight.test_invariant_check_detects_corrupted_state) ... ok
+test_invariants_hold_over_many_inputs (test_example.TestPreflight.test_invariants_hold_over_many_inputs) ... ok
+test_negative_budget_rejected (test_example.TestPreflight.test_negative_budget_rejected) ... ok
+test_trace_records_each_step_in_order (test_example.TestPreflight.test_trace_records_each_step_in_order) ... ok
+test_trace_state_links_to_final_output (test_example.TestPreflight.test_trace_state_links_to_final_output) ... ok
+test_under_and_exactly_at_budget (test_example.TestPreflight.test_under_and_exactly_at_budget) ... ok
+test_whitespace_only_input (test_example.TestPreflight.test_whitespace_only_input) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.000s
+
+OK
+exit=0
