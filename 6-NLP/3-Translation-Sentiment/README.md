@@ -182,6 +182,14 @@ Can you make Marvin even better by extracting other features from the user input
 
 There are many ways to extract sentiment from text. Think of the business applications that might make use of this technique. Think about how it can go awry. Read more about sophisticated enterprise-ready systems that analyze sentiment such as [Azure Text Analysis](https://docs.microsoft.com/azure/cognitive-services/Text-Analytics/how-tos/text-analytics-how-to-sentiment-analysis?tabs=version-3-1?WT.mc_id=academic-77952-leestott). Test some of the Pride and Prejudice sentences above and see if it can detect nuance.
 
+## Applied lab: token-budget preflight
+
+A short extension lab checks a prompt against a token budget and reports retained tokens and truncation: [R37-T041 lab](applied-labs/r37-t041/README.md).
+
+- Scope: a deterministic local fixture, standard library only.
+- Limitations: whitespace tokens are a teaching approximation, not a real model's tokenizer. No model, paid service or hardware is used.
+- Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
 ## Assignment 
 
 [Poetic license](assignment.md)
