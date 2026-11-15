@@ -1,0 +1,9 @@
+y_true=[1, 1, 0, 0] y_pred=[1, 0, 1, 0]
+sample true pred outcome
+1 1 1 TP
+2 1 0 FN
+3 0 1 FP
+4 0 0 TN
+TP=1 FN=1 FP=1 TN=1
+precision=TP/(TP+FP)=1/2=0.5
+recall=TP/(TP+FN)=1/2=0.5
