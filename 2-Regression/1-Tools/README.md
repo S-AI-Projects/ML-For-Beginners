@@ -221,6 +221,96 @@ In this tutorial, you worked with simple linear regression, rather than univaria
 
 Read more about the concept of regression and think about what kinds of questions can be answered by this technique. Take this [tutorial](https://docs.microsoft.com/learn/modules/train-evaluate-regression-models?WT.mc_id=academic-77952-leestott) to deepen your understanding.
 
+## Applied lab: typed tool dispatch
+
+See the [R37-T042 lab](applied-labs/r37-t042/README.md): a local contract fixture that dispatches JSON tool calls for `add` and `multiply` through an allowlist, with numeric argument validation.
+
+> This is a **local contract fixture, not a full MCP transport implementation**.
+
+### Prerequisites
+
+Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+### Invocation
+
+Run from the repository root:
+
+```bash
+python3 2-Regression/1-Tools/applied-labs/r37-t042/example.py
+python3 -m unittest discover -s 2-Regression/1-Tools/applied-labs/r37-t042 -p "test_*.py"
+```
+
+### Fixture
+
+`example.py` takes JSON-style calls like `{"tool": "add", "args": {"a": 2, "b": 3}}` and dispatches only `add(a, b)` and `multiply(a, b)`. Success returns `{"ok": true, "result": ...}`; failure returns `{"ok": false, "error": {"code": ..., "message": ...}}`. The CLI runs four calls: a valid `add`, a valid `multiply`, an `add` with string argument `"a"`, and a valid `multiply` that must not run.
+
+`test_example.py` checks six calls against hand-written expected values and against an independent calculation (`sum`, `math.prod`) that does not use the dispatcher.
+
+```text
+Local contract fixture, not a full MCP transport implementation.
+[
+  {
+    "tool": "add",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  },
+  {
+    "tool": "multiply",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  },
+  {
+    "tool": "add",
+    "args": {
+      "a": "a",
+      "b": 3
+    }
+  },
+  {
+    "tool": "multiply",
+    "args": {
+      "a": 2,
+      "b": 3
+    }
+  }
+]
+[
+  {
+    "ok": true,
+    "result": 5
+  },
+  {
+    "ok": true,
+    "result": 6
+  },
+  {
+    "ok": false,
+    "error": {
+      "code": "invalid_argument",
+      "message": "argument 'a' must be a number"
+    }
+  },
+  {
+    "ok": false,
+    "error": {
+      "code": "not_executed",
+      "message": "not run: an earlier call failed"
+    }
+  }
+]
+```
+
+### Limitations
+
+- No transport: calls are Python dicts, not MCP messages.
+- The allowlist covers only `add` and `multiply`.
+- Argument validation is limited to numeric `a` and `b`.
+- Stopping at the first error is a fixture rule, not a general protocol guarantee.
+
 ## Assignment
 
 [A different dataset](assignment.md)

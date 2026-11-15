@@ -1,0 +1,36 @@
+Required command: python3 -m unittest discover -s 2-Regression/1-Tools/applied-labs/r37-t042 -p "test_*.py"
+Run against the broken copy in work/R37-T042/broken (one wrong expected value; see broken/test_example.diff):
+Command actually run: python3 -m unittest discover -s work/R37-T042/broken -p "test_*.py" -v
+---
+test_add_2_3 (test_example.DispatchTests.test_add_2_3) ... ok
+test_bool_and_none_are_not_numeric (test_example.DispatchTests.test_bool_and_none_are_not_numeric) ... ok
+test_failed_call_stops_later_calls (test_example.DispatchTests.test_failed_call_stops_later_calls) ... ok
+test_missing_and_extra_args_are_invalid (test_example.DispatchTests.test_missing_and_extra_args_are_invalid) ... ok
+test_multiply_2_3 (test_example.DispatchTests.test_multiply_2_3) ... ok
+test_non_string_tool_is_unknown_tool (test_example.DispatchTests.test_non_string_tool_is_unknown_tool) ... ok
+test_string_argument_is_invalid (test_example.DispatchTests.test_string_argument_is_invalid) ... ok
+test_table_matches_expected_and_independent_calculation (test_example.DispatchTests.test_table_matches_expected_and_independent_calculation) ... 
+  test_table_matches_expected_and_independent_calculation (test_example.DispatchTests.test_table_matches_expected_and_independent_calculation) (tool='multiply', a=2, b=3) ... FAIL
+test_unknown_tool (test_example.DispatchTests.test_unknown_tool) ... ok
+test_unknown_tool_stops_later_calls (test_example.DispatchTests.test_unknown_tool_stops_later_calls) ... ok
+
+======================================================================
+FAIL: test_table_matches_expected_and_independent_calculation (test_example.DispatchTests.test_table_matches_expected_and_independent_calculation) (tool='multiply', a=2, b=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T042/broken/test_example.py", line 42, in test_table_matches_expected_and_independent_calculation
+    self.assertEqual(result, {"ok": True, "result": expected})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ok': True, 'result': 6} != {'ok': True, 'result': 7}
+- {'ok': True, 'result': 6}
+?                        ^
+
++ {'ok': True, 'result': 7}
+?                        ^
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1
