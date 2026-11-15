@@ -1,0 +1,25 @@
+case: budget 3 truncation
+  input: 'one two three four' budget=3
+  expected: {'retained': ['one', 'two', 'three'], 'removed_count': 1, 'truncated': True}
+  actual: {'retained': ['one', 'two', 'three'], 'removed_count': 1, 'truncated': True}
+  PASS
+case: exact fit
+  input: 'one two three four' budget=4
+  expected: {'retained': ['one', 'two', 'three', 'four'], 'removed_count': 0, 'truncated': False}
+  actual: {'retained': ['one', 'two', 'three', 'four'], 'removed_count': 0, 'truncated': False}
+  PASS
+case: empty input
+  input: '' budget=3
+  expected: {'retained': [], 'removed_count': 0, 'truncated': False}
+  actual: {'retained': [], 'removed_count': 0, 'truncated': False}
+  PASS
+case: budget 0
+  input: 'one two' budget=0
+  expected: {'retained': [], 'removed_count': 2, 'truncated': True}
+  actual: {'retained': [], 'removed_count': 2, 'truncated': True}
+  PASS
+case: negative budget
+  input: 'one two' budget=-1
+  expected: ValueError
+  actual: ValueError
+  PASS
