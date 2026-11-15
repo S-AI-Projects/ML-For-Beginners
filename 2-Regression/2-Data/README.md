@@ -284,3 +284,15 @@ Take a look at the many ways to visualize data. Make a list of the various libra
 ## Assignment
 
 [Exploring visualization](assignment.md)
+
+## Applied lab: MAE and RMSE with invalid-data handling
+
+A small local example computes MAE and RMSE from paired values, rejects
+mismatched lengths, empty inputs and missing values with a clear error, and
+shows that the next valid input works normally. It uses hand-written numbers
+(simulation, not a trained model), so it says nothing about real model error.
+See [applied-labs/r37-t038](./applied-labs/r37-t038/README.md).
+
+Run: `python3 2-Regression/2-Data/applied-labs/r37-t038/example.py`
+Fixture: truth `[1,2,3]`, prediction `[1,3,2]`
+Expected: `MAE=0.6667 RMSE=0.8165` (2/3 and sqrt(2/3)); identical arrays give 0

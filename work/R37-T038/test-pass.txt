@@ -1,0 +1,18 @@
+test_batch_reports_error_and_continues (test_example.TestInvalidAndRecovery.test_batch_reports_error_and_continues) ... ok
+test_deliberate_wrong_result_is_detected (test_example.TestInvalidAndRecovery.test_deliberate_wrong_result_is_detected) ... ok
+test_empty (test_example.TestInvalidAndRecovery.test_empty) ... ok
+test_length_mismatch (test_example.TestInvalidAndRecovery.test_length_mismatch) ... ok
+test_missing_values (test_example.TestInvalidAndRecovery.test_missing_values) ... ok
+test_non_numbers_and_bools (test_example.TestInvalidAndRecovery.test_non_numbers_and_bools) ... ok
+test_recovers_on_next_valid_input (test_example.TestInvalidAndRecovery.test_recovers_on_next_valid_input) ... ok
+test_contract_example (test_example.TestMetrics.test_contract_example) ... ok
+test_identical_arrays_give_zero (test_example.TestMetrics.test_identical_arrays_give_zero) ... ok
+test_rmse_is_at_least_mae (test_example.TestMetrics.test_rmse_is_at_least_mae) ... ok
+test_single_pair_and_floats (test_example.TestMetrics.test_single_pair_and_floats) ... ok
+test_units_follow_the_data (test_example.TestMetrics.test_units_follow_the_data) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+exit=0
