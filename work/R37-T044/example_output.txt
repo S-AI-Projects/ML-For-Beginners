@@ -1,0 +1,5 @@
+step 1: point=(1, 0) distances=(1, 9) chosen=0 assignments=[0]
+step 2: point=(3, 0) distances=(9, 1) chosen=1 assignments=[0, 1]
+step 3: point=(2, 0) distances=(4, 4) chosen=0 assignments=[0, 1, 0]
+final assignments: [0, 1, 0]
+invariant check (length and last entry): ok

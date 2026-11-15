@@ -1,0 +1,11 @@
+--- 5-Clustering/1-Visualize/applied-labs/r37-t044/test_example.py	2026-11-15 14:37:50
++++ work/R37-T044/broken/test_example.py	2026-11-15 14:39:29
+@@ -17,7 +17,7 @@
+ 
+     def test_headline_assignment(self):
+         final, _ = assign_with_trace([(1, 0), (3, 0), (2, 0)])
+-        self.assertEqual(final, [0, 1, 0])
++        self.assertEqual(final, [0, 1, 1])
+ 
+     def test_tie_goes_to_first_centroid(self):
+         _, trace = assign_with_trace([(1, 0), (3, 0), (2, 0)])
