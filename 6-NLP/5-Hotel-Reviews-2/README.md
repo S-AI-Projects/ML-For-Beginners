@@ -373,3 +373,16 @@ Take [this Learn module](https://docs.microsoft.com/en-us/learn/modules/classify
 ## Assignment 
 
 [Try a different dataset](assignment.md)
+
+## Applied lab: prompt-length preflight with a state trace
+
+A small local example splits text on whitespace, compares the token count
+with a configured budget, and reports what was retained and removed, with the
+state after each step. The whitespace tokenizer is a teaching approximation,
+not any real model's tokenizer, and nothing here uses a model (simulation),
+so it says nothing about real token counts or limits. See
+[applied-labs/r37-t034](./applied-labs/r37-t034/README.md).
+
+Run: `python3 6-NLP/5-Hotel-Reviews-2/applied-labs/r37-t034/example.py`
+Fixture: text `"one two three four"`, budget `3`
+Expected: `retained=['one', 'two', 'three'] removed_count=1 truncated=True`
