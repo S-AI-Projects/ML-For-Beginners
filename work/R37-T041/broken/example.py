@@ -3,7 +3,9 @@
 Teaching approximation: this splits text on whitespace. It is NOT the tokenizer
 of any real model, so counts will differ from a production model's tokens.
 
-Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+Python 3 standard library and a local checkout. The local fixture is mandatory;
+any optional real-service extension needs separately supplied
+credentials/hardware and is not part of this task.
 
 Boundary decision: the first `budget` tokens are kept and the rest are removed.
 An exact fit (len(tokens) == budget) is not truncated; budget 0 keeps nothing.
@@ -13,7 +15,8 @@ import sys
 
 
 def preflight_tokens(text, budget):
-    """Keep the first `budget` whitespace tokens of `text` and report what was removed."""
+    """Keep the first `budget` whitespace tokens of `text` and report what
+    was removed."""
     if budget < 0:
         raise ValueError("budget must be >= 0")
     tokens = text.split()
@@ -30,7 +33,8 @@ def main():
     text = "one two three four"
     budget = 3
     result = preflight_tokens(text, budget)
-    print(f"tokenizer: whitespace split (teaching approximation, not a model tokenizer)")
+    print("tokenizer: whitespace split "
+          "(teaching approximation, not a model tokenizer)")
     print(f"input: {text!r}")
     print(f"budget: {budget}")
     print(f"retained: {result['retained']}")
