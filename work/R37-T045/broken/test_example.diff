@@ -1,0 +1,11 @@
+--- lab/test_example.py
++++ broken/test_example.py
+@@ -26,7 +26,7 @@
+         self.assertEqual(r["y_pred"], [1, 0, 1, 0])
+         self.assertEqual(
+             (r["tp"], r["fn"], r["fp"], r["tn"]), (1, 1, 1, 1))
+-        self.assertEqual(r["precision"], 0.5)
++        self.assertEqual(r["precision"], 0.75)
+         self.assertEqual(r["recall"], 0.5)
+ 
+     def test_no_positive_predictions_gives_precision_zero(self):

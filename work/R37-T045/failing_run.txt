@@ -1,0 +1,31 @@
+Command: python3 -m unittest discover -s work/R37-T045/broken -p "test_*.py" -v
+Note: same command as passing_run.txt, run on the broken copy.
+
+test_adapter_called_once_per_input_in_order (test_example.EvaluateTests.test_adapter_called_once_per_input_in_order) ... ok
+test_adapter_exception_is_not_swallowed (test_example.EvaluateTests.test_adapter_exception_is_not_swallowed) ... ok
+test_adapter_non_binary_output_raises (test_example.EvaluateTests.test_adapter_non_binary_output_raises) ... ok
+test_all_correct (test_example.EvaluateTests.test_all_correct) ... ok
+test_all_wrong (test_example.EvaluateTests.test_all_wrong) ... ok
+test_asymmetric_counts (test_example.EvaluateTests.test_asymmetric_counts) ... ok
+test_empty_input_gives_zero_counts_and_scores (test_example.EvaluateTests.test_empty_input_gives_zero_counts_and_scores) ... ok
+test_headline_contract (test_example.EvaluateTests.test_headline_contract) ... FAIL
+test_length_mismatch_raises (test_example.EvaluateTests.test_length_mismatch_raises) ... ok
+test_no_actual_positives_gives_recall_zero (test_example.EvaluateTests.test_no_actual_positives_gives_recall_zero) ... ok
+test_no_positive_predictions_gives_precision_zero (test_example.EvaluateTests.test_no_positive_predictions_gives_precision_zero) ... ok
+test_non_binary_label_raises (test_example.EvaluateTests.test_non_binary_label_raises) ... ok
+test_works_with_a_different_callable (test_example.EvaluateTests.test_works_with_a_different_callable) ... ok
+
+======================================================================
+FAIL: test_headline_contract (test_example.EvaluateTests.test_headline_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T045/broken/test_example.py", line 29, in test_headline_contract
+    self.assertEqual(r["precision"], 0.75)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.5 != 0.75
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1
