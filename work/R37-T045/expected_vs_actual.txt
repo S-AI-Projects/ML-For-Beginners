@@ -1,0 +1,9 @@
+case | input | expected | actual | result
+headline | y_true=[1, 1, 0, 0] inputs=['a', 'b', 'c', 'd'] | {'y_pred': [1, 0, 1, 0], 'tp': 1, 'fn': 1, 'fp': 1, 'tn': 1, 'precision': 0.5, 'recall': 0.5} | {'y_pred': [1, 0, 1, 0], 'tp': 1, 'fn': 1, 'fp': 1, 'tn': 1, 'precision': 0.5, 'recall': 0.5} | PASS
+no positive predictions | y_true=[1, 1, 0, 0] inputs=['a', 'b', 'c', 'd'] | {'precision': 0.0} | {'precision': 0.0} | PASS
+no actual positives | y_true=[0, 0, 0, 0] inputs=['a', 'b', 'c', 'd'] | {'recall': 0.0} | {'recall': 0.0} | PASS
+empty input | y_true=[] inputs=[] | {'tp': 0, 'fn': 0, 'fp': 0, 'tn': 0, 'precision': 0.0, 'recall': 0.0} | {'tp': 0, 'fn': 0, 'fp': 0, 'tn': 0, 'precision': 0.0, 'recall': 0.0} | PASS
+all correct | y_true=[1, 0] inputs=['a', 'b'] | {'tp': 1, 'fn': 0, 'fp': 0, 'tn': 1, 'precision': 1.0, 'recall': 1.0} | {'tp': 1, 'fn': 0, 'fp': 0, 'tn': 1, 'precision': 1.0, 'recall': 1.0} | PASS
+all wrong | y_true=[1, 0] inputs=['b', 'a'] | {'tp': 0, 'fn': 1, 'fp': 1, 'tn': 0, 'precision': 0.0, 'recall': 0.0} | {'tp': 0, 'fn': 1, 'fp': 1, 'tn': 0, 'precision': 0.0, 'recall': 0.0} | PASS
+other callable | y_true=[1, 0, 1] inputs=['x', 'y', 'z'] | {'y_pred': [1, 1, 1], 'tp': 2, 'fp': 1, 'precision': 0.6666666666666666, 'recall': 1.0} | {'y_pred': [1, 1, 1], 'tp': 2, 'fp': 1, 'precision': 0.6666666666666666, 'recall': 1.0} | PASS
+asymmetric counts | y_true=[1, 1, 1, 0] inputs=['a', 'b', 'c', 'd'] | {'y_pred': [1, 0, 0, 1], 'tp': 1, 'fn': 2, 'fp': 1, 'tn': 0, 'precision': 0.5, 'recall': 0.3333333333333333} | {'y_pred': [1, 0, 0, 1], 'tp': 1, 'fn': 2, 'fp': 1, 'tn': 0, 'precision': 0.5, 'recall': 0.3333333333333333} | PASS

@@ -339,6 +339,44 @@ Let's revisit the terms we saw earlier with the help of the confusion matrix's m
 
 ✅ Can you think which metric you should watch if you want your model to reduce the number of false negatives?
 
+### Applied lab: confusion-matrix arithmetic offline
+
+A small offline lab computes TP, FN, FP, TN, precision and recall from true and predicted labels, with an explicit zero-denominator policy. Full details are in the [lab README](applied-labs/r37-t045/README.md).
+
+**Label:** offline mock adapter, not a real model service.
+
+Invocation (from the repository root):
+
+```bash
+python3 2-Regression/4-Logistic/applied-labs/r37-t045/example.py
+```
+
+Fixture: `y_true = [1, 1, 0, 0]`, inputs `a`, `b`, `c`, `d`, and a local lookup-table adapter that predicts `[1, 0, 1, 0]`.
+
+Expected output:
+
+```text
+offline mock adapter, not a real model service
+inputs:  a b c d
+y_true:  1 1 0 0
+y_pred:  1 0 1 0
+TP=1 FN=1 FP=1 TN=1
+precision=0.5 recall=0.5
+zero-denominator case (predict all 0):
+  TP=0 FP=0 precision=0.0
+zero-denominator case (no actual positives):
+  TP=0 FN=0 recall=0.0
+```
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+
+- The adapter is a fixed lookup table, not a trained model. It says nothing about model performance.
+- Not established by this mock: network latency, timeouts, retries, authentication, rate limits, error responses, nondeterminism, the real model's threshold and accuracy, schema drift, or cost.
+- The zero-denominator values (`0.0`) are a convention so the output is always a number.
+- Only binary labels are supported, and the fixture has four items.
+
 ## Visualize the ROC curve of this model
 
 [![ML for beginners - Analyzing Logistic Regression Performance with ROC Curves](https://img.youtube.com/vi/GApO575jTA0/0.jpg)](https://youtu.be/GApO575jTA0 "ML for beginners - Analyzing Logistic Regression Performance with ROC Curves")
