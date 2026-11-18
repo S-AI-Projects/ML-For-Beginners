@@ -1,0 +1,19 @@
+Note: same command as the required check, with -v (the only difference).
+test_configs_are_defined_in_order (test_example.ConfigurationTests.test_configs_are_defined_in_order) ... ok
+test_each_config_matches_expected (test_example.ConfigurationTests.test_each_config_matches_expected) ... ok
+test_rmse_at_least_mae_with_equality_for_a_and_c (test_example.ConfigurationTests.test_rmse_at_least_mae_with_equality_for_a_and_c) ... ok
+test_tradeoff_same_mae_larger_rmse_for_outlier (test_example.ConfigurationTests.test_tradeoff_same_mae_larger_rmse_for_outlier) ... ok
+test_truth_is_fixed_list (test_example.ConfigurationTests.test_truth_is_fixed_list) ... ok
+test_headline_mae_and_rmse (test_example.HeadlineTests.test_headline_mae_and_rmse) ... ok
+test_identical_lists_give_zero (test_example.HeadlineTests.test_identical_lists_give_zero) ... ok
+test_negative_and_float_values (test_example.HeadlineTests.test_negative_and_float_values) ... ok
+test_single_element_pair (test_example.HeadlineTests.test_single_element_pair) ... ok
+test_both_empty_raise (test_example.InputValidationTests.test_both_empty_raise) ... ok
+test_mismatched_lengths_raise (test_example.InputValidationTests.test_mismatched_lengths_raise) ... ok
+test_one_empty_raises (test_example.InputValidationTests.test_one_empty_raises) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+exit code: 0
