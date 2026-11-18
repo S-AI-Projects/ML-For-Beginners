@@ -212,3 +212,7 @@ In the next few lessons you will learn more about sentiment analysis. Research t
 ## Assignment 
 
 [Make a bot talk back](assignment.md)
+
+## Applied local example: comparing embedding vectors
+
+[Run the local cosine similarity example](applied-labs/r37-t012/README.md). It accepts two comma-separated vectors and reports their cosine similarity, connecting the lesson's numerical embeddings to normalization and dot product. For example, `python3 6-NLP/2-Tasks/applied-labs/r37-t012/example.py 1,0 1,0` returns similarity `1.0`; using `1,0 0,1` returns `0.0`. If either vector has exactly zero norm, the result is explicitly undefined (`null` in JSON); the boundary is exact, with no epsilon threshold. It requires only Python 3 standard library and a local checkout. This is a local calculation on supplied numbers, not an embedding model or NLP service, and says nothing about semantic quality or hardware.
