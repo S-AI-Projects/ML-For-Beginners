@@ -1,0 +1,20 @@
+headline MAE [1,2,3] vs [1,3,2]    expected=0.666667 actual=0.666667 PASS
+headline RMSE                      expected=0.816497 actual=0.816497 PASS
+identical MAE                      expected=0.000000 actual=0.000000 PASS
+identical RMSE                     expected=0.000000 actual=0.000000 PASS
+single element MAE [5] vs [3]      expected=2.000000 actual=2.000000 PASS
+single element RMSE                expected=2.000000 actual=2.000000 PASS
+negative/float MAE                 expected=2.750000 actual=2.750000 PASS
+negative/float RMSE                expected=2.761340 actual=2.761340 PASS
+config A MAE                       expected=1.000000 actual=1.000000 PASS
+config A RMSE                      expected=1.000000 actual=1.000000 PASS
+config B MAE                       expected=1.000000 actual=1.000000 PASS
+config B RMSE                      expected=2.000000 actual=2.000000 PASS
+config C MAE                       expected=0.500000 actual=0.500000 PASS
+config C RMSE                      expected=0.500000 actual=0.500000 PASS
+mae length mismatch               raises ValueError PASS
+rmse length mismatch               raises ValueError PASS
+mae both empty                    raises ValueError PASS
+rmse both empty                    raises ValueError PASS
+mae one empty                     raises ValueError PASS
+rmse one empty                     raises ValueError PASS

@@ -281,6 +281,40 @@ Explore the different types of visualization that Matplotlib and Seaborn offer. 
 
 Take a look at the many ways to visualize data. Make a list of the various libraries available and note which are best for given types of tasks, for example 2D visualizations vs. 3D visualizations. What do you discover?
 
+## Applied lab: MAE and RMSE evaluation experiment
+
+Lab: [applied-labs/r37-t047](applied-labs/r37-t047/README.md) (code: [example.py](applied-labs/r37-t047/example.py), tests: [test_example.py](applied-labs/r37-t047/test_example.py)).
+
+Invocation from the repository root:
+
+```bash
+python3 2-Regression/2-Data/applied-labs/r37-t047/example.py
+```
+
+Fixture: the headline pair truth `[1, 2, 3]` and prediction `[1, 3, 2]`, plus three hand-made configurations (A, B, C) against truth `[1, 2, 3, 4]`.
+
+Expected output:
+
+```text
+Headline: MAE 0.6667, RMSE 0.8165
+Config  Name            MAE     RMSE
+A       uniform error   1.0000  1.0000
+B       one outlier     1.0000  2.0000
+C       small error     0.5000  0.5000
+Trade-off: A and B share MAE 1.0000; B RMSE 2.0000 vs A 1.0000
+```
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+**Label:** controlled toy configurations, not a measure of real-world model accuracy.
+
+Limitations:
+
+- No model is trained, and no real data is used.
+- Only three hand-made configurations are compared.
+- Standard library only; no GPU, device, cloud or paid service.
+- The results say nothing about real-world model accuracy.
+
 ## Assignment
 
 [Exploring visualization](assignment.md)
