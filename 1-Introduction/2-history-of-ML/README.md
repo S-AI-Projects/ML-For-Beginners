@@ -148,3 +148,38 @@ Here are items to watch and listen to:
 ## Assignment
 
 [Create a timeline](assignment.md)
+
+---
+## Applied lab: structural rubric checker
+
+The lab in [applied-labs/r37-t046](applied-labs/r37-t046/README.md) turns the "1980s Expert systems" section into a small rules-based checker. It uses a fixed threat-to-control table, similar to the rules an expert system holds.
+
+**Label:** fictional scenarios, structural rubric only, not a security assessment.
+
+Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Invocation (from the repository root):
+
+```bash
+python3 1-Introduction/2-history-of-ML/applied-labs/r37-t046/example.py
+```
+
+The fixture has three fictional scenarios: one passes, one fails because its asset is missing, and one is flagged for review because its control is unrelated to its threat. Expected output:
+
+```text
+scenario 1: pass
+  reasons: all fields present; control related to threat
+scenario 2: fail
+  reasons: missing or empty field: asset
+scenario 3: review
+  reasons: control not related to threat: scheduled rule review
+baseline == refactored: True
+```
+
+Limitations:
+
+- The checker verifies structure only. Human review judges the explanation.
+- "pass" means the fields are filled and the control is in the table. It does not mean the control is effective.
+- The threat-to-control table is hand-written and tiny; real expert systems reason over far larger rule bases.
+- The scenarios are invented and are not evidence about any real system.
+- No real hardware, cloud, security effectiveness or model performance is claimed.
