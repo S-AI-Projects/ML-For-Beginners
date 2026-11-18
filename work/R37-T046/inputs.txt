@@ -1,0 +1,4 @@
+Fixture (fictional scenarios; section "1980s Expert systems"), from example.py SCENARIOS:
+scenario 1: asset="loan-triage rule base (fictional)", threat="unauthorized rule edit", control="access control on rule base", residual_risk="insider with valid credentials"
+scenario 2: asset omitted, threat="unauthorized rule edit", control="change review log", residual_risk="review log is read only after an incident"
+scenario 3: asset="triage inference engine (fictional)", threat="conflicting rules", control="scheduled rule review", residual_risk="conflicts found only at review time"
