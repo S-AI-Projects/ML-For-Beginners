@@ -1,0 +1,11 @@
+--- a/test_example.py
++++ b/test_example.py
+@@ -28,7 +28,7 @@
+ class RubricTests(unittest.TestCase):
+     def test_scenario_1_passes(self):
+         for check in (ex.check_scenario_baseline, ex.check_scenario):
+-            self.assertEqual(check(S1)["status"], "pass")
++            self.assertEqual(check(S1)["status"], "fail")
+ 
+     def test_scenario_2_fails_and_names_asset(self):
+         for check in (ex.check_scenario_baseline, ex.check_scenario):

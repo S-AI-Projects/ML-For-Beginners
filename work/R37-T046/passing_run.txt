@@ -1,0 +1,21 @@
+Note: this run is the required command with -v added. -v is the only difference from the required command.
+
+test_baseline_equals_refactored_extra_cases (test_example.RubricTests.test_baseline_equals_refactored_extra_cases) ... ok
+test_baseline_equals_refactored_on_fixture (test_example.RubricTests.test_baseline_equals_refactored_on_fixture) ... ok
+test_control_addresses_threat_false (test_example.RubricTests.test_control_addresses_threat_false) ... ok
+test_control_addresses_threat_true (test_example.RubricTests.test_control_addresses_threat_true) ... ok
+test_control_addresses_unknown_threat_is_false (test_example.RubricTests.test_control_addresses_unknown_threat_is_false) ... ok
+test_docstring_carries_label_and_prerequisite (test_example.RubricTests.test_docstring_carries_label_and_prerequisite) ... ok
+test_empty_and_whitespace_fields_fail (test_example.RubricTests.test_empty_and_whitespace_fields_fail) ... ok
+test_missing_fields_take_precedence_over_review (test_example.RubricTests.test_missing_fields_take_precedence_over_review) ... ok
+test_scenario_1_passes (test_example.RubricTests.test_scenario_1_passes) ... ok
+test_scenario_2_fails_and_names_asset (test_example.RubricTests.test_scenario_2_fails_and_names_asset) ... ok
+test_scenario_3_is_review (test_example.RubricTests.test_scenario_3_is_review) ... ok
+test_section_heading_exists_in_lesson (test_example.RubricTests.test_section_heading_exists_in_lesson) ... ok
+test_statuses_are_only_pass_fail_review (test_example.RubricTests.test_statuses_are_only_pass_fail_review) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+OK
+exit code: 0

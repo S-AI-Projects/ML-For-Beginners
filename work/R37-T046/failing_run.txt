@@ -1,0 +1,18 @@
+........F....
+======================================================================
+FAIL: test_scenario_1_passes (test_example.RubricTests.test_scenario_1_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T046/broken/test_example.py", line 31, in test_scenario_1_passes
+    self.assertEqual(check(S1)["status"], "fail")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'pass' != 'fail'
+- pass
++ fail
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1

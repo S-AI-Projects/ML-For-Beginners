@@ -1,0 +1,14 @@
+case | expected | baseline | refactored | match | reasons
+fixture scenario 1 | pass | pass | pass | PASS | all fields present; control related to threat
+fixture scenario 2 | fail | fail | fail | PASS | missing or empty field: asset
+fixture scenario 3 | review | review | review | PASS | control not related to threat: scheduled rule review
+scenario 1, asset empty string | fail | fail | fail | PASS | missing or empty field: asset
+scenario 1, residual_risk whitespace | fail | fail | fail | PASS | missing or empty field: residual_risk
+scenario 3, asset missing (precedence over review) | fail | fail | fail | PASS | missing or empty field: asset
+scenario 1, control unrelated to threat | review | review | review | PASS | control not related to threat: scheduled rule review
+scenario 1, unknown threat | review | review | review | PASS | control not related to threat: access control on rule base
+scenario 1, asset None | fail | fail | fail | PASS | missing or empty field: asset
+scenario 2 without section | fail | fail | fail | PASS | missing or empty field: section; missing or empty field: asset
+control_addresses_threat true case: True
+control_addresses_threat false case: False
+control_addresses_threat unknown threat: False

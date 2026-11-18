@@ -1,0 +1,7 @@
+scenario 1: pass
+  reasons: all fields present; control related to threat
+scenario 2: fail
+  reasons: missing or empty field: asset
+scenario 3: review
+  reasons: control not related to threat: scheduled rule review
+baseline == refactored: True
