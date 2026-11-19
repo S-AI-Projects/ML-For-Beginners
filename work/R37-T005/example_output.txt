@@ -1,0 +1,6 @@
+offline service adapter, not a remote cloud metrics service
+truth=[1, 2, 3], prediction=[1, 3, 2]:
+  MAE=0.6667 (expected 2/3 = 0.6667)
+  RMSE=0.8165 (expected sqrt(2/3) = 0.8165)
+identical arrays [1, 2, 3]:
+  MAE=0.0000, RMSE=0.0000

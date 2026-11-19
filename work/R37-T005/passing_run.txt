@@ -1,0 +1,17 @@
+test_adapter_callable_interface (test_example.RegressionAdapterTests.test_adapter_callable_interface) ... ok
+test_client_with_injected_adapter (test_example.RegressionAdapterTests.test_client_with_injected_adapter) ... ok
+test_empty_input_raises (test_example.RegressionAdapterTests.test_empty_input_raises) ... ok
+test_floating_point_numbers (test_example.RegressionAdapterTests.test_floating_point_numbers) ... ok
+test_headline_mae_and_rmse (test_example.RegressionAdapterTests.test_headline_mae_and_rmse) ... ok
+test_identical_arrays_zero_errors (test_example.RegressionAdapterTests.test_identical_arrays_zero_errors) ... ok
+test_large_uniform_offset (test_example.RegressionAdapterTests.test_large_uniform_offset) ... ok
+test_mismatched_lengths_raises (test_example.RegressionAdapterTests.test_mismatched_lengths_raises) ... ok
+test_non_numeric_elements_raises (test_example.RegressionAdapterTests.test_non_numeric_elements_raises) ... ok
+test_single_element_evaluation (test_example.RegressionAdapterTests.test_single_element_evaluation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0

@@ -396,6 +396,41 @@ Test several different variables in this notebook to see how correlation corresp
 
 In this lesson we learned about Linear Regression. There are other important types of Regression. Read about Stepwise, Ridge, Lasso and Elasticnet techniques. A good course to study to learn more is the [Stanford Statistical Learning course](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning)
 
+
+## Applied Lab: Regression Evaluation with Offline Service Adapter
+
+A callable adapter example computing MAE and RMSE with explicit service decoupling: [R37-T005 lab](applied-labs/r37-t005/README.md).
+
+**Label:** offline service adapter, not a remote cloud metrics service.
+
+Invocation, from the repository root:
+
+```bash
+python3 2-Regression/3-Linear/applied-labs/r37-t005/example.py
+```
+
+Fixture: `truth=[1, 2, 3]`, `prediction=[1, 3, 2]` gives MAE = 2/3 and RMSE = sqrt(2/3); identical arrays give both errors 0.0.
+
+Expected output:
+
+```text
+offline service adapter, not a remote cloud metrics service
+truth=[1, 2, 3], prediction=[1, 3, 2]:
+  MAE=0.6667 (expected 2/3 = 0.6667)
+  RMSE=0.8165 (expected sqrt(2/3) = 0.8165)
+identical arrays [1, 2, 3]:
+  MAE=0.0000, RMSE=0.0000
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Deterministic in-process adapter only; does not establish cloud authentication, network latency, or RPC protocol handling.
+- Fixed hand-coded observation arrays; no scikit-learn regression models are trained.
+- Makes no claims about real hardware, cloud metrics service behavior, or trained model performance.
+
 ## Assignment 
 
 [Build a Model](assignment.md)
