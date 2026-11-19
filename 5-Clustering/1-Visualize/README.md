@@ -327,6 +327,43 @@ Before you apply clustering algorithms, as we have learned, it's a good idea to 
 
 [This helpful article](https://www.freecodecamp.org/news/8-clustering-algorithms-in-machine-learning-that-all-data-scientists-should-know/) walks you through the different ways that various clustering algorithms behave, given different data shapes.
 
+
+## Applied Lab: Nearest-Centroid Assignment
+
+A deterministic nearest-centroid assignment fixture demonstrating distance calculations, tie rules, and error recovery: [R37-T008 lab](applied-labs/r37-t008/README.md).
+
+**Label:** nearest-centroid test fixture, not a K-means training algorithm.
+
+Invocation, from the repository root:
+
+```bash
+python3 5-Clustering/1-Visualize/applied-labs/r37-t008/example.py
+```
+
+Fixture: Centroids (0,0) and (4,0). Points (1,0), (3,0), and (2,0) map to 0, 1, 0 with a declared first-centroid tie rule. Invalid-dimensional points are rejected and recovery is demonstrated.
+
+Expected output:
+
+```text
+nearest-centroid test fixture, not a K-means training algorithm
+headline points [(1, 0), (3, 0), (2, 0)] -> [0, 1, 0]
+  (1,0) d0=1, d1=9 -> 0
+  (3,0) d0=9, d1=1 -> 1
+  (2,0) d0=4, d1=4 -> 0 (tie broken to first centroid)
+failure and recovery demonstration:
+  step 1 valid input (1, 0) -> assigned to centroid 0
+  step 2 invalid input (1, 0, 0) -> rejected with ValueError: point must be 2-dimensional, got length 3: (1, 0, 0)
+  step 3 recovery input (3, 0) -> assigned to centroid 1
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Assigns 2D points to two fixed centroids; no centroid update step or convergence loop is executed.
+- Makes no claims about real hardware, cloud clustering services, or production clustering performance.
+
 ## Assignment
 
 [Research other visualizations for clustering](assignment.md)
