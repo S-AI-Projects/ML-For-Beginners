@@ -1,0 +1,14 @@
+case | expected | actual | result
+headline confusion counts | (1, 1, 1, 1) | (1, 1, 1, 1) | PASS
+headline precision | 0.5 | 0.5 | PASS
+headline recall | 0.5 | 0.5 | PASS
+no positive predictions precision | 0.0 | 0.0 | PASS
+no actual positives recall | 0.0 | 0.0 | PASS
+Q1 predict output counts | (1, 2, 1, 0) | (1, 2, 1, 0) | PASS
+Q1 predict output precision | 0.5 | 0.5 | PASS
+Q1 predict output recall | 0.3333 (1/3) | 0.3333 | PASS
+Q2 diagnose swapped arguments | 0.3333 (equals recall) | 0.3333 | PASS
+Q3 boundary policy choice | 0.0 | 0.0 | PASS
+mismatched lengths raises ValueError | ValueError | ValueError | PASS
+non-binary labels raise ValueError | ValueError | ValueError | PASS
+empty inputs raise ValueError | ValueError | ValueError | PASS

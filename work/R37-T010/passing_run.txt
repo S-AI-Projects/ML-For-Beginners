@@ -1,0 +1,17 @@
+test_empty_inputs_raises (test_example.LogisticClassificationEvaluationTests.test_empty_inputs_raises) ... ok
+test_headline_confusion_matrix (test_example.LogisticClassificationEvaluationTests.test_headline_confusion_matrix) ... ok
+test_headline_precision_and_recall (test_example.LogisticClassificationEvaluationTests.test_headline_precision_and_recall) ... ok
+test_mismatched_lengths_raises (test_example.LogisticClassificationEvaluationTests.test_mismatched_lengths_raises) ... ok
+test_no_actual_positives_recall_zero (test_example.LogisticClassificationEvaluationTests.test_no_actual_positives_recall_zero) ... ok
+test_no_positive_predictions_precision_zero (test_example.LogisticClassificationEvaluationTests.test_no_positive_predictions_precision_zero) ... ok
+test_non_binary_labels_raises (test_example.LogisticClassificationEvaluationTests.test_non_binary_labels_raises) ... ok
+test_q1_predict_output_executable_check (test_example.LogisticClassificationEvaluationTests.test_q1_predict_output_executable_check) ... ok
+test_q2_diagnose_swapped_arguments_check (test_example.LogisticClassificationEvaluationTests.test_q2_diagnose_swapped_arguments_check) ... ok
+test_q3_boundary_policy_executable_check (test_example.LogisticClassificationEvaluationTests.test_q3_boundary_policy_executable_check) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0
