@@ -1,0 +1,5 @@
+Y_TRUE = [1, 1, 0, 0]
+Y_PRED = [1, 0, 1, 0]
+Q1_TRUE = [1, 1, 1, 0]
+Q1_PRED = [1, 0, 0, 1]
+Q3 precision input = [1, 1, 0, 0] vs [0, 0, 0, 0]
