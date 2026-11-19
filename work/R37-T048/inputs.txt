@@ -1,0 +1,15 @@
+Inputs used by example.py (built in code, no files read)
+
+valid batch (10 observations, ordered):
+  [(1, 1.5), (2, 3.0), (3, 4.5), (4, 6.0), (5, 7.5),
+   (6, 9.0), (7, 10.5), (8, 12.0), (9, 13.5), (10, 15.0)]
+  value = timestamp * 1.5
+
+invalid batch (10 observations, same timestamps 1 to 10):
+  timestamp 4 has value None (missing value); others value = timestamp * 1.5
+
+recovered batch (next valid, 10 observations):
+  timestamps 11 to 20, value = timestamp * 1.5
+
+Test fixtures (test_example.py) use the same value rule; shuffled input
+uses the index order (6, 0, 9, 3, 1, 8, 4, 2, 7, 5) of the ordered ten.

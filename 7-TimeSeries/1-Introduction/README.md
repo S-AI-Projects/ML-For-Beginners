@@ -180,6 +180,42 @@ Make a list of all the industries and areas of inquiry you can think of that wou
 
 Although we won't cover them here, neural networks are sometimes used to enhance classic methods of time series forecasting. Read more about them [in this article](https://medium.com/microsoftazure/neural-networks-for-forecasting-financial-and-economic-time-series-6aca370ff412)
 
+## Applied lab: chronological split failure and recovery
+
+The [applied lab](applied-labs/r37-t048/README.md) splits timestamped observations in time order into train, validation and test parts, then shows one invalid batch being rejected and the next valid batch splitting correctly.
+
+**Label:** toy timestamped fixture, not a forecasting model.
+
+Invocation, from the lab directory:
+
+```bash
+python3 example.py
+```
+
+Fixture: ten observations with integer timestamps 1 to 10, then a batch with a missing value at timestamp 4 (rejected), then the next ten observations with timestamps 11 to 20.
+
+Expected output:
+
+```text
+toy timestamped fixture, not a forecasting model
+valid batch (10 observations):
+  train      n=6  t=1-6
+  validation n=2  t=7-8
+  test       n=2  t=9-10
+invalid batch (missing value):
+  error: missing value at timestamp 4
+recovered, next valid batch (10 observations):
+  train      n=6  t=11-16
+  validation n=2  t=17-18
+  test       n=2  t=19-20
+```
+
+## Prerequisites
+
+Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations: integer timestamps only; no gap or frequency checks; no model is trained and no forecast accuracy is measured.
+
 ## Assignment
 
 [Visualize some more time series](assignment.md)

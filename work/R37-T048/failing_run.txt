@@ -1,0 +1,36 @@
+command: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s work/R37-T048/broken -p "test_*.py" -v
+note: broken copy only; one expected value changed (train 6 -> 7 in test_ten_ordered_observations_split_six_two_two); lab files untouched
+test_caller_list_is_not_mutated (test_example.ChronologicalSplitTests.test_caller_list_is_not_mutated) ... ok
+test_duplicate_timestamp_is_named (test_example.ChronologicalSplitTests.test_duplicate_timestamp_is_named) ... ok
+test_exactly_five_gives_three_one_one (test_example.ChronologicalSplitTests.test_exactly_five_gives_three_one_one) ... ok
+test_fewer_than_five_observations_rejected (test_example.ChronologicalSplitTests.test_fewer_than_five_observations_rejected) ... ok
+test_missing_value_is_named (test_example.ChronologicalSplitTests.test_missing_value_is_named) ... ok
+test_no_future_leakage (test_example.ChronologicalSplitTests.test_no_future_leakage) ... ok
+test_recovery_after_invalid_batch (test_example.ChronologicalSplitTests.test_recovery_after_invalid_batch) ... ok
+test_shuffled_input_gives_identical_split (test_example.ChronologicalSplitTests.test_shuffled_input_gives_identical_split) ... ok
+test_ten_ordered_observations_split_six_two_two (test_example.ChronologicalSplitTests.test_ten_ordered_observations_split_six_two_two) ... FAIL
+test_twenty_gives_twelve_four_four (test_example.ChronologicalSplitTests.test_twenty_gives_twelve_four_four) ... ok
+
+======================================================================
+FAIL: test_ten_ordered_observations_split_six_two_two (test_example.ChronologicalSplitTests.test_ten_ordered_observations_split_six_two_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T048/broken/test_example.py", line 16, in test_ten_ordered_observations_split_six_two_two
+    self.assertEqual([t for t, _ in train], [1, 2, 3, 4, 5, 6, 7])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6] != [1, 2, 3, 4, 5, 6, 7]
+
+Second list contains 1 additional elements.
+First extra element 6:
+7
+
+- [1, 2, 3, 4, 5, 6]
++ [1, 2, 3, 4, 5, 6, 7]
+?                  +++
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1
