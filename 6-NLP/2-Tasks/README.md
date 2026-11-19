@@ -209,6 +209,38 @@ Take a task in the prior knowledge check and try to implement it. Test the bot o
 
 In the next few lessons you will learn more about sentiment analysis. Research this interesting technique in articles such as these on [KDNuggets](https://www.kdnuggets.com/tag/nlp)
 
+
+## Applied Lab: Cosine Similarity with State Trace
+
+A local vector comparison example demonstrating cosine similarity, zero-vector handling, and intermediate state trace invariants: [R37-T004 lab](applied-labs/r37-t004/README.md).
+
+**Label:** local vector test double, not an NLP embedding service.
+
+Invocation, from the repository root:
+
+```bash
+python3 6-NLP/2-Tasks/applied-labs/r37-t004/example.py
+```
+
+Fixture: `[1, 0]` vs `[1, 0]` yields 1.0; `[1, 0]` vs `[0, 1]` yields 0.0; a zero vector returns `None` under the documented undefined-result policy.
+
+Expected output:
+
+```text
+local vector test double, not an NLP embedding service
+[1, 0] vs [1, 0] -> similarity=1.0000, invariant=True
+[1, 0] vs [0, 1] -> similarity=0.0000, invariant=True
+[0, 0] vs [1, 0] -> similarity=None (undefined sentinel), invariant=True
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Operates on caller-supplied numeric arrays; no transformer or tokenizer is trained or loaded.
+- Makes no claims about real hardware, cloud NLP APIs, or trained model accuracy.
+
 ## Assignment 
 
 [Make a bot talk back](assignment.md)
