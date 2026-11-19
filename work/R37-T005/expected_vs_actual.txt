@@ -1,0 +1,11 @@
+case | expected | actual | result
+truth=[1,2,3], pred=[1,3,2] MAE | 0.6667 (2/3) | 0.6667 | PASS
+truth=[1,2,3], pred=[1,3,2] RMSE | 0.8165 (sqrt(2/3)) | 0.8165 | PASS
+identical arrays [1,2,3] MAE | 0.0 | 0.0 | PASS
+identical arrays [1,2,3] RMSE | 0.0 | 0.0 | PASS
+adapter callable interface | callable | callable | PASS
+client injected adapter | MAE=2/3 | MAE=2/3 | PASS
+mismatched lengths raises ValueError | ValueError | ValueError | PASS
+empty inputs raise ValueError | ValueError | ValueError | PASS
+non-numeric elements raise TypeError | TypeError | TypeError | PASS
+single element evaluation | MAE=4.0, RMSE=4.0 | MAE=4.0, RMSE=4.0 | PASS

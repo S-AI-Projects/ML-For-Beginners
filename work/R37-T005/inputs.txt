@@ -1,0 +1,18 @@
+Fixture regression inputs for R37-T005:
+
+Headline contract:
+  truth = [1, 2, 3]
+  prediction = [1, 3, 2]
+  -> MAE = 2/3 (0.6667), RMSE = sqrt(2/3) (0.8165)
+
+Identical arrays:
+  truth = [1, 2, 3]
+  prediction = [1, 2, 3]
+  -> MAE = 0.0, RMSE = 0.0
+
+Boundary & error inputs:
+  Single element: truth = [10], prediction = [6] -> MAE = 4.0, RMSE = 4.0
+  Floats: truth = [1.5, 2.5], prediction = [1.0, 3.0] -> MAE = 0.5, RMSE = 0.5
+  Mismatched lengths: [1, 2] vs [1, 2, 3] -> ValueError
+  Empty: [] vs [] -> ValueError
+  Non-numeric: [1, "two"] vs [1, 2] -> TypeError

@@ -1,0 +1,20 @@
+--- /Users/partharunmaskar/ML-For-Beginners/2-Regression/3-Linear/applied-labs/r37-t005/test_example.py	2026-11-19 19:52:48
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T005/broken/test_example.py	2026-11-19 19:52:48
+@@ -12,7 +12,7 @@
+         truth = [1, 2, 3]
+         prediction = [1, 3, 2]
+         res = example.evaluate(truth, prediction)
+-        self.assertAlmostEqual(res["mae"], 2.0 / 3.0)
++        self.assertAlmostEqual(res["mae"], 5.0 / 3.0)
+         self.assertAlmostEqual(res["rmse"], math.sqrt(2.0 / 3.0))
+ 
+     def test_identical_arrays_zero_errors(self):
+@@ -33,7 +33,7 @@
+         adapter = example.LocalRegressionEvaluatorAdapter()
+         client = example.RegressionEvaluationClient(service_adapter=adapter)
+         res = client.evaluate([1, 2, 3], [1, 3, 2])
+-        self.assertAlmostEqual(res["mae"], 2.0 / 3.0)
++        self.assertAlmostEqual(res["mae"], 5.0 / 3.0)
+ 
+     def test_mismatched_lengths_raises(self):
+         with self.assertRaises(ValueError):
