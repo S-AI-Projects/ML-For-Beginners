@@ -1,0 +1,11 @@
+case | expected | actual | result
+add(2, 3) | 5 | 5 | PASS
+multiply(2, 3) | 6 | 6 | PASS
+unknown tool -> structured error | UNKNOWN_TOOL | UNKNOWN_TOOL | PASS
+string 'a' -> structured error | INVALID_TYPE | INVALID_TYPE | PASS
+boolean 'a' -> structured error | INVALID_TYPE | INVALID_TYPE | PASS
+missing argument 'b' -> error | MISSING_ARGUMENT | MISSING_ARGUMENT | PASS
+batch aborts at first failure | 1 of 2 executed | 1 of 2 executed | PASS
+subsequent tool never invoked | executed=[] | executed=[] | PASS
+baseline vs refactored valid equivalence | identical | identical | PASS
+baseline vs refactored error equivalence | identical | identical | PASS

@@ -1,0 +1,7 @@
+local contract fixture, not a full MCP transport implementation
+headline calls execution:
+  add(2, 3) -> {'ok': True, 'result': 5}
+  multiply(2, 3) -> {'ok': True, 'result': 6}
+  failed call -> {'ok': False, 'error': {'code': 'UNKNOWN_TOOL', 'message': "tool 'unknown_tool' not in allowlist"}}
+  calls executed in batch: 3 of 4 (aborted on error)
+  baseline == refactored equivalence: True

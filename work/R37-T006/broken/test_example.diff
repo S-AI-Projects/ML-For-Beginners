@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/2-Regression/1-Tools/applied-labs/r37-t006/test_example.py	2026-11-19 19:54:57
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T006/broken/test_example.py	2026-11-19 19:54:57
+@@ -11,7 +11,7 @@
+         call = {"tool": "add", "args": {"a": 2, "b": 3}}
+         res = example.dispatch_call_refactored(call)
+         self.assertTrue(res["ok"])
+-        self.assertEqual(res["result"], 5)
++        self.assertEqual(res["result"], 999)
+ 
+     def test_multiply_valid(self):
+         call = {"tool": "multiply", "args": {"a": 2, "b": 3}}
