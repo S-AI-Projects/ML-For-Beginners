@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/4-Classification/4-Applied/applied-labs/r37-t001/test_example.py	2026-11-19 19:47:49
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T001/broken/test_example.py	2026-11-19 19:47:50
+@@ -16,7 +16,7 @@
+     def test_headline_precision_and_recall(self):
+         y_true = [1, 1, 0, 0]
+         y_pred = [1, 0, 1, 0]
+-        self.assertAlmostEqual(example.precision(y_true, y_pred), 0.5)
++        self.assertAlmostEqual(example.precision(y_true, y_pred), 0.75)
+         self.assertAlmostEqual(example.recall(y_true, y_pred), 0.5)
+ 
+     def test_no_positive_predictions_precision_zero(self):

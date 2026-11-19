@@ -1,0 +1,26 @@
+test_completely_wrong_classification (test_example.ClassificationEvaluationTests.test_completely_wrong_classification) ... ok
+test_empty_input_raises (test_example.ClassificationEvaluationTests.test_empty_input_raises) ... ok
+test_headline_confusion_matrix (test_example.ClassificationEvaluationTests.test_headline_confusion_matrix) ... ok
+test_headline_precision_and_recall (test_example.ClassificationEvaluationTests.test_headline_precision_and_recall) ... FAIL
+test_invalid_types_raise (test_example.ClassificationEvaluationTests.test_invalid_types_raise) ... ok
+test_mismatched_lengths_raises (test_example.ClassificationEvaluationTests.test_mismatched_lengths_raises) ... ok
+test_no_actual_positives_recall_zero (test_example.ClassificationEvaluationTests.test_no_actual_positives_recall_zero) ... ok
+test_no_positive_predictions_precision_zero (test_example.ClassificationEvaluationTests.test_no_positive_predictions_precision_zero) ... ok
+test_non_binary_label_raises (test_example.ClassificationEvaluationTests.test_non_binary_label_raises) ... ok
+test_perfect_classification (test_example.ClassificationEvaluationTests.test_perfect_classification) ... ok
+
+======================================================================
+FAIL: test_headline_precision_and_recall (test_example.ClassificationEvaluationTests.test_headline_precision_and_recall)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T001/broken/test_example.py", line 19, in test_headline_precision_and_recall
+    self.assertAlmostEqual(example.precision(y_true, y_pred), 0.75)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.5 != 0.75 within 7 places (0.25 difference)
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)
+
+exit code: 1
