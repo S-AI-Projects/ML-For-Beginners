@@ -53,6 +53,30 @@ In this section, you will need, and use:
 
 > 💡 Tip: You can run Python directly in VS Code environments. Check the [docs](https://code.visualstudio.com/docs/languages/python?WT.mc_id=academic-77952-leestott) for more information.
 
+## Applied example: a local token budget preflight
+
+The [R37-T014 local example](applied-labs/r37-t014/example.py) records each intermediate state while a text fixture is split and checked against a token budget. This connects tokenization boundaries to resource budgets and preflight reporting: the final retained-token list must agree with the recorded budget step, and the removed count must agree with the original token list.
+
+This fixture uses only Python 3's `str.split()` whitespace splitting. It is a teaching approximation, not the tokenizer used by any language model; it does not model subword tokens, model context windows, or service behavior. No model, network service, GPU, or extra package is used.
+
+From the repository root, run:
+
+```bash
+python3 6-NLP/1-Introduction-to-NLP/applied-labs/r37-t014/example.py --text "one two three four" --budget 3
+```
+
+The fixture is `one two three four` with budget `3`. Its final report is:
+
+```json
+{
+  "retained_tokens": ["one", "two", "three"],
+  "removed_count": 1,
+  "truncated": true
+}
+```
+
+The trace printed before that report shows the input, all whitespace tokens, and the retained and removed slices. Empty text retains no tokens; a negative budget is rejected.
+
 ## Talking to machines
 
 The history of trying to make computers understand human language goes back decades, and one of the earliest scientists to consider natural language processing was *Alan Turing*.
