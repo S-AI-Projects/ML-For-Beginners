@@ -1,0 +1,13 @@
+case | expected | actual | result
+[1, 0] vs [1, 0] similarity | 1.0 | 1.0 | PASS
+[1, 0] vs [1, 0] invariant | True | True | PASS
+[1, 0] vs [0, 1] similarity | 0.0 | 0.0 | PASS
+[1, 0] vs [0, 1] invariant | True | True | PASS
+[0, 0] vs [1, 0] sentinel | None | None | PASS
+[0, 0] vs [1, 0] invariant | True | True | PASS
+[0, 0] vs [0, 0] sentinel | None | None | PASS
+[1, 0] vs [-1, 0] similarity | -1.0 | -1.0 | PASS
+trace intermediate steps present | 6 steps | 6 steps | PASS
+dimension mismatch raises ValueError | ValueError | ValueError | PASS
+empty vector raises ValueError | ValueError | ValueError | PASS
+non-numeric elements raise TypeError | TypeError | TypeError | PASS

@@ -1,0 +1,17 @@
+test_both_zero_vectors_return_sentinel (test_example.CosineSimilarityTests.test_both_zero_vectors_return_sentinel) ... ok
+test_dimension_mismatch_raises (test_example.CosineSimilarityTests.test_dimension_mismatch_raises) ... ok
+test_empty_vector_raises (test_example.CosineSimilarityTests.test_empty_vector_raises) ... ok
+test_identical_vectors_similarity_one (test_example.CosineSimilarityTests.test_identical_vectors_similarity_one) ... ok
+test_intermediate_trace_steps_recorded (test_example.CosineSimilarityTests.test_intermediate_trace_steps_recorded) ... ok
+test_invariant_holds_arbitrary_vectors (test_example.CosineSimilarityTests.test_invariant_holds_arbitrary_vectors) ... ok
+test_non_numeric_elements_raises (test_example.CosineSimilarityTests.test_non_numeric_elements_raises) ... ok
+test_opposite_vectors_similarity_negative_one (test_example.CosineSimilarityTests.test_opposite_vectors_similarity_negative_one) ... ok
+test_orthogonal_vectors_similarity_zero (test_example.CosineSimilarityTests.test_orthogonal_vectors_similarity_zero) ... ok
+test_zero_vector_returns_undefined_sentinel (test_example.CosineSimilarityTests.test_zero_vector_returns_undefined_sentinel) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0

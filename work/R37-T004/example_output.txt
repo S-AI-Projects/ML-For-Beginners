@@ -1,0 +1,4 @@
+local vector test double, not an NLP embedding service
+[1, 0] vs [1, 0] -> similarity=1.0000, invariant=True
+[1, 0] vs [0, 1] -> similarity=0.0000, invariant=True
+[0, 0] vs [1, 0] -> similarity=None (undefined sentinel), invariant=True
