@@ -1,0 +1,15 @@
+case | expected | actual | result
+[right, right] from 0: final_state | 2 | 2 | PASS
+[right, right] from 0: total_reward | 1 | 1 | PASS
+[right, right] from 0: end_reason | terminal | terminal | PASS
+[left]*10 from 0: final_state | 0 | 0 | PASS
+[left]*10 from 0: total_reward | 0 | 0 | PASS
+[left]*10 from 0: end_reason | step_cap | step_cap | PASS
+compare approaches [right, right] match | True | True | PASS
+compare approaches [left]*10 match | True | True | PASS
+compare approaches mixed actions match | True | True | PASS
+wall at state 0: step(0, 'left') | (0, 0, False) | (0, 0, False) | PASS
+reward only on entry: step(1, 'right') | (2, 1, True) | (2, 1, True) | PASS
+actions after terminal ignored | final=2, reward=1 | final=2, reward=1 | PASS
+invalid action raises ValueError | ValueError | ValueError | PASS
+invalid state raises ValueError | ValueError | ValueError | PASS

@@ -1,0 +1,35 @@
+test_actions_after_terminal_ignored (test_example.StateChainTests.test_actions_after_terminal_ignored) ... FAIL
+test_compare_approaches_mixed_actions (test_example.StateChainTests.test_compare_approaches_mixed_actions) ... ok
+test_compare_approaches_repeated_left (test_example.StateChainTests.test_compare_approaches_repeated_left) ... ok
+test_compare_approaches_right_right (test_example.StateChainTests.test_compare_approaches_right_right) ... ok
+test_invalid_action_raises (test_example.StateChainTests.test_invalid_action_raises) ... ok
+test_invalid_state_raises (test_example.StateChainTests.test_invalid_state_raises) ... ok
+test_repeated_left_ends_at_step_cap_with_reward_0 (test_example.StateChainTests.test_repeated_left_ends_at_step_cap_with_reward_0) ... ok
+test_reward_only_on_entry_into_terminal (test_example.StateChainTests.test_reward_only_on_entry_into_terminal) ... ok
+test_right_right_ends_at_terminal_with_reward_1 (test_example.StateChainTests.test_right_right_ends_at_terminal_with_reward_1) ... FAIL
+test_wall_at_zero (test_example.StateChainTests.test_wall_at_zero) ... ok
+
+======================================================================
+FAIL: test_actions_after_terminal_ignored (test_example.StateChainTests.test_actions_after_terminal_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T003/broken/test_example.py", line 64, in test_actions_after_terminal_ignored
+    self.assertEqual(total_reward, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_right_right_ends_at_terminal_with_reward_1 (test_example.StateChainTests.test_right_right_ends_at_terminal_with_reward_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T003/broken/test_example.py", line 15, in test_right_right_ends_at_terminal_with_reward_1
+    self.assertEqual(total_reward, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+FAILED (failures=2)
+
+exit code: 1
