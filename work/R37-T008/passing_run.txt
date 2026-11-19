@@ -1,0 +1,17 @@
+test_batch_failure_behavior (test_example.NearestCentroidAssignmentTests.test_batch_failure_behavior) ... ok
+test_failure_and_recovery_sequence (test_example.NearestCentroidAssignmentTests.test_failure_and_recovery_sequence) ... ok
+test_headline_points_map_to_0_1_0 (test_example.NearestCentroidAssignmentTests.test_headline_points_map_to_0_1_0) ... ok
+test_points_closer_to_centroid_one (test_example.NearestCentroidAssignmentTests.test_points_closer_to_centroid_one) ... ok
+test_points_closer_to_centroid_zero (test_example.NearestCentroidAssignmentTests.test_points_closer_to_centroid_zero) ... ok
+test_reject_1d_point (test_example.NearestCentroidAssignmentTests.test_reject_1d_point) ... ok
+test_reject_3d_point (test_example.NearestCentroidAssignmentTests.test_reject_3d_point) ... ok
+test_reject_empty_point (test_example.NearestCentroidAssignmentTests.test_reject_empty_point) ... ok
+test_reject_non_numeric_coordinates (test_example.NearestCentroidAssignmentTests.test_reject_non_numeric_coordinates) ... ok
+test_tie_rule_at_exact_midpoint (test_example.NearestCentroidAssignmentTests.test_tie_rule_at_exact_midpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0

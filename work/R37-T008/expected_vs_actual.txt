@@ -1,0 +1,11 @@
+case | expected | actual | result
+headline points [(1,0), (3,0), (2,0)] | [0, 1, 0] | [0, 1, 0] | PASS
+midpoint tie rule (2, 0) | 0 | 0 | PASS
+closer to centroid 0 (0, 0) | 0 | 0 | PASS
+closer to centroid 1 (4, 0) | 1 | 1 | PASS
+reject 1D point (1,) | ValueError | ValueError | PASS
+reject 3D point (1, 0, 0) | ValueError | ValueError | PASS
+reject empty point () | ValueError | ValueError | PASS
+reject non-numeric point | TypeError | TypeError | PASS
+failure and recovery sequence | 0 -> ValueError -> 1 | 0 -> ValueError -> 1 | PASS
+batch failure and recovery | ValueError -> [0, 1] | ValueError -> [0, 1] | PASS

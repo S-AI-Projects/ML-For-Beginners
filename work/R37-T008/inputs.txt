@@ -1,0 +1,16 @@
+Fixture clustering inputs for R37-T008:
+
+Centroids:
+  C0 = (0, 0)
+  C1 = (4, 0)
+
+Headline points:
+  (1, 0) -> d0=1, d1=9 -> centroid 0
+  (3, 0) -> d0=9, d1=1 -> centroid 1
+  (2, 0) -> d0=4, d1=4 -> centroid 0 (tie-break rule)
+
+Failure & recovery inputs:
+  1. (1, 0) -> valid -> 0
+  2. (1, 0, 0) -> invalid 3D -> ValueError
+  3. (3, 0) -> valid recovery -> 1
+  Other invalid: (1,), (), ("a", 0), (True, False)
