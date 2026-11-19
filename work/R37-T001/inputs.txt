@@ -1,0 +1,21 @@
+Fixture and evaluation inputs for R37-T001:
+
+Headline contract:
+  y_true = [1, 1, 0, 0]
+  y_pred = [1, 0, 1, 0]
+
+Zero positive predictions contract:
+  y_true = [1, 1, 0, 0]
+  y_pred = [0, 0, 0, 0]
+
+Zero actual positives:
+  y_true = [0, 0, 0, 0]
+  y_pred = [1, 0, 1, 0]
+
+Perfect classification:
+  y_true = [1, 0, 1, 0]
+  y_pred = [1, 0, 1, 0]
+
+Completely wrong:
+  y_true = [1, 1, 0, 0]
+  y_pred = [0, 0, 1, 1]

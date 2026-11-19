@@ -1,0 +1,14 @@
+case | expected | actual | result
+headline confusion [1,1,0,0] vs [1,0,1,0] | (1, 1, 1, 1) | (1, 1, 1, 1) | PASS
+headline precision | 0.5 | 0.5 | PASS
+headline recall | 0.5 | 0.5 | PASS
+no positive predictions -> precision | 0.0 | 0.0 | PASS
+no positive predictions -> recall | 0.0 | 0.0 | PASS
+no actual positives -> recall | 0.0 | 0.0 | PASS
+perfect classification -> precision | 1.0 | 1.0 | PASS
+perfect classification -> recall | 1.0 | 1.0 | PASS
+all wrong -> precision | 0.0 | 0.0 | PASS
+all wrong -> recall | 0.0 | 0.0 | PASS
+length mismatch raises ValueError | ValueError | ValueError | PASS
+non-binary labels raise ValueError | ValueError | ValueError | PASS
+empty input raises ValueError | ValueError | ValueError | PASS

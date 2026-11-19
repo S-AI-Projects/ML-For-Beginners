@@ -309,6 +309,41 @@ While this lesson just touched on the utility of creating a recommendation syste
 - https://www.technologyreview.com/2014/08/25/171547/the-ultimate-challenge-for-recommendation-engines/
 - https://www.technologyreview.com/2015/03/23/168831/everything-is-a-recommendation/
 
+
+## Applied Lab: Classification Evaluation
+
+A runnable concept example demonstrating binary classification evaluation: [R37-T001 lab](applied-labs/r37-t001/README.md).
+
+**Label:** minimal complete local example, not a trained classifier.
+
+Invocation, from the repository root:
+
+```bash
+python3 4-Classification/4-Applied/applied-labs/r37-t001/example.py
+```
+
+Fixture: `y_true=[1, 1, 0, 0]`, `y_pred=[1, 0, 1, 0]` yielding TP=1, FN=1, FP=1, TN=1, precision=0.5, recall=0.5; and `y_pred=[0, 0, 0, 0]` giving precision=0.0 under the explicit zero-denominator policy.
+
+Expected output:
+
+```text
+headline: y_true=[1, 1, 0, 0], y_pred=[1, 0, 1, 0]
+  TP=1 FN=1 FP=1 TN=1
+  precision=0.5000 recall=0.5000
+no positive predictions: y_true=[1, 1, 0, 0], y_pred=[0, 0, 0, 0]
+  TP=0 FN=2 FP=0 TN=2
+  precision=0.0000 recall=0.0000
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Labels are fixed toy integers; no model is trained or downloaded.
+- Binary evaluation only; multiclass extensions are not included.
+- Makes no claims about real hardware, cloud services, or production classifier performance.
+
 ## Assignment 
 
 [Build a new recommender](assignment.md)
