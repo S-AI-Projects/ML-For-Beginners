@@ -1,0 +1,11 @@
+--- 7-TimeSeries/1-Introduction/applied-labs/r37-t048/test_example.py	2026-11-19 09:52:05
++++ work/R37-T048/broken/test_example.py	2026-11-19 09:53:02
+@@ -13,7 +13,7 @@
+ 
+     def test_ten_ordered_observations_split_six_two_two(self):
+         train, validation, test = chronological_split(ordered(10))
+-        self.assertEqual([t for t, _ in train], [1, 2, 3, 4, 5, 6])
++        self.assertEqual([t for t, _ in train], [1, 2, 3, 4, 5, 6, 7])
+         self.assertEqual([t for t, _ in validation], [7, 8])
+         self.assertEqual([t for t, _ in test], [9, 10])
+ 

@@ -1,0 +1,14 @@
+PASS | ten ordered sizes | expected 6/2/2 | actual 6/2/2
+PASS | ten ordered train | expected [1, 2, 3, 4, 5, 6] | actual [1, 2, 3, 4, 5, 6]
+PASS | ten ordered validation | expected [7, 8] | actual [7, 8]
+PASS | ten ordered test | expected [9, 10] | actual [9, 10]
+PASS | shuffled same split | expected True | actual True
+PASS | caller list unchanged | expected True | actual True
+PASS | no future leakage (n=20) | expected True | actual True
+PASS | duplicate timestamp | expected ValueError: duplicate timestamp 4 | actual ValueError: duplicate timestamp 4
+PASS | missing value | expected ValueError: missing value at timestamp 4 | actual ValueError: missing value at timestamp 4
+PASS | fewer than 5 | expected ValueError: need at least 5 observations, got 4 | actual ValueError: need at least 5 observations, got 4
+PASS | exactly 5 sizes | expected 3/1/1 | actual 3/1/1
+PASS | 20 sizes | expected 12/4/4 | actual 12/4/4
+PASS | recovery train | expected [11, 12, 13, 14, 15, 16] | actual [11, 12, 13, 14, 15, 16]
+cases: 13, failures: 0

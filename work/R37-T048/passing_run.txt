@@ -1,0 +1,18 @@
+command: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s 7-TimeSeries/1-Introduction/applied-labs/r37-t048 -p "test_*.py" -v
+note: -v is the only difference from the required command (verbose per-test lines)
+test_caller_list_is_not_mutated (test_example.ChronologicalSplitTests.test_caller_list_is_not_mutated) ... ok
+test_duplicate_timestamp_is_named (test_example.ChronologicalSplitTests.test_duplicate_timestamp_is_named) ... ok
+test_exactly_five_gives_three_one_one (test_example.ChronologicalSplitTests.test_exactly_five_gives_three_one_one) ... ok
+test_fewer_than_five_observations_rejected (test_example.ChronologicalSplitTests.test_fewer_than_five_observations_rejected) ... ok
+test_missing_value_is_named (test_example.ChronologicalSplitTests.test_missing_value_is_named) ... ok
+test_no_future_leakage (test_example.ChronologicalSplitTests.test_no_future_leakage) ... ok
+test_recovery_after_invalid_batch (test_example.ChronologicalSplitTests.test_recovery_after_invalid_batch) ... ok
+test_shuffled_input_gives_identical_split (test_example.ChronologicalSplitTests.test_shuffled_input_gives_identical_split) ... ok
+test_ten_ordered_observations_split_six_two_two (test_example.ChronologicalSplitTests.test_ten_ordered_observations_split_six_two_two) ... ok
+test_twenty_gives_twelve_four_four (test_example.ChronologicalSplitTests.test_twenty_gives_twelve_four_four) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+exit code: 0

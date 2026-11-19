@@ -1,0 +1,11 @@
+toy timestamped fixture, not a forecasting model
+valid batch (10 observations):
+  train      n=6  t=1-6
+  validation n=2  t=7-8
+  test       n=2  t=9-10
+invalid batch (missing value):
+  error: missing value at timestamp 4
+recovered, next valid batch (10 observations):
+  train      n=6  t=11-16
+  validation n=2  t=17-18
+  test       n=2  t=19-20
