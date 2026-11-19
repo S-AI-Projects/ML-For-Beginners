@@ -145,6 +145,43 @@ Here are items to watch and listen to:
 
 ---
 
+
+## Applied Lab: Security-Scenario Rubric
+
+A structural rubric checker and evaluation experiment evaluating historical ML security scenarios: [R37-T009 lab](applied-labs/r37-t009/README.md).
+
+**Label:** fictional scenarios, structural rubric only, not a security assessment.
+
+Invocation, from the repository root:
+
+```bash
+python3 1-Introduction/2-history-of-ML/applied-labs/r37-t009/example.py
+```
+
+Fixture: Three fictional scenarios (asset, threat, control, residual risk). Complete scenario passes; missing asset fails; unrelated control is flagged for review. Evaluation experiment compares three controlled configurations.
+
+Expected output:
+
+```text
+fictional scenarios, structural rubric only, not a security assessment
+scenario 1: status=pass, reason=scenario meets all structural rubric requirements
+scenario 2: status=fail, reason=missing or empty required field: 'asset'
+scenario 3: status=review, reason=control 'periodic workstation display monitor recalibration' is unrelated to named threat 'exfiltration of expert system decision heuristics'; human review required
+evaluation experiment across configurations:
+  config_1_single: n=1, counts={'pass': 1, 'fail': 0, 'review': 0}, automated_rate=1.00, review_rate=0.00
+  config_2_standard_three: n=3, counts={'pass': 1, 'fail': 1, 'review': 1}, automated_rate=0.67, review_rate=0.33
+  config_3_extended_five: n=5, counts={'pass': 2, 'fail': 2, 'review': 1}, automated_rate=0.80, review_rate=0.20
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Fictional scenarios tied to historical milestones; not a production cybersecurity evaluation.
+- Structural checking only; does not replace qualified human expert review.
+- Makes no claims about real hardware, cloud platforms, or trained model performance.
+
 ## Assignment
 
 [Create a timeline](assignment.md)
