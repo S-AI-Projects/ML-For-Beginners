@@ -284,6 +284,39 @@ Now that you have cleaned the data, use [SMOTE](https://imbalanced-learn.org/dev
 
 ---
 
+## Applied lab: classification evaluation (R37-T049)
+
+Full write-up: [applied-labs/r37-t049/README.md](./applied-labs/r37-t049/README.md)
+
+Run from the repository root:
+
+```bash
+python3 4-Classification/1-Introduction/applied-labs/r37-t049/example.py
+```
+
+Fixture: two hard-coded 0/1 label lists (`[1, 1, 0, 0]` vs `[1, 0, 1, 0]`, and a second pair for the applied questions). No file is read and nothing is downloaded.
+
+Expected output:
+
+```text
+headline TP=1 FN=1 FP=1 TN=1
+precision=0.5000 recall=0.5000
+Q1 Predict an output for Q1 data: TP=1 FN=2 FP=1 TN=0 precision=0.5000 recall=0.3333
+Q2 Diagnose a swapped-argument failure: precision(y_pred, y_true)=0.3333 equals recall=0.3333
+Q3 Choose a boundary policy for no positives: precision with no positive predictions=0.0000
+```
+
+**Prerequisites:** Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+**Label:** fixed toy labels, not a trained classifier.
+
+Limitations:
+
+- Binary 0/1 labels only; no multiclass or probabilities.
+- No model is trained; the labels are typed in as lists.
+- Four items per example, not a real dataset.
+- The precision and recall zero-denominator value (0.0) is this lab's policy, not a lesson rule.
+
 ## 🚀Challenge
 
 This curriculum contains several interesting datasets. Dig through the `data` folders and see if any contain datasets that would be appropriate for binary or multi-class classification? What questions would you ask of this dataset?
