@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/1-Introduction/2-history-of-ML/applied-labs/r37-t009/test_example.py	2026-11-19 19:57:54
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T009/broken/test_example.py	2026-11-19 19:57:54
+@@ -9,7 +9,7 @@
+ 
+     def test_complete_scenario_passes(self):
+         res = example.check_scenario(example.SCENARIOS["scenario_1_pass"])
+-        self.assertEqual(res["status"], "pass")
++        self.assertEqual(res["status"], "fail")
+         self.assertIn("meets all structural rubric", res["reason"])
+ 
+     def test_scenario_without_asset_fails(self):

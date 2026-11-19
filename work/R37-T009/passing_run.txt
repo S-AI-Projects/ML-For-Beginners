@@ -1,0 +1,17 @@
+test_complete_scenario_passes (test_example.SecurityScenarioRubricTests.test_complete_scenario_passes) ... ok
+test_experiment_metrics_and_tradeoff (test_example.SecurityScenarioRubricTests.test_experiment_metrics_and_tradeoff) ... ok
+test_experiment_runs_three_configurations (test_example.SecurityScenarioRubricTests.test_experiment_runs_three_configurations) ... ok
+test_invalid_type_raises (test_example.SecurityScenarioRubricTests.test_invalid_type_raises) ... ok
+test_missing_control_fails (test_example.SecurityScenarioRubricTests.test_missing_control_fails) ... ok
+test_missing_residual_risk_fails (test_example.SecurityScenarioRubricTests.test_missing_residual_risk_fails) ... ok
+test_missing_threat_fails (test_example.SecurityScenarioRubricTests.test_missing_threat_fails) ... ok
+test_scenario_without_asset_fails (test_example.SecurityScenarioRubricTests.test_scenario_without_asset_fails) ... ok
+test_unrelated_control_flagged_for_review (test_example.SecurityScenarioRubricTests.test_unrelated_control_flagged_for_review) ... ok
+test_whitespace_only_field_fails (test_example.SecurityScenarioRubricTests.test_whitespace_only_field_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0
