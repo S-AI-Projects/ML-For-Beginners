@@ -1,0 +1,16 @@
+Fixture and episode inputs for R37-T003:
+
+Chain:
+  States: 0, 1, 2 (terminal = 2)
+  Actions: "left" (-1), "right" (+1)
+  Max steps: 5
+  Reward: 1 only on transition entering terminal 2
+
+Contract episodes:
+  1. start 0, actions ["right", "right"] -> final 2, total reward 1, end terminal
+  2. start 0, actions ["left"] * 10 -> final 0, total reward 0, end step_cap
+
+Comparison episodes:
+  3. start 0, actions ["right", "left", "right", "right"] -> final 2, reward 1
+  4. start 1, actions ["right"] -> final 2, reward 1
+  5. start 1, actions ["left", "left"] -> final 0, reward 0

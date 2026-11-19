@@ -331,6 +331,44 @@ You should see something like this:
 
 ## [Post-lecture quiz](https://ff-quizzes.netlify.app/en/ml/)
 
+
+## Applied Lab: Finite-State Reward Trace
+
+A deterministic three-state chain comparing direct simulation with an independent calculation: [R37-T003 lab](applied-labs/r37-t003/README.md).
+
+**Label:** toy three-state chain, not a trained Q-learning or Gym physics agent.
+
+Invocation, from the repository root:
+
+```bash
+python3 8-Reinforcement/2-Gym/applied-labs/r37-t003/example.py
+```
+
+Fixture: states 0, 1, 2 (terminal 2), actions left/right, reward 1 only upon entering terminal 2, episode cap 5 steps. `[right, right]` from 0 reaches 2 with reward 1; repeated `left` ends at cap with reward 0.
+
+Expected output:
+
+```text
+toy three-state chain, not a trained Q-learning or Gym physics agent
+start 0, actions ['right', 'right']:
+  direct: final=2, reward=1, end=terminal
+  independent: final=2, reward=1, end=terminal
+  approaches agree: True
+start 0, actions ['left'] * 10:
+  direct: final=0, reward=0, end=step_cap
+  independent: final=0, reward=0, end=step_cap
+  approaches agree: True
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Discrete three-state toy chain only; does not simulate CartPole continuous physics or OpenAI Gym environments.
+- No reinforcement learning, policy updates, or exploration algorithms.
+- Makes no claims about real hardware, cloud service behavior, or trained-model performance.
+
 ## Assignment
 [Train a Mountain Car](assignment.md)
 

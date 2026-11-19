@@ -1,0 +1,9 @@
+toy three-state chain, not a trained Q-learning or Gym physics agent
+start 0, actions ['right', 'right']:
+  direct: final=2, reward=1, end=terminal
+  independent: final=2, reward=1, end=terminal
+  approaches agree: True
+start 0, actions ['left'] * 10:
+  direct: final=0, reward=0, end=step_cap
+  independent: final=0, reward=0, end=step_cap
+  approaches agree: True

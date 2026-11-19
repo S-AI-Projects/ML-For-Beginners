@@ -1,0 +1,20 @@
+--- /Users/partharunmaskar/ML-For-Beginners/8-Reinforcement/2-Gym/applied-labs/r37-t003/test_example.py	2026-11-19 19:51:01
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T003/broken/test_example.py	2026-11-19 19:51:01
+@@ -12,7 +12,7 @@
+             0, ["right", "right"]
+         )
+         self.assertEqual(final_state, 2)
+-        self.assertEqual(total_reward, 1)
++        self.assertEqual(total_reward, 2)
+         self.assertEqual(end_reason, "terminal")
+         self.assertEqual(len(trace), 2)
+         self.assertEqual(trace, [(0, "right", 0, 1), (1, "right", 1, 2)])
+@@ -61,7 +61,7 @@
+             0, ["right", "right", "left", "right"]
+         )
+         self.assertEqual(final_state, 2)
+-        self.assertEqual(total_reward, 1)
++        self.assertEqual(total_reward, 2)
+         self.assertEqual(end_reason, "terminal")
+         self.assertEqual(len(trace), 2)
+ 
