@@ -221,6 +221,42 @@ In this tutorial, you worked with simple linear regression, rather than univaria
 
 Read more about the concept of regression and think about what kinds of questions can be answered by this technique. Take this [tutorial](https://docs.microsoft.com/learn/modules/train-evaluate-regression-models?WT.mc_id=academic-77952-leestott) to deepen your understanding.
 
+
+## Applied Lab: Typed Tool Dispatch
+
+A local JSON tool dispatch fixture with numeric argument validation and refactored responsibility extraction: [R37-T006 lab](applied-labs/r37-t006/README.md).
+
+**Label:** local contract fixture, not a full MCP transport implementation.
+
+Invocation, from the repository root:
+
+```bash
+python3 2-Regression/1-Tools/applied-labs/r37-t006/example.py
+```
+
+Fixture: `add(2, 3)` -> 5; `multiply(2, 3)` -> 6; unknown tool and string argument return structured errors; failed calls abort batch execution immediately.
+
+Expected output:
+
+```text
+local contract fixture, not a full MCP transport implementation
+headline calls execution:
+  add(2, 3) -> {'ok': True, 'result': 5}
+  multiply(2, 3) -> {'ok': True, 'result': 6}
+  failed call -> {'ok': False, 'error': {'code': 'UNKNOWN_TOOL', 'message': "tool 'unknown_tool' not in allowlist"}}
+  calls executed in batch: 3 of 4 (aborted on error)
+  baseline == refactored equivalence: True
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Local in-process Python dispatcher; does not implement client-server MCP network transports.
+- Simple binary mathematical tools only.
+- Makes no claims about real hardware, cloud execution environments, or trained model performance.
+
 ## Assignment
 
 [A different dataset](assignment.md)
