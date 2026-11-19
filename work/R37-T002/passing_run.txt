@@ -1,0 +1,17 @@
+test_case_insensitivity_boundary (test_example.LexicalRetrieverTests.test_case_insensitivity_boundary) ... ok
+test_custom_corpus_retrieval (test_example.LexicalRetrieverTests.test_custom_corpus_retrieval) ... ok
+test_empty_query_raises_value_error (test_example.LexicalRetrieverTests.test_empty_query_raises_value_error) ... ok
+test_non_string_query_raises_type_error (test_example.LexicalRetrieverTests.test_non_string_query_raises_type_error) ... ok
+test_punctuation_and_whitespace_boundary (test_example.LexicalRetrieverTests.test_punctuation_and_whitespace_boundary) ... ok
+test_query_ocean_returns_no_match (test_example.LexicalRetrieverTests.test_query_ocean_returns_no_match) ... ok
+test_query_red_apple_ranks_a_before_b (test_example.LexicalRetrieverTests.test_query_red_apple_ranks_a_before_b) ... ok
+test_repeated_query_words_set_boundary (test_example.LexicalRetrieverTests.test_repeated_query_words_set_boundary) ... ok
+test_smallest_valid_single_word_match (test_example.LexicalRetrieverTests.test_smallest_valid_single_word_match) ... ok
+test_tie_breaking_by_doc_id (test_example.LexicalRetrieverTests.test_tie_breaking_by_doc_id) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+exit code: 0
