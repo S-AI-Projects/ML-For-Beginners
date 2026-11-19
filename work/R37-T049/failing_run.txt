@@ -1,0 +1,23 @@
+test_q1_predict_output (test_example.AppliedQuestionsTest.test_q1_predict_output) ... ok
+test_q2_swapped_arguments (test_example.AppliedQuestionsTest.test_q2_swapped_arguments) ... ok
+test_q3_no_positive_predictions (test_example.AppliedQuestionsTest.test_q3_no_positive_predictions) ... ok
+test_headline_counts_and_metrics (test_example.ConfusionMetricsTest.test_headline_counts_and_metrics) ... FAIL
+test_length_mismatch_raises (test_example.ConfusionMetricsTest.test_length_mismatch_raises) ... ok
+test_no_actual_positives_recall_is_zero (test_example.ConfusionMetricsTest.test_no_actual_positives_recall_is_zero) ... ok
+test_no_positive_predictions_precision_is_zero (test_example.ConfusionMetricsTest.test_no_positive_predictions_precision_is_zero) ... ok
+test_non_binary_label_raises (test_example.ConfusionMetricsTest.test_non_binary_label_raises) ... ok
+
+======================================================================
+FAIL: test_headline_counts_and_metrics (test_example.ConfusionMetricsTest.test_headline_counts_and_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T049/broken/test_example.py", line 13, in test_headline_counts_and_metrics
+    self.assertAlmostEqual(example.precision(y_true, y_pred), 0.75)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.5 != 0.75 within 7 places (0.25 difference)
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1
