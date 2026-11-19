@@ -1,0 +1,11 @@
+--- test_example.py
++++ broken/test_example.py
+@@ -12,7 +12,7 @@
+             0, ["right", "right"])
+         self.assertEqual(trace, [(0, "right", 0, 1), (1, "right", 1, 2)])
+         self.assertEqual(final, 2)
+-        self.assertEqual(total, 1)
++        self.assertEqual(total, 2)
+         self.assertEqual(reason, "terminal")
+         self.assertEqual(len(trace), 2)
+ 
