@@ -1,0 +1,65 @@
+test_case_insensitivity_boundary (test_example.LexicalRetrieverTests.test_case_insensitivity_boundary) ... FAIL
+test_custom_corpus_retrieval (test_example.LexicalRetrieverTests.test_custom_corpus_retrieval) ... ok
+test_empty_query_raises_value_error (test_example.LexicalRetrieverTests.test_empty_query_raises_value_error) ... ok
+test_non_string_query_raises_type_error (test_example.LexicalRetrieverTests.test_non_string_query_raises_type_error) ... ok
+test_punctuation_and_whitespace_boundary (test_example.LexicalRetrieverTests.test_punctuation_and_whitespace_boundary) ... FAIL
+test_query_ocean_returns_no_match (test_example.LexicalRetrieverTests.test_query_ocean_returns_no_match) ... ok
+test_query_red_apple_ranks_a_before_b (test_example.LexicalRetrieverTests.test_query_red_apple_ranks_a_before_b) ... FAIL
+test_repeated_query_words_set_boundary (test_example.LexicalRetrieverTests.test_repeated_query_words_set_boundary) ... ok
+test_smallest_valid_single_word_match (test_example.LexicalRetrieverTests.test_smallest_valid_single_word_match) ... ok
+test_tie_breaking_by_doc_id (test_example.LexicalRetrieverTests.test_tie_breaking_by_doc_id) ... ok
+
+======================================================================
+FAIL: test_case_insensitivity_boundary (test_example.LexicalRetrieverTests.test_case_insensitivity_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T002/broken/test_example.py", line 32, in test_case_insensitivity_boundary
+    self.assertEqual(results, [("B", 2), ("A", 1)])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('A', 2), ('B', 1)] != [('B', 2), ('A', 1)]
+
+First differing element 0:
+('A', 2)
+('B', 2)
+
+- [('A', 2), ('B', 1)]
++ [('B', 2), ('A', 1)]
+
+======================================================================
+FAIL: test_punctuation_and_whitespace_boundary (test_example.LexicalRetrieverTests.test_punctuation_and_whitespace_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T002/broken/test_example.py", line 41, in test_punctuation_and_whitespace_boundary
+    self.assertEqual(results, [("B", 2), ("A", 1)])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('A', 2), ('B', 1)] != [('B', 2), ('A', 1)]
+
+First differing element 0:
+('A', 2)
+('B', 2)
+
+- [('A', 2), ('B', 1)]
++ [('B', 2), ('A', 1)]
+
+======================================================================
+FAIL: test_query_red_apple_ranks_a_before_b (test_example.LexicalRetrieverTests.test_query_red_apple_ranks_a_before_b)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T002/broken/test_example.py", line 12, in test_query_red_apple_ranks_a_before_b
+    self.assertEqual(results, [("B", 2), ("A", 1)])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('A', 2), ('B', 1)] != [('B', 2), ('A', 1)]
+
+First differing element 0:
+('A', 2)
+('B', 2)
+
+- [('A', 2), ('B', 1)]
++ [('B', 2), ('A', 1)]
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=3)
+
+exit code: 1

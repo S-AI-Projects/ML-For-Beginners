@@ -373,6 +373,40 @@ MAPE:  2.0572089029888656 %
 
 This lesson was to introduce the application of SVR for Time Series Forecasting. To read more about SVR, you can refer to [this blog](https://www.analyticsvidhya.com/blog/2020/03/support-vector-regression-tutorial-for-machine-learning/). This [documentation on scikit-learn](https://scikit-learn.org/stable/modules/svm.html) provides a more comprehensive explanation about SVMs in general, [SVRs](https://scikit-learn.org/stable/modules/svm.html#regression) and also other implementation details such as the different [kernel functions](https://scikit-learn.org/stable/modules/svm.html#kernel-functions) that can be used, and their parameters.
 
+
+## Applied Lab: Retrieval with Source Attribution
+
+A deterministic lexical retriever test double demonstrating query/document overlap and source attribution: [R37-T002 lab](applied-labs/r37-t002/README.md).
+
+**Label:** lexical test double, not a production vector search.
+
+Invocation, from the repository root:
+
+```bash
+python3 7-TimeSeries/3-SVR/applied-labs/r37-t002/example.py
+```
+
+Fixture: Documents A="red apple", B="green apple", C="blue sky". Query "red apple" ranks A (score 2) before B (score 1); query "ocean" returns no match (`[]`).
+
+Expected output:
+
+```text
+lexical test double, not a production vector search
+query 'red apple' -> [('A', 2), ('B', 1)]
+query 'ocean' -> []
+smallest valid query 'sky' -> [('C', 1)]
+tie-break boundary query 'apple' -> [('A', 1), ('B', 1)]
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Lexical word overlap only; does not perform dense vector or semantic retrieval.
+- Corpus is local and fixed; no external database or search index is used.
+- Makes no claims about real hardware, cloud service behavior, or trained-model performance.
+
 ## Assignment
 
 [A new SVR model](assignment.md)

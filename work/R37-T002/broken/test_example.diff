@@ -1,0 +1,29 @@
+--- /Users/partharunmaskar/ML-For-Beginners/7-TimeSeries/3-SVR/applied-labs/r37-t002/test_example.py	2026-11-19 19:50:03
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T002/broken/test_example.py	2026-11-19 19:50:03
+@@ -9,7 +9,7 @@
+ 
+     def test_query_red_apple_ranks_a_before_b(self):
+         results = example.retrieve("red apple")
+-        self.assertEqual(results, [("A", 2), ("B", 1)])
++        self.assertEqual(results, [("B", 2), ("A", 1)])
+         # Check source attribution IDs
+         doc_ids = [doc_id for doc_id, _ in results]
+         self.assertEqual(doc_ids, ["A", "B"])
+@@ -29,7 +29,7 @@
+ 
+     def test_case_insensitivity_boundary(self):
+         results = example.retrieve("RED APPLE")
+-        self.assertEqual(results, [("A", 2), ("B", 1)])
++        self.assertEqual(results, [("B", 2), ("A", 1)])
+ 
+     def test_repeated_query_words_set_boundary(self):
+         # Word set ensures duplicates don't artificially increase score
+@@ -38,7 +38,7 @@
+ 
+     def test_punctuation_and_whitespace_boundary(self):
+         results = example.retrieve("  red!  apple?  ")
+-        self.assertEqual(results, [("A", 2), ("B", 1)])
++        self.assertEqual(results, [("B", 2), ("A", 1)])
+ 
+     def test_empty_query_raises_value_error(self):
+         with self.assertRaises(ValueError):
