@@ -1,0 +1,8 @@
+fictional scenarios, structural rubric only, not a security assessment
+scenario 1: status=pass, reason=scenario meets all structural rubric requirements
+scenario 2: status=fail, reason=missing or empty required field: 'asset'
+scenario 3: status=review, reason=control 'periodic workstation display monitor recalibration' is unrelated to named threat 'exfiltration of expert system decision heuristics'; human review required
+evaluation experiment across configurations:
+  config_1_single: n=1, counts={'pass': 1, 'fail': 0, 'review': 0}, automated_rate=1.00, review_rate=0.00
+  config_2_standard_three: n=3, counts={'pass': 1, 'fail': 1, 'review': 1}, automated_rate=0.67, review_rate=0.33
+  config_3_extended_five: n=5, counts={'pass': 2, 'fail': 2, 'review': 1}, automated_rate=0.80, review_rate=0.20

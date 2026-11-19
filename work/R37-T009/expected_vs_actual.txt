@@ -1,0 +1,11 @@
+case | expected | actual | result
+scenario 1 complete | pass | pass | PASS
+scenario 2 missing asset | fail | fail | PASS
+scenario 3 unrelated control | review | review | PASS
+missing threat field | fail | fail | PASS
+missing control field | fail | fail | PASS
+missing residual_risk field | fail | fail | PASS
+whitespace-only asset | fail | fail | PASS
+experiment config 1 count | 1 | 1 | PASS
+experiment config 2 counts | {'pass': 1, 'fail': 1, 'review': 1} | {'pass': 1, 'fail': 1, 'review': 1} | PASS
+experiment config 3 count | 5 | 5 | PASS

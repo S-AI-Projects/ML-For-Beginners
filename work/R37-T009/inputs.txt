@@ -1,0 +1,24 @@
+Fixture scenarios and experiment configurations for R37-T009:
+
+Scenario 1 (Pass):
+  Asset: Dartmouth 1956 workshop proposal and conference transcripts
+  Threat: unauthorized modification of historical Dartmouth conference proceedings
+  Control: cryptographic checksums and immutable version control for proceedings
+  Residual risk: compromise of cryptographic signing keys requiring manual recovery
+
+Scenario 2 (Fail - missing asset):
+  Asset: ""
+  Threat: adversarial poisoning of early perceptron training samples
+  Control: input sanity filtering and historical training data provenance audits
+  Residual risk: subtle poisoning within nominal sensor thresholds
+
+Scenario 3 (Review - unrelated control):
+  Asset: proprietary medical diagnosis expert system decision heuristics
+  Threat: exfiltration of expert system decision heuristics
+  Control: periodic workstation display monitor recalibration
+  Residual risk: unauthorized exfiltration remains unmitigated
+
+Configurations:
+  Config 1: 1 scenario (Pass)
+  Config 2: 3 scenarios (Pass, Fail, Review)
+  Config 3: 5 scenarios (2 Pass, 2 Fail, 1 Review)
