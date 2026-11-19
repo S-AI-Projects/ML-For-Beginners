@@ -281,6 +281,43 @@ Explore the different types of visualization that Matplotlib and Seaborn offer. 
 
 Take a look at the many ways to visualize data. Make a list of the various libraries available and note which are best for given types of tasks, for example 2D visualizations vs. 3D visualizations. What do you discover?
 
+
+## Applied Lab: Regression Evaluation Worked Example
+
+A worked input-to-output explanation and regression test suite calculating MAE and RMSE: [R37-T007 lab](applied-labs/r37-t007/README.md).
+
+**Label:** worked teaching example, not a scikit-learn training pipeline.
+
+Invocation, from the repository root:
+
+```bash
+python3 2-Regression/2-Data/applied-labs/r37-t007/example.py
+```
+
+Fixture: `truth=[1, 2, 3]`, `prediction=[1, 3, 2]` yields MAE = 2/3 and RMSE = sqrt(2/3); identical arrays give both errors 0.0.
+
+Expected output:
+
+```text
+worked teaching example, not a scikit-learn training pipeline
+worked breakdown for truth=[1, 2, 3], prediction=[1, 3, 2]:
+  i | truth | pred | error (y - y_hat) | |error| | error^2
+  0 | 1     | 1    | 0                 | 0       | 0
+  1 | 2     | 3    | -1                | 1       | 1
+  2 | 3     | 2    | 1                 | 1       | 1
+  total absolute error = 2, n = 3 -> MAE = 2/3 = 0.6667
+  total squared error = 2, n = 3 -> MSE = 2/3, RMSE = sqrt(2/3) = 0.8165
+identical arrays [1, 2, 3]: MAE = 0.0000, RMSE = 0.0000
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Computes metrics on small local lists; does not train or evaluate scikit-learn regression models.
+- Makes no claims about real hardware, cloud platforms, or model accuracy on production data.
+
 ## Assignment
 
 [Exploring visualization](assignment.md)

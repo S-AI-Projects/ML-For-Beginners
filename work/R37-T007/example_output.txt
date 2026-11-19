@@ -1,0 +1,9 @@
+worked teaching example, not a scikit-learn training pipeline
+worked breakdown for truth=[1, 2, 3], prediction=[1, 3, 2]:
+  i | truth | pred | error (y - y_hat) | |error| | error^2
+  0 | 1     | 1    | 0                 | 0       | 0
+  1 | 2     | 3    | -1                | 1       | 1
+  2 | 3     | 2    | 1                 | 1       | 1
+  total absolute error = 2, n = 3 -> MAE = 2/3 = 0.6667
+  total squared error = 2, n = 3 -> MSE = 2/3, RMSE = sqrt(2/3) = 0.8165
+identical arrays [1, 2, 3]: MAE = 0.0000, RMSE = 0.0000
