@@ -1,0 +1,18 @@
+Inputs used for the R37-T050 evidence (fixture and contract cases).
+
+Chain: states 0, 1, 2 (2 is terminal); actions "left" (-1), "right" (+1);
+left at 0 stays at 0; reward 1 only when a step enters state 2.
+Default max_steps = 5.
+
+Contract episodes (CLI):
+  1. start 0, actions ["right", "right"]
+  2. start 0, actions ["left"] * 10
+
+Edge cases (tests):
+  start 2, ["left"]                          -> no steps, terminal
+  start 0, ["left", "right", "left", "right", "right"] -> terminal on step 5
+  start 0, ["right"]                         -> actions_exhausted
+  start 0, ["right", "right", "jump"]        -> "jump" ignored after end
+  step(0, "jump"), run_episode(0, ["jump"])  -> ValueError
+  run_episode(3, ["right"]), run_episode(-1, ["right"]), step(5, "right")
+                                             -> ValueError

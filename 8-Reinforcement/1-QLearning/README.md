@@ -316,5 +316,46 @@ Overall, it is important to remember that the success and quality of the learnin
 
 ## [Post-lecture quiz](https://ff-quizzes.netlify.app/en/ml/)
 
+## Applied lab: finite-state reward trace
+
+A runnable toy example of the state, action, reward and episode loop: [R37-T050 lab](applied-labs/r37-t050/README.md).
+
+**Label:** toy three-state chain, not a trained Q-learning agent.
+
+Invocation, from the repository root:
+
+```bash
+python3 8-Reinforcement/1-QLearning/applied-labs/r37-t050/example.py
+```
+
+Fixture: a chain with states 0, 1 and 2 (2 is terminal), actions `left` and `right`, and reward 1 only on the step that enters state 2. Left at 0 stays at 0. Episodes stop at the terminal state or after 5 steps.
+
+Expected output:
+
+```text
+right, right (start 0):
+  0 --right--> 1, reward 0
+  1 --right--> 2, reward 1
+  final 2, total reward 1, end terminal
+left x10 (start 0):
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  final 0, total reward 0, end step_cap
+```
+
+## Prerequisites
+
+Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+
+- There is no Q-table, no learning update and no exploration. The example only shows transitions, rewards and episode stops.
+- Transitions are deterministic, and the chain has three states.
+- The step cap and end reasons are added for this lab; the lesson does not define them.
+- The example says nothing about trained-model or learning performance, real hardware, or cloud services.
+
 ## Assignment 
 [A More Realistic World](assignment.md)

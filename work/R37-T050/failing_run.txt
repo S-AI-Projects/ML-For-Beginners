@@ -1,0 +1,28 @@
+Failing run: broken copy (one wrong expected value: [right,right] total reward 2)
+  python3 -m unittest discover -s work/R37-T050/broken -p "test_*.py" -v
+
+test_actions_after_end_are_ignored (test_example.ChainTests.test_actions_after_end_are_ignored) ... ok
+test_actions_exhausted_before_cap (test_example.ChainTests.test_actions_exhausted_before_cap) ... ok
+test_bad_start_state_raises (test_example.ChainTests.test_bad_start_state_raises) ... ok
+test_left_at_zero_stays_at_zero (test_example.ChainTests.test_left_at_zero_stays_at_zero) ... ok
+test_reward_only_when_entering_terminal (test_example.ChainTests.test_reward_only_when_entering_terminal) ... ok
+test_right_right_reaches_terminal (test_example.ChainTests.test_right_right_reaches_terminal) ... FAIL
+test_start_at_terminal_takes_no_steps (test_example.ChainTests.test_start_at_terminal_takes_no_steps) ... ok
+test_ten_lefts_stop_at_step_cap (test_example.ChainTests.test_ten_lefts_stop_at_step_cap) ... ok
+test_terminal_on_step_five_beats_step_cap (test_example.ChainTests.test_terminal_on_step_five_beats_step_cap) ... ok
+test_unknown_action_raises (test_example.ChainTests.test_unknown_action_raises) ... ok
+
+======================================================================
+FAIL: test_right_right_reaches_terminal (test_example.ChainTests.test_right_right_reaches_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/vaibhavtripathi/Desktop/ML-For-Beginners/work/R37-T050/broken/test_example.py", line 15, in test_right_right_reaches_terminal
+    self.assertEqual(total, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)
+exit code: 1

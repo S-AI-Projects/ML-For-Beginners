@@ -1,0 +1,11 @@
+right, right (start 0):
+  0 --right--> 1, reward 0
+  1 --right--> 2, reward 1
+  final 2, total reward 1, end terminal
+left x10 (start 0):
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  0 --left--> 0, reward 0
+  final 0, total reward 0, end step_cap

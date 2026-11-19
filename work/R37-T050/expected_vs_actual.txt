@@ -1,0 +1,68 @@
+Expected vs actual, one-off python3 calls on example.py
+
+PASS  [right,right] from 0: trace
+      expected: [(0, 'right', 0, 1), (1, 'right', 1, 2)]
+      actual:   [(0, 'right', 0, 1), (1, 'right', 1, 2)]
+PASS  [right,right] from 0: final state
+      expected: 2
+      actual:   2
+PASS  [right,right] from 0: total reward
+      expected: 1
+      actual:   1
+PASS  [right,right] from 0: end reason
+      expected: 'terminal'
+      actual:   'terminal'
+PASS  [right,right] from 0: steps
+      expected: 2
+      actual:   2
+PASS  10 x left from 0: steps
+      expected: 5
+      actual:   5
+PASS  10 x left from 0: final state
+      expected: 0
+      actual:   0
+PASS  10 x left from 0: total reward
+      expected: 0
+      actual:   0
+PASS  10 x left from 0: end reason
+      expected: 'step_cap'
+      actual:   'step_cap'
+PASS  step(0, left) stays at 0
+      expected: (0, 0, False)
+      actual:   (0, 0, False)
+PASS  step(0, right) reward 0
+      expected: (1, 0, False)
+      actual:   (1, 0, False)
+PASS  step(1, right) enters 2, reward 1
+      expected: (2, 1, True)
+      actual:   (2, 1, True)
+PASS  step(1, left) reward 0
+      expected: (0, 0, False)
+      actual:   (0, 0, False)
+PASS  start at 2: no steps, terminal
+      expected: ([], 2, 0, 'terminal')
+      actual:   ([], 2, 0, 'terminal')
+PASS  terminal on step 5 beats cap
+      expected: ('terminal', 2, 1, 5)
+      actual:   ('terminal', 2, 1, 5)
+PASS  actions exhausted before cap
+      expected: 'actions_exhausted'
+      actual:   'actions_exhausted'
+PASS  actions after end ignored
+      expected: ([(0, 'right', 0, 1), (1, 'right', 1, 2)], 'terminal')
+      actual:   ([(0, 'right', 0, 1), (1, 'right', 1, 2)], 'terminal')
+PASS  unknown action in step
+      expected: 'ValueError'
+      actual:   'ValueError'
+PASS  unknown action in run_episode
+      expected: 'ValueError'
+      actual:   'ValueError'
+PASS  start state 3
+      expected: 'ValueError'
+      actual:   'ValueError'
+PASS  start state -1
+      expected: 'ValueError'
+      actual:   'ValueError'
+PASS  step state 5
+      expected: 'ValueError'
+      actual:   'ValueError'
