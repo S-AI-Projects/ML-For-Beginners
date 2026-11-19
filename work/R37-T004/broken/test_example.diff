@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/6-NLP/2-Tasks/applied-labs/r37-t004/test_example.py	2026-11-19 19:51:57
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T004/broken/test_example.py	2026-11-19 19:51:57
+@@ -9,7 +9,7 @@
+ 
+     def test_identical_vectors_similarity_one(self):
+         sim, trace = example.cosine_similarity_with_trace([1, 0], [1, 0])
+-        self.assertEqual(sim, 1.0)
++        self.assertEqual(sim, 2.0)
+         self.assertTrue(example.check_trace_invariant(trace))
+ 
+     def test_orthogonal_vectors_similarity_zero(self):

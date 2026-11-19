@@ -1,0 +1,14 @@
+Fixture vector inputs for R37-T004:
+
+Contract inputs:
+  1. u = [1, 0], v = [1, 0] -> similarity = 1.0
+  2. u = [1, 0], v = [0, 1] -> similarity = 0.0
+  3. u = [0, 0], v = [1, 0] -> similarity = None (sentinel)
+
+Edge and invariant inputs:
+  4. u = [0, 0], v = [0, 0] -> None
+  5. u = [1, 0], v = [-1, 0] -> -1.0
+  6. u = [3, 4], v = [3, 4] -> 1.0 (norms = 5.0, dot = 25)
+  7. u = [1, 2, 3], v = [4, 5, 6] -> similarity ~ 0.9746
+  8. Mismatched: [1, 0] vs [1, 0, 0] -> ValueError
+  9. Empty: [] vs [] -> ValueError
