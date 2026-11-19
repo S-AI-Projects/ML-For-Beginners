@@ -1,0 +1,17 @@
+Fixture tool call inputs for R37-T006:
+
+Valid calls:
+  - {"tool": "add", "args": {"a": 2, "b": 3}} -> result = 5
+  - {"tool": "multiply", "args": {"a": 2, "b": 3}} -> result = 6
+
+Error calls:
+  - {"tool": "divide", "args": {"a": 6, "b": 2}} -> UNKNOWN_TOOL error
+  - {"tool": "add", "args": {"a": "2", "b": 3}} -> INVALID_TYPE error
+  - {"tool": "multiply", "args": {"a": True, "b": 3}} -> INVALID_TYPE error
+  - {"tool": "add", "args": {"a": 1}} -> MISSING_ARGUMENT error
+
+Batch with failure-stop:
+  1. add(2, 3) -> ok
+  2. multiply(2, 3) -> ok
+  3. unknown_tool -> error (stops batch)
+  4. multiply(10, 20) -> not executed

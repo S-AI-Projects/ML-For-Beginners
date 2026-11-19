@@ -1,0 +1,26 @@
+test_add_valid (test_example.TypedToolDispatchTests.test_add_valid) ... FAIL
+test_baseline_and_refactored_equivalence_errors (test_example.TypedToolDispatchTests.test_baseline_and_refactored_equivalence_errors) ... ok
+test_baseline_and_refactored_equivalence_valid (test_example.TypedToolDispatchTests.test_baseline_and_refactored_equivalence_valid) ... ok
+test_batch_execution_stops_on_first_error (test_example.TypedToolDispatchTests.test_batch_execution_stops_on_first_error) ... ok
+test_boolean_argument_rejected (test_example.TypedToolDispatchTests.test_boolean_argument_rejected) ... ok
+test_extracted_validator_unit (test_example.TypedToolDispatchTests.test_extracted_validator_unit) ... ok
+test_missing_argument_structured_error (test_example.TypedToolDispatchTests.test_missing_argument_structured_error) ... ok
+test_multiply_valid (test_example.TypedToolDispatchTests.test_multiply_valid) ... ok
+test_string_argument_structured_error (test_example.TypedToolDispatchTests.test_string_argument_structured_error) ... ok
+test_unknown_tool_structured_error (test_example.TypedToolDispatchTests.test_unknown_tool_structured_error) ... ok
+
+======================================================================
+FAIL: test_add_valid (test_example.TypedToolDispatchTests.test_add_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T006/broken/test_example.py", line 14, in test_add_valid
+    self.assertEqual(res["result"], 999)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 5 != 999
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+FAILED (failures=1)
+
+exit code: 1
