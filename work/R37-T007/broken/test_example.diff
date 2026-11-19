@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/2-Regression/2-Data/applied-labs/r37-t007/test_example.py	2026-11-19 19:55:55
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T007/broken/test_example.py	2026-11-19 19:55:55
+@@ -14,7 +14,7 @@
+         mae = example.calculate_mae(truth, prediction)
+         rmse = example.calculate_rmse(truth, prediction)
+         # Exact values: MAE = 2/3, RMSE = sqrt(2/3)
+-        self.assertAlmostEqual(mae, 2.0 / 3.0)
++        self.assertAlmostEqual(mae, 4.0 / 3.0)
+         self.assertAlmostEqual(rmse, math.sqrt(2.0 / 3.0))
+ 
+     def test_worked_table_row_details(self):
