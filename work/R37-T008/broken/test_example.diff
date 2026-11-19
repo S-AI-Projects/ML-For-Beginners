@@ -1,0 +1,11 @@
+--- /Users/partharunmaskar/ML-For-Beginners/5-Clustering/1-Visualize/applied-labs/r37-t008/test_example.py	2026-11-19 19:56:50
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T008/broken/test_example.py	2026-11-19 19:56:50
+@@ -10,7 +10,7 @@
+     def test_headline_points_map_to_0_1_0(self):
+         pts = [(1, 0), (3, 0), (2, 0)]
+         assignments = example.assign_points(pts)
+-        self.assertEqual(assignments, [0, 1, 0])
++        self.assertEqual(assignments, [1, 1, 1])
+ 
+     def test_tie_rule_at_exact_midpoint(self):
+         # Point (2, 0) is equidistant from (0, 0) and (4, 0): dist0 = 4, dist1 = 4

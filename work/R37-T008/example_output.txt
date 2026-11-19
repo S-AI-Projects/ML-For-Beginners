@@ -1,0 +1,9 @@
+nearest-centroid test fixture, not a K-means training algorithm
+headline points [(1, 0), (3, 0), (2, 0)] -> [0, 1, 0]
+  (1,0) d0=1, d1=9 -> 0
+  (3,0) d0=9, d1=1 -> 1
+  (2,0) d0=4, d1=4 -> 0 (tie broken to first centroid)
+failure and recovery demonstration:
+  step 1 valid input (1, 0) -> assigned to centroid 0
+  step 2 invalid input (1, 0, 0) -> rejected with ValueError: point must be 2-dimensional, got length 3: (1, 0, 0)
+  step 3 recovery input (3, 0) -> assigned to centroid 1
