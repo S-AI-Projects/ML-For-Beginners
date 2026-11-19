@@ -1,0 +1,35 @@
+test_empty_inputs_raises (test_example.LogisticClassificationEvaluationTests.test_empty_inputs_raises) ... ok
+test_headline_confusion_matrix (test_example.LogisticClassificationEvaluationTests.test_headline_confusion_matrix) ... ok
+test_headline_precision_and_recall (test_example.LogisticClassificationEvaluationTests.test_headline_precision_and_recall) ... FAIL
+test_mismatched_lengths_raises (test_example.LogisticClassificationEvaluationTests.test_mismatched_lengths_raises) ... ok
+test_no_actual_positives_recall_zero (test_example.LogisticClassificationEvaluationTests.test_no_actual_positives_recall_zero) ... ok
+test_no_positive_predictions_precision_zero (test_example.LogisticClassificationEvaluationTests.test_no_positive_predictions_precision_zero) ... ok
+test_non_binary_labels_raises (test_example.LogisticClassificationEvaluationTests.test_non_binary_labels_raises) ... ok
+test_q1_predict_output_executable_check (test_example.LogisticClassificationEvaluationTests.test_q1_predict_output_executable_check) ... FAIL
+test_q2_diagnose_swapped_arguments_check (test_example.LogisticClassificationEvaluationTests.test_q2_diagnose_swapped_arguments_check) ... ok
+test_q3_boundary_policy_executable_check (test_example.LogisticClassificationEvaluationTests.test_q3_boundary_policy_executable_check) ... ok
+
+======================================================================
+FAIL: test_headline_precision_and_recall (test_example.LogisticClassificationEvaluationTests.test_headline_precision_and_recall)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T010/broken/test_example.py", line 17, in test_headline_precision_and_recall
+    self.assertAlmostEqual(prec, 0.95)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: 0.5 != 0.95 within 7 places (0.44999999999999996 difference)
+
+======================================================================
+FAIL: test_q1_predict_output_executable_check (test_example.LogisticClassificationEvaluationTests.test_q1_predict_output_executable_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/partharunmaskar/ML-For-Beginners/work/R37-T010/broken/test_example.py", line 38, in test_q1_predict_output_executable_check
+    self.assertAlmostEqual(prec, 0.95)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: 0.5 != 0.95 within 7 places (0.44999999999999996 difference)
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+FAILED (failures=2)
+
+exit code: 1

@@ -1,0 +1,20 @@
+--- /Users/partharunmaskar/ML-For-Beginners/2-Regression/4-Logistic/applied-labs/r37-t010/test_example.py	2026-11-19 19:59:11
++++ /Users/partharunmaskar/ML-For-Beginners/work/R37-T010/broken/test_example.py	2026-11-19 19:59:11
+@@ -14,7 +14,7 @@
+     def test_headline_precision_and_recall(self):
+         prec = example.precision(example.Y_TRUE, example.Y_PRED)
+         rec = example.recall(example.Y_TRUE, example.Y_PRED)
+-        self.assertAlmostEqual(prec, 0.5)
++        self.assertAlmostEqual(prec, 0.95)
+         self.assertAlmostEqual(rec, 0.5)
+ 
+     def test_no_positive_predictions_precision_zero(self):
+@@ -35,7 +35,7 @@
+         self.assertEqual((tp, fn, fp, tn), (1, 2, 1, 0))
+         prec = example.precision(example.Q1_TRUE, example.Q1_PRED)
+         rec = example.recall(example.Q1_TRUE, example.Q1_PRED)
+-        self.assertAlmostEqual(prec, 0.5)
++        self.assertAlmostEqual(prec, 0.95)
+         self.assertAlmostEqual(rec, 1.0 / 3.0)
+ 
+     def test_q2_diagnose_swapped_arguments_check(self):

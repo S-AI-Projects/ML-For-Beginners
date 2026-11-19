@@ -390,6 +390,40 @@ There's a lot more to unpack regarding logistic regression! But the best way to 
 
 Read the first few pages of [this paper from Stanford](https://web.stanford.edu/~jurafsky/slp3/5.pdf) on some practical uses for logistic regression. Think about tasks that are better suited for one or the other type of regression tasks that we have studied up to this point. What would work best?
 
+
+## Applied Lab: Classification Evaluation Scenario Assessment
+
+A binary classification evaluation scenario assessment with applied questions and executable checks: [R37-T010 lab](applied-labs/r37-t010/README.md).
+
+**Label:** fixed toy labels, not a trained logistic regression model.
+
+Invocation, from the repository root:
+
+```bash
+python3 2-Regression/4-Logistic/applied-labs/r37-t010/example.py
+```
+
+Fixture: `y_true=[1, 1, 0, 0]`, `y_pred=[1, 0, 1, 0]` gives TP=1, FN=1, FP=1, TN=1, precision=0.5, recall=0.5; no positive predictions gives precision=0.0 under the explicit zero-denominator policy. Three applied questions cover output prediction, swapped-argument diagnosis, and boundary policy choice.
+
+Expected output:
+
+```text
+fixed toy labels, not a trained logistic regression model
+headline TP=1 FN=1 FP=1 TN=1
+precision=0.5000 recall=0.5000
+Q1 Predict an output: TP=1 FN=2 FP=1 TN=0 precision=0.5000 recall=0.3333
+Q2 Diagnose a failure: precision(y_pred, y_true)=0.3333 equals recall=0.3333
+Q3 Choose a boundary policy: precision with no positive predictions=0.0000
+```
+
+### Prerequisites and Limitations
+
+Prerequisites: Python 3 standard library and a local checkout. The local fixture is mandatory; any optional real-service extension needs separately supplied credentials/hardware and is not part of this task.
+
+Limitations:
+- Fixed binary labels only; does not train or fit scikit-learn LogisticRegression estimators.
+- Makes no claims about real hardware, cloud service behavior, or trained model performance.
+
 ## Assignment 
 
 [Retrying this regression](assignment.md)
