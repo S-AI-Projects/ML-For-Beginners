@@ -1,0 +1,20 @@
+{
+  "checked": 3,
+  "outcomes": [
+    {
+      "name": "fictional-education-progress",
+      "status": "PASS",
+      "reason": "required fields present and no fixture mismatch detected"
+    },
+    {
+      "name": "fictional-retail-recommendations",
+      "status": "FAIL",
+      "reason": "missing asset"
+    },
+    {
+      "name": "fictional-health-readmission",
+      "status": "REVIEW",
+      "reason": "control not matched to named threat by the fixture rubric"
+    }
+  ]
+}
