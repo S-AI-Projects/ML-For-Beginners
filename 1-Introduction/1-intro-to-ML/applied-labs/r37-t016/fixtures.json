@@ -1,0 +1,29 @@
+[
+  {
+    "id": "clinic-records",
+    "lesson_section": "Applications of machine learning",
+    "asset": "fictional patient history used by a disease-risk model",
+    "threat": "unauthorized record access",
+    "control": "restrict record access",
+    "residual_risk": "an authorized user could still misuse a record",
+    "control_rationale": "Access limits reduce exposure of the fictional records to people without a work need."
+  },
+  {
+    "id": "weather-feed-missing-asset",
+    "lesson_section": "Why data quality matters",
+    "asset": "",
+    "threat": "tampered weather measurements",
+    "control": "validate incoming measurements",
+    "residual_risk": "plausible-looking bad readings may remain",
+    "control_rationale": "Checking incoming measurements can reveal some changes before they enter the fictional analysis."
+  },
+  {
+    "id": "sentiment-control-review",
+    "lesson_section": "Examples of applied ML",
+    "asset": "fictional set of text reviews and sentiment labels",
+    "threat": "incorrect sentiment labels",
+    "control": "restrict record access",
+    "residual_risk": "a reviewer may overlook ambiguous language",
+    "control_rationale": "Reviewing labels may help catch inconsistent examples before sentiment analysis."
+  }
+]
