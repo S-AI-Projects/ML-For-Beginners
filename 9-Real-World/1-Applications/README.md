@@ -136,6 +136,10 @@ The most effective marketing strategies target customers in different ways based
 
 Identify another sector that benefits from some of the techniques you learned in this curriculum, and discover how it uses ML.
 
+## Local applied example: scenario risk rubric
+
+The [fictional scenario rubric exercise](applied-labs/r37-t019/README.md) connects asset, threat, control, and residual-risk statements to the education, retail, and health care examples above. It checks only required fields and a small declared threat/control vocabulary; human review remains responsible for judging explanations. The fixtures are simulated text, and the checker makes no claim about model accuracy, real services, or hardware.
+
 ## [Post-lecture quiz](https://ff-quizzes.netlify.app/en/ml/)
 
 ## Review & Self Study

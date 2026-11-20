@@ -1,0 +1,5 @@
+{
+  "size_1": ["PASS"],
+  "size_2": ["PASS", "FAIL"],
+  "size_3": ["PASS", "FAIL", "REVIEW"]
+}
