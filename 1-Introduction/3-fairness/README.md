@@ -94,6 +94,12 @@ The people who design and deploy AI systems must be accountable for how their sy
 
 Ultimately one of the biggest questions for our generation, as the first generation that is bringing AI to society, is how to ensure that computers will remain accountable to people and how to ensure that the people that design computers remain accountable to everyone else.
 
+### Applied example: validate actions before execution
+
+Safety and accountability also depend on checking what an automated action is allowed to do and whether its inputs are complete before it runs. The [local policy-gate example](applied-labs/r37-t018/README.md) uses an explicit tool allow-list and per-tool argument schema: an unknown `delete` action and a `read` missing its required path are refused before the executor is called. A following valid fixture read succeeds, making the refusal trace and recovery visible.
+
+From the repository root, run `python3 1-Introduction/3-fairness/applied-labs/r37-t018/example.py`. Its local fixture tries, in order, `delete(path="fixture/impact-summary.txt")`, `read(arguments={})`, and `read(path="fixture/impact-summary.txt")`. The expected trace is rejected, rejected, allowed; only the final `read` reaches the executor (`executor_calls: ["read"]`). The [worked example](applied-labs/r37-t018/README.md) shows the full output and regression-test command. This is a deterministic simulation with Python's standard library and an embedded fixture; it does not execute real tools, access the filesystem, or demonstrate production security guarantees.
+
 ## Impact assessment 
 
 Before training a machine learning model, it is important to conduct an impact assessment to understand the purpose of the AI system; what the intended use is; where it will be deployed; and who will be interacting with the system.  These are helpful for reviewer(s) or testers evaluating the system to know what factors to take into consideration when identifying potential risks and expected consequences.
