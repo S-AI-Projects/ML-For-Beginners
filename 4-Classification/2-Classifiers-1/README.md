@@ -236,6 +236,35 @@ In this lesson, you used your cleaned data to build a machine learning model tha
 ## Review & Self Study
 
 Dig a little more into the math behind logistic regression in [this lesson](https://people.eecs.berkeley.edu/~russell/classes/cs194/f11/lectures/CS194%20Fall%202011%20Lecture%2006.pdf)
+
+## Applied local example: binary metrics
+
+The [R37-T020 applied lab](applied-labs/r37-t020/) computes a confusion matrix and positive-class precision/recall from fixed binary labels. It connects to the classification report above: precision divides true positives by predicted positives (`TP + FP`), while recall divides true positives by actual positives (`TP + FN`). The lesson's cuisine task is multiclass and reports per-cuisine metrics; this small binary fixture isolates the arithmetic and does not train a model, use cuisine records, or claim model performance. Its four examples are balanced (two actual positives and two negatives), so they do not demonstrate the effects of class imbalance.
+
+Prerequisite: Python 3 standard library and a local repository checkout; no packages or services are needed. From the repository root, run:
+
+```bash
+python3 4-Classification/2-Classifiers-1/applied-labs/r37-t020/example.py
+```
+
+Fixture: `y_true=[1, 1, 0, 0]`, `y_pred=[1, 0, 1, 0]`, where `1` is the positive class. Expected output:
+
+```text
+y_true=[1, 1, 0, 0], y_pred=[1, 0, 1, 0]
+TP=1, FN=1, FP=1, TN=1
+precision=0.5, recall=0.5
+```
+
+The matrix labels are named explicitly to avoid confusion over matrix layout conventions. If there are no predicted positives, precision is defined here as `0.0`; if there are no actual positives, recall is also defined as `0.0`.
+
+### Questions to apply
+
+1. **Predict an output.** For the fixture above, what are TP, FN, FP, TN, precision and recall? Rationale: each of the four actual/predicted pairs appears once, so each count is one; both denominators are two. Check: `python3 -m unittest discover -s 4-Classification/2-Classifiers-1/applied-labs/r37-t020 -p "test_*.py"` runs `test_predict_output_fixed_fixture`.
+2. **Diagnose a failure.** What happens when the prediction list has a different length from the truth list? Rationale: pairwise counting would omit unmatched labels, so the helper rejects the input instead of silently calculating partial metrics. Check: the same unittest command runs `test_diagnose_mismatched_input_lengths` and `test_failure_scenario_exits_nonzero_in_fresh_process`.
+3. **Choose a boundary policy.** If `y_true=[1, 0]` and `y_pred=[0, 0]`, what precision should be reported? Rationale: `TP + FP` is zero, so this lab explicitly returns `0.0` for undefined precision (rather than raising or returning NaN); recall is `0.0 / 1`, also zero. Check: the same unittest command runs `test_choose_boundary_policy_no_predicted_positives`.
+
+All behavior here is a local deterministic simulation over supplied labels. It does not represent a remote service, physical device, or trained-model prediction. A deliberate wrong expected matrix can confirm the tests reject incorrect answers: `R37_T020_DELIBERATE_WRONG=1 python3 -m unittest discover -s 4-Classification/2-Classifiers-1/applied-labs/r37-t020 -p "test_*.py"` must exit non-zero.
+
 ## Assignment 
 
 [Study the solvers](assignment.md)
