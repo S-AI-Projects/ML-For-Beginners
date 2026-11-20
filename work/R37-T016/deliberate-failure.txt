@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    assert "pass" == "fail", "deliberately wrong result"
+           ^^^^^^^^^^^^^^^^
+AssertionError: deliberately wrong result
+deliberate wrong-result process exit: 1

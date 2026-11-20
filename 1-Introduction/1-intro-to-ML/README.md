@@ -148,3 +148,8 @@ Take a [Learning Path](https://docs.microsoft.com/learn/modules/introduction-to-
 # Assignment
 
 [Get up and running](assignment.md)
+
+---
+## Applied example: describing risk around an ML use
+
+The [R37-T016 local scenario checker](applied-labs/r37-t016/README.md) connects this lesson's sections on [data quality](#why-data-quality-matters) and [applied ML](#examples-of-applied-ml) to three fictional situations. Learners state an asset, threat, control, control rationale, and residual risk. The fixture checker verifies the four rubric fields and whether the stated control is paired with the named threat in its small local rubric; human review judges the control rationale, and the checker cannot judge whether it is persuasive or whether a real control works. Its examples are simulations only: they make no claims about real hardware, cloud services, or trained-model performance.
