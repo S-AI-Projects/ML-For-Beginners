@@ -1,0 +1,17 @@
+[
+  {
+    "id": "clinic-records",
+    "status": "pass",
+    "detail": "complete; stated control matches threat"
+  },
+  {
+    "id": "weather-feed-missing-asset",
+    "status": "fail",
+    "detail": "missing or empty asset"
+  },
+  {
+    "id": "sentiment-control-review",
+    "status": "review",
+    "detail": "control is not linked to the named threat in this local rubric"
+  }
+]
