@@ -1,0 +1,23 @@
+[
+  {
+    "name": "fictional-education-progress",
+    "asset": "Fictional learner progress summaries for a course dashboard",
+    "threat": "Unauthorized disclosure of learner progress summaries",
+    "control": "Restrict dashboard access to the learner and assigned instructor; encrypt stored summaries",
+    "residual_risk": "An authorized instructor could still share a summary outside the course"
+  },
+  {
+    "name": "fictional-retail-recommendations",
+    "asset": "",
+    "threat": "Poisoned customer reviews could distort product recommendations",
+    "control": "Check review provenance and quarantine suspicious submissions before analysis",
+    "residual_risk": "Coordinated reviewers may evade the simple provenance checks"
+  },
+  {
+    "name": "fictional-health-readmission",
+    "asset": "Fictional discharge notes used in a readmission planning exercise",
+    "threat": "A malicious note could inject instructions into a readmission summary",
+    "control": "Encrypt the notes at rest and restrict access to care staff",
+    "residual_risk": "An authorized staff member could still act on a malicious note"
+  }
+]
