@@ -71,6 +71,17 @@ In the next lesson, you will build an ARIMA model using [Univariate Time Series]
 
 ✅ Identify the variable that changes over time in this dataset
 
+## Worked example: split observations by time
+
+Forecasting uses earlier observations to reason about later ones. If a split is made after shuffling, a training set can contain dates from after the forecast origin, leaking future information into training. The [local timestamp-splitting example](applied-labs/r37-t017/README.md) sorts the rows first, then keeps the earliest 60% for training, the next 20% for validation, and the latest 20% for testing. Its ten-row input yields 6, 2, and 2 rows respectively.
+
+This is a deterministic simulation using synthetic local readings; it does not call or mock a cloud service, download data, fit a model, or make forecasting-performance claims. It illustrates only chronological partitioning and duplicate-timestamp validation. Real forecasting work must also choose an appropriate forecast origin and horizon, handle missing or irregular observations, and fit preprocessing and models using training data only. The example requires Python 3 and uses only its standard library. From the repository root, run:
+
+```bash
+python3 7-TimeSeries/1-Introduction/applied-labs/r37-t017/example.py
+python3 -m unittest discover -s 7-TimeSeries/1-Introduction/applied-labs/r37-t017 -p "test_*.py"
+```
+
 ## Time Series data characteristics to consider
 
 When looking at time series data, you might notice that it has [certain characteristics](https://online.stat.psu.edu/stat510/lesson/1/1.1) that you need to take into account and mitigate to better understand its patterns. If you consider time series data as potentially providing a 'signal' that you want to analyze, these characteristics can be thought of as 'noise'. You often will need to reduce this 'noise' by offsetting some of these characteristics using some statistical techniques.
