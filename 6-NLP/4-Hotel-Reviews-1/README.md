@@ -21,6 +21,32 @@ You will need:
 * NLTK, [which you should install locally](https://www.nltk.org/install.html)
 * The data set which is available on Kaggle [515K Hotel Reviews Data in Europe](https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe). It is around 230 MB unzipped. Download it to the root `/data` folder associated with these NLP lessons.
 
+### Applied example: local token-budget preflight (simulation)
+
+The [R37-T015 offline example](applied-labs/r37-t015/example.py) connects a text tokenizer to a budget check through a callable interface. It illustrates the lesson's need to inspect text-processing assumptions and report a preflight result: with a budget of three, the fixture retains three tokens and explicitly reports the one token removed by truncation. This is a deterministic local simulation using Python's whitespace splitting as a **teaching approximation**, not the real tokenizer used by any trained model.
+
+Prerequisite: Python 3 and a local repository checkout. The fixture uses only the Python standard library; it does not require hotel-review data, NLTK, model downloads, credentials, a paid provider, GPU, or physical device. From the repository root, run:
+
+```bash
+python3 6-NLP/4-Hotel-Reviews-1/applied-labs/r37-t015/example.py --text "one two three four" --budget 3
+```
+
+Expected output:
+
+```json
+{
+  "retained_tokens": [
+    "one",
+    "two",
+    "three"
+  ],
+  "removed_count": 1,
+  "truncated": true
+}
+```
+
+Empty input (`--text "" --budget 3`) reports an empty retained list, zero removed tokens, and `truncated: false`. A negative budget (for example, `--text "one" --budget -1`) exits with an error. The local mock only demonstrates the example's own whitespace-token fixture and budget accounting; it does not establish any real service's tokenizer, context limit, truncation policy, request handling, or errors.
+
 ## Exploratory data analysis
 
 This challenge assumes that you are building a hotel recommendation bot using sentiment analysis and guest reviews scores. The dataset you will be using includes reviews of 1493 different hotels in 6 cities. 
