@@ -1,0 +1,26 @@
+test_allowed_list_directory_both_agree (test_allowlist_policy.TestApproachComparison.test_allowed_list_directory_both_agree) ... ok
+test_allowed_read_both_agree (test_allowlist_policy.TestApproachComparison.test_allowed_read_both_agree) ... ok
+test_missing_arg_both_agree (test_allowlist_policy.TestApproachComparison.test_missing_arg_both_agree) ... ok
+test_unknown_delete_both_agree (test_allowlist_policy.TestApproachComparison.test_unknown_delete_both_agree) ... ok
+test_executor_not_called_for_missing_arg (test_allowlist_policy.TestBoundaryMissingArg.test_executor_not_called_for_missing_arg) ... ok
+test_read_file_missing_path_raises (test_allowlist_policy.TestBoundaryMissingArg.test_read_file_missing_path_raises) ... ok
+test_violation_message_mentions_missing_arg (test_allowlist_policy.TestBoundaryMissingArg.test_violation_message_mentions_missing_arg) ... ok
+test_write_file_missing_content_raises (test_allowlist_policy.TestBoundaryMissingArg.test_write_file_missing_content_raises) ... ok
+test_write_file_missing_path_raises (test_allowlist_policy.TestBoundaryMissingArg.test_write_file_missing_path_raises) ... ok
+test_delete_raises_policy_violation (test_allowlist_policy.TestBoundaryUnknownTool.test_delete_raises_policy_violation) ... ok
+test_empty_tool_name_rejected (test_allowlist_policy.TestBoundaryUnknownTool.test_empty_tool_name_rejected) ... ok
+test_executor_not_called_for_unknown_tool (test_allowlist_policy.TestBoundaryUnknownTool.test_executor_not_called_for_unknown_tool) ... ok
+test_violation_message_mentions_unknown_tool (test_allowlist_policy.TestBoundaryUnknownTool.test_violation_message_mentions_unknown_tool) ... ok
+test_wrong_verdict_DEMO_FAIL (test_allowlist_policy.TestDeliberateFailure.test_wrong_verdict_DEMO_FAIL)
+Asserts that an unknown tool returns 'ALLOW' — which is intentionally wrong. ... skipped 'Deliberate-failure demo — remove @skip to confirm non-zero exit on failure.'
+test_all_rejections_leave_executor_clean (test_allowlist_policy.TestExecutorNotReachedOnReject.test_all_rejections_leave_executor_clean) ... ok
+test_allowed_list_directory (test_allowlist_policy.TestNormalCase.test_allowed_list_directory) ... ok
+test_allowed_read_returns_result (test_allowlist_policy.TestNormalCase.test_allowed_read_returns_result) ... ok
+test_allowed_write_file (test_allowlist_policy.TestNormalCase.test_allowed_write_file) ... ok
+test_executor_called_exactly_once (test_allowlist_policy.TestNormalCase.test_executor_called_exactly_once) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
