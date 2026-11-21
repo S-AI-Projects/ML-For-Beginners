@@ -212,3 +212,59 @@ In the next few lessons you will learn more about sentiment analysis. Research t
 ## Assignment 
 
 [Make a bot talk back](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Cosine-Similarity Lookup — Offline Service Adapter
+
+> **Note:** This section demonstrates vector similarity using a local deterministic mock adapter.
+> No model download, paid provider, GPU, or physical device is required.
+
+In Natural Language Processing (NLP) workflows, embeddings represent semantic units as real-valued
+vectors. Measuring semantic closeness typically involves calculating the cosine similarity
+between pairs of vectors. This lab implements exact cosine similarity comparison, explicit
+zero-vector handling, and abstracts embedding lookup behind a callable service interface.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`math`, `typing`, `unittest`).
+
+### Fixtures and Vector Comparisons
+
+| Vector A | Vector B | Cosine Similarity | Description |
+|---|---|---|---|
+| `[1, 0]` | `[1, 0]` | **1.0** | Identical direction / perfect similarity |
+| `[1, 0]` | `[0, 1]` | **0.0** | Orthogonal / no shared components |
+| `[1, 0]` | `[0, 0]` | **NaN** (`UNDEFINED_SENTINEL`) | Zero norm vector returns documented sentinel |
+| `[0, 0]` | `[0, 0]` | **NaN** (`UNDEFINED_SENTINEL`) | Both zero vectors return documented sentinel |
+
+### Service Adapter & Mock Boundaries
+
+The `EmbeddingService` protocol provides a clean callable interface (`adapter(text) -> List[float]`).
+`LocalOfflineEmbeddingAdapter` provides deterministic offline lookup.
+
+**Real-service behaviors this mock does NOT establish:**
+- Network latency, HTTP request/response lifecycles, and connection timeouts
+- API authentication, token validation, and credential rotation
+- Rate limiting, concurrency throttling, and HTTP 429 exponential backoff
+- Neural network inference generating continuous high-dimensional semantic spaces
+
+### How to run
+
+```bash
+# From repository root
+python3 6-NLP/2-Tasks/applied-labs/r37-t025/example.py
+
+python3 -m unittest discover \
+  -s 6-NLP/2-Tasks/applied-labs/r37-t025 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson covers broad rule-based and NLP conversational bots using tokenization, POS tagging, and sentiment analysis.
+This lab focuses purely on the underlying vector mathematics of cosine similarity and the design pattern of isolating
+external embedding services behind deterministic local adapters.
+
+Source files: [`applied-labs/r37-t025/example.py`](applied-labs/r37-t025/example.py) · [`applied-labs/r37-t025/test_cosine_sim.py`](applied-labs/r37-t025/test_cosine_sim.py)
+
