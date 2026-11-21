@@ -1,0 +1,8 @@
+=== Finite-State Reward Trace Demo ===
+Optimal ['right', 'right'] from 0: Final state=2, Total reward=1, Steps=2
+Repeated 'left' from 0: Final state=0, Total reward=0, Steps=5
+
+=== Configurations Comparison ===
+config_cap_1 (cap=1): Truncates before reaching terminal state; reward=0; fails on insufficient budget.
+config_cap_2 (cap=2): Succeeds on exact minimal optimal path; reward=1; zero margin for exploration.
+config_cap_5 (cap=5): Tolerates exploratory moves while still capping infinite loops safely at step 5.

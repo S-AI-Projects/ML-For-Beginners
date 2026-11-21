@@ -1,0 +1,12 @@
+test_configurations_comparison (test_chain_env.TestControlledConfigurationsComparison.test_configurations_comparison) ... ok
+test_deliberate_wrong_reward_DEMO_FAIL (test_chain_env.TestDeliberateFailure.test_deliberate_wrong_reward_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_repeated_left_ends_at_step_cap_with_reward_0 (test_chain_env.TestFiniteStateChainContract.test_repeated_left_ends_at_step_cap_with_reward_0) ... ok
+test_reward_given_only_on_entry (test_chain_env.TestFiniteStateChainContract.test_reward_given_only_on_entry) ... ok
+test_right_right_reaches_terminal_state_with_reward_1 (test_chain_env.TestFiniteStateChainContract.test_right_right_reaches_terminal_state_with_reward_1) ... ok
+test_invalid_action_raises (test_chain_env.TestInputValidation.test_invalid_action_raises) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
