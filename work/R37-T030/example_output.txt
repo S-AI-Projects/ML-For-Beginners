@@ -1,0 +1,8 @@
+=== Retrieval with Source Attribution Demo ===
+Query 'red apple': [('A', 2), ('B', 1)]
+Query 'ocean': []
+
+=== Scenario Assessment Checks ===
+Check 1 (Predict output 'green'): True
+Check 2 (Diagnose failure & normalization): True
+Check 3 (Boundary tie-breaking policy): True

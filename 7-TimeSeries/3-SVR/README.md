@@ -377,6 +377,74 @@ This lesson was to introduce the application of SVR for Time Series Forecasting.
 
 [A new SVR model](assignment.md)
 
+---
+
+## 🧪 Applied Lab: Retrieval with Source Attribution — Scenario Assessment
+
+> **Note:** This section is a lexical test double, NOT a production vector search.
+> All behavior is simulated/mock using small local fixtures.
+> No model download, paid provider, GPU, or physical device is required.
+
+In retrieval-augmented systems, evaluation requires understanding query normalization,
+source attribution, and deterministic boundary policies. This lab implements a tiny lexical
+retriever over three local documents, scores word set overlap, breaks ties by document ID,
+and answers three scenario assessment questions with executable checks.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`re`, `typing`, `unittest`).
+
+### Fixtures and Retrieval Ranking
+
+Corpus:
+- **A**: `"red apple"`
+- **B**: `"green apple"`
+- **C**: `"blue sky"`
+
+| Query | Expected Ranking / Output | Scoring Details & Tie-Breaking |
+|---|---|---|
+| `"red apple"` | `[('A', 2), ('B', 1)]` | A matches 2 words, B matches 1 word; C excluded (0 overlap) |
+| `"ocean"` | `[]` | No words overlap any document |
+| `"apple"` | `[('A', 1), ('B', 1)]` | Tie broken by document ID ascending ('A' before 'B') |
+
+### Applied Scenario Assessment & Executable Checks
+
+1. **Predict Output:**
+   - *Question:* Given query `"green"`, what is the exact output tuple list?
+   - *Answer:* `[('B', 1)]`
+   - *Rationale:* Only document B contains the token `"green"`.
+   - *Executable Check:* `check_question_1_prediction()` ✓
+2. **Diagnose Failure:**
+   - *Question:* Why would query `"RED APPLE!"` fail without normalization?
+   - *Diagnosis:* Case and punctuation mismatch (`'RED'` != `'red'`).
+   - *Remedy:* Lowercase tokenization and punctuation stripping ensure match with A and B.
+   - *Executable Check:* `check_question_2_diagnosis()` ✓
+3. **Choose Boundary Policy:**
+   - *Question:* Which tie-breaking policy should be chosen for equal overlap scores?
+   - *Chosen Policy:* `doc_id_ascending`
+   - *Rationale:* Eliminates platform-dependent dictionary insertion order jitter and guarantees reproducible evaluation.
+   - *Executable Check:* `check_question_3_boundary_policy()` ✓
+
+### How to run
+
+```bash
+# From repository root
+python3 7-TimeSeries/3-SVR/applied-labs/r37-t030/example.py
+
+python3 -m unittest discover \
+  -s 7-TimeSeries/3-SVR/applied-labs/r37-t030 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson focuses on continuous numerical forecasting using Support Vector Regressors (SVR).
+This lab provides a discrete lexical test double designed to evaluate attribution, error diagnosis,
+and tie-breaking policies without neural embeddings or vector databases.
+
+Source files: [`applied-labs/r37-t030/example.py`](applied-labs/r37-t030/example.py) · [`applied-labs/r37-t030/test_retrieval_assessment.py`](applied-labs/r37-t030/test_retrieval_assessment.py)
+
+
 
 
 ## Credits

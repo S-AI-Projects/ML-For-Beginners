@@ -1,0 +1,13 @@
+test_q1_predict_output_executable_check (test_retrieval_assessment.TestAppliedScenarioAssessment.test_q1_predict_output_executable_check) ... ok
+test_q2_diagnose_failure_executable_check (test_retrieval_assessment.TestAppliedScenarioAssessment.test_q2_diagnose_failure_executable_check) ... ok
+test_q3_boundary_tie_breaking_policy_executable_check (test_retrieval_assessment.TestAppliedScenarioAssessment.test_q3_boundary_tie_breaking_policy_executable_check) ... ok
+test_deliberate_wrong_answer_DEMO_FAIL (test_retrieval_assessment.TestDeliberateFailure.test_deliberate_wrong_answer_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_query_ocean_returns_no_match (test_retrieval_assessment.TestRetrievalContract.test_query_ocean_returns_no_match) ... ok
+test_query_red_apple_ranks_a_before_b (test_retrieval_assessment.TestRetrievalContract.test_query_red_apple_ranks_a_before_b) ... ok
+test_single_match_source_attribution (test_retrieval_assessment.TestRetrievalContract.test_single_match_source_attribution) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
