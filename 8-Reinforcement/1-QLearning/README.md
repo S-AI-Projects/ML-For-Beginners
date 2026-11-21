@@ -318,3 +318,55 @@ Overall, it is important to remember that the success and quality of the learnin
 
 ## Assignment 
 [A More Realistic World](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Finite-State Reward Trace — Evaluation Experiment
+
+> **Note:** This section demonstrates deterministic transition and reward tracking in a small finite-state environment.
+> All behavior is simulated/mock using small local fixtures.
+> No model download, paid provider, GPU, or physical device is required.
+
+In Reinforcement Learning, understanding state transitions, terminal states, reward timing,
+and step budgeting is essential to analyzing policy behavior and convergence. This lab
+simulates a deterministic 3-state chain environment ({0, 1, 2}) with actions `left` and `right`.
+Reward 1 is delivered strictly on entry into terminal state 2, and episodes are bounded by a step cap.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`typing`, `unittest`).
+
+### Fixtures and Reward Contract
+
+| Starting State | Action Sequence | Step Cap | Final State | Total Reward | Steps | Outcome Description |
+|---|---|---|---|---|---|---|
+| `0` | `['right', 'right']` | 5 | **2** | **1** | 2 | Optimal path; reaches terminal state 2 with reward 1 |
+| `0` | `['left', 'left', ...]` | 5 | **0** | **0** | 5 | Looping at left boundary; safely truncated at step cap 5 |
+| `1` | `['right']` | 5 | **2** | **1** | 1 | Entry into terminal gives reward 1 |
+| `2` | `['right']` | 5 | **2** | **0** | 1 | Already in terminal state; reward 0 |
+
+### Comparison: Three Controlled Configurations
+
+1. **Step Cap = 1:** Budget insufficient from state 0 (optimal reward = 0). Demonstrates truncation hazard.
+2. **Step Cap = 2:** Minimal exact budget to reach terminal state (optimal reward = 1). Zero margin for sub-optimal actions.
+3. **Step Cap = 5:** Balanced budget allowing exploratory moves (e.g. `['right', 'left', 'right', 'right']` -> reward = 1) while still halting infinite cycles.
+
+### How to run
+
+```bash
+# From repository root
+python3 8-Reinforcement/1-QLearning/applied-labs/r37-t027/example.py
+
+python3 -m unittest discover \
+  -s 8-Reinforcement/1-QLearning/applied-labs/r37-t027 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson implements full 2D grid navigation using Peter and the Wolf with Q-Table exploration, discount factors,
+and stochastic policies. This lab abstracts down to a 1D 3-state chain to isolate reward attribution, terminal state
+transitions, and step-budgeting trade-offs without stochastic training jitter.
+
+Source files: [`applied-labs/r37-t027/example.py`](applied-labs/r37-t027/example.py) · [`applied-labs/r37-t027/test_chain_env.py`](applied-labs/r37-t027/test_chain_env.py)
+
