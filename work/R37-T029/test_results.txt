@@ -1,0 +1,12 @@
+test_deliberate_wrong_tokens_DEMO_FAIL (test_token_preflight.TestDeliberateFailure.test_deliberate_wrong_tokens_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_budget_3_truncation (test_token_preflight.TestTokenBudgetConceptContract.test_budget_3_truncation) ... ok
+test_empty_input_retains_none (test_token_preflight.TestTokenBudgetConceptContract.test_empty_input_retains_none) ... ok
+test_exact_budget_no_truncation (test_token_preflight.TestTokenBudgetConceptContract.test_exact_budget_no_truncation) ... ok
+test_negative_budget_raises_value_error (test_token_preflight.TestTokenBudgetConceptContract.test_negative_budget_raises_value_error) ... ok
+test_whitespace_only_retains_none (test_token_preflight.TestTokenBudgetConceptContract.test_whitespace_only_retains_none) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
