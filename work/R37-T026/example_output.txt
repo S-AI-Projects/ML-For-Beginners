@@ -1,0 +1,13 @@
+=== Worked Example: Allowlisted Action Policy ===
+
+1. Evaluating allowed read:
+   Outcome: SUCCESS -> [stub] executed read with args {'path': '/data/sample.txt'}
+   Executor call count: 1
+
+2. Evaluating unknown delete tool:
+   Outcome: REJECTED -> unknown tool 'delete' — not in allowlist.
+   Executor call count: 1 (unchanged)
+
+3. Evaluating missing required argument:
+   Outcome: REJECTED -> missing required argument 'path' for tool 'read'.
+   Executor call count: 1 (unchanged)
