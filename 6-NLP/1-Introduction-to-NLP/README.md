@@ -163,3 +163,54 @@ Take a look at the references below as further reading opportunities.
 ## Assignment 
 
 [Search for a bot](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Token-Budget Preflight — Failure and Recovery Example
+
+> **Note:** This section uses a deterministic whitespace-token teaching approximation.
+> It is NOT the model's real tokenizer (which uses BPE/SentencePiece subword algorithms).
+> All behavior is simulated using small local fixtures without GPU, cloud API, or model weights.
+
+In production LLM applications, unbounded user inputs can exceed context window limits or lead to
+excessive compute costs. A preflight token-budget filter checks prompt length before invoking downstream
+model endpoints, gracefully truncating or rejecting inputs while reporting retained and removed counts.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`typing`, `unittest`).
+
+### Fixtures and Token Budget Behavior
+
+| Input Prompt | Budget | Retained Tokens | Removed Count | Status / Outcome |
+|---|---|---|---|---|
+| `"one two three four"` | 3 | `['one', 'two', 'three']` | 1 | Truncated to budget ✓ |
+| `""` (empty string) | 3 | `[]` | 0 | Empty input retained cleanly ✓ |
+| `"one two"` | -1 | None | None | **Rejected**: `ValueError` (negative budget) |
+| `None` (missing) | 3 | None | None | **Rejected**: `ValueError` (missing data payload) |
+
+### Failure and Recovery Trace
+
+1. **Failure 1 (Negative Budget):** Calling with `budget=-1` fails fast before tokenization (`ValueError: Invalid budget: -1`).
+2. **Failure 2 (Missing Payload):** Calling with `text=None` fails at preflight validation (`ValueError: Invalid input: text cannot be None`).
+3. **Recovery:** The subsequent valid request (`"one two three four"`, `budget=3`) executes seamlessly without lingering corrupted state.
+
+### How to run
+
+```bash
+# From repository root
+python3 6-NLP/1-Introduction-to-NLP/applied-labs/r37-t028/example.py
+
+python3 -m unittest discover \
+  -s 6-NLP/1-Introduction-to-NLP/applied-labs/r37-t028 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson introduces general linguistics, Eliza-style pattern matchers, and token concepts.
+This lab isolates the resource management preflight pattern using whitespace tokenization rather than
+complex subword vocabulary decoders.
+
+Source files: [`applied-labs/r37-t028/example.py`](applied-labs/r37-t028/example.py) · [`applied-labs/r37-t028/test_token_budget.py`](applied-labs/r37-t028/test_token_budget.py)
+
