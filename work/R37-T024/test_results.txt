@@ -1,0 +1,18 @@
+test_equivalence_custom_corpus (test_retrieval.TestBeforeAfterEquivalence.test_equivalence_custom_corpus) ... ok
+test_equivalence_ocean (test_retrieval.TestBeforeAfterEquivalence.test_equivalence_ocean) ... ok
+test_equivalence_red_apple (test_retrieval.TestBeforeAfterEquivalence.test_equivalence_red_apple) ... ok
+test_equivalence_tie_case (test_retrieval.TestBeforeAfterEquivalence.test_equivalence_tie_case) ... ok
+test_deliberate_wrong_ranking_DEMO_FAIL (test_retrieval.TestDeliberateFailure.test_deliberate_wrong_ranking_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_score_overlap_exact_match (test_retrieval.TestExtractedResponsibility.test_score_overlap_exact_match) ... ok
+test_score_overlap_no_match (test_retrieval.TestExtractedResponsibility.test_score_overlap_no_match) ... ok
+test_score_overlap_partial_match (test_retrieval.TestExtractedResponsibility.test_score_overlap_partial_match) ... ok
+test_query_ocean_returns_empty_list (test_retrieval.TestRetrievalContract.test_query_ocean_returns_empty_list) ... ok
+test_query_red_apple_ranks_a_before_b (test_retrieval.TestRetrievalContract.test_query_red_apple_ranks_a_before_b) ... ok
+test_source_attribution_doc_ids_returned (test_retrieval.TestRetrievalContract.test_source_attribution_doc_ids_returned) ... ok
+test_tie_breaking_by_doc_id (test_retrieval.TestTieBreaking.test_tie_breaking_by_doc_id) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
