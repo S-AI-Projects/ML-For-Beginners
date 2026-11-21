@@ -1,0 +1,17 @@
+WARNING: no positive predictions (TP + FP = 0). Precision set to 0.0 under the documented zero-denominator policy.
+=== Normal case ===
+  y_true : [1, 1, 0, 0]
+  y_pred : [1, 0, 1, 0]
+  TP=1  FN=1  FP=1  TN=1
+  precision = 0.5000
+  recall    = 0.5000
+
+=== Boundary case: no positive predictions ===
+  y_true : [1, 0]
+  y_pred : [0, 0]
+  TP=0  FN=1  FP=0  TN=1
+  precision = 0.0000  (zero-denominator policy applied)
+  recall    = 0.0000
+
+=== Invalid case: length mismatch ===
+  Caught expected ValueError: Length mismatch: y_true has 2 items, y_pred has 1 items.

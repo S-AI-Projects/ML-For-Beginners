@@ -312,3 +312,67 @@ While this lesson just touched on the utility of creating a recommendation syste
 ## Assignment 
 
 [Build a new recommender](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Classification Evaluation – Boundary-Case Extension
+
+> **Note:** This section is a local simulation/mock extension. No model download,
+> paid provider, GPU, or physical device is required. All fixtures are
+> hard-coded lists — not outputs of a trained model.
+
+The lesson's `classification_report` output shows precision and recall for each
+cuisine class but does not explain *how* these numbers are computed or what
+happens when a classifier makes no positive predictions (a common real-world
+edge case). This lab fills that gap using a minimal binary fixture.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — no extra packages needed.
+
+### Fixture and expected output
+
+| Scenario | `y_true` | `y_pred` | TP | FN | FP | TN | precision | recall |
+|---|---|---|---|---|---|---|---|---|
+| **Normal** | `[1,1,0,0]` | `[1,0,1,0]` | 1 | 1 | 1 | 1 | 0.5 | 0.5 |
+| **Boundary** (no positive preds) | `[1,0]` | `[0,0]` | 0 | 1 | 0 | 1 | **0.0** ¹ | 0.0 |
+| **All-positive preds** | `[1,0]` | `[1,1]` | 1 | 0 | 1 | 0 | 0.5 | 1.0 |
+
+¹ Zero-denominator policy: when `TP + FP == 0`, precision is set to `0.0`
+  and a warning is emitted — matching scikit-learn's `zero_division=0` default.
+
+### How to run
+
+```bash
+# From the repo root
+python3 4-Classification/4-Applied/applied-labs/r37-t021/example.py
+
+python3 -m unittest discover \
+  -s 4-Classification/4-Applied/applied-labs/r37-t021 \
+  -p "test_*.py" -v
+```
+
+**Example output (normal case):**
+```
+=== Normal case ===
+  y_true : [1, 1, 0, 0]
+  y_pred : [1, 0, 1, 0]
+  TP=1  FN=1  FP=1  TN=1
+  precision = 0.5000
+  recall    = 0.5000
+```
+
+**Boundary case output (stderr warning):**
+```
+WARNING: no positive predictions (TP + FP = 0). Precision set to 0.0 under the documented zero-denominator policy.
+```
+
+### Where the simplification stops
+
+This lab uses only a 4-sample binary fixture. The lesson's real SVC model
+operates on 380 ingredients across 5 cuisine classes. The fixture deliberately
+avoids multi-class averaging, model training, ONNX export, and any network or
+hardware dependency — it focuses solely on the metric computation and
+boundary-decision logic.
+
+Source files: [`applied-labs/r37-t021/example.py`](applied-labs/r37-t021/example.py) · [`applied-labs/r37-t021/test_classification_eval.py`](applied-labs/r37-t021/test_classification_eval.py)
