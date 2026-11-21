@@ -1,0 +1,20 @@
+test_deliberate_wrong_mae_DEMO_FAIL (test_regression_eval.TestDeliberateFailure.test_deliberate_wrong_mae_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_both_empty_raises_value_error (test_regression_eval.TestInputValidationAndBoundary.test_both_empty_raises_value_error) ... ok
+test_empty_prediction_raises_value_error (test_regression_eval.TestInputValidationAndBoundary.test_empty_prediction_raises_value_error) ... ok
+test_empty_truth_raises_value_error (test_regression_eval.TestInputValidationAndBoundary.test_empty_truth_raises_value_error) ... ok
+test_mismatched_lengths_raises_value_error (test_regression_eval.TestInputValidationAndBoundary.test_mismatched_lengths_raises_value_error) ... ok
+test_single_element_array (test_regression_eval.TestInputValidationAndBoundary.test_single_element_array) ... ok
+test_intermediate_absolute_errors (test_regression_eval.TestRegressionEvaluationNormalFixture.test_intermediate_absolute_errors) ... ok
+test_intermediate_residuals (test_regression_eval.TestRegressionEvaluationNormalFixture.test_intermediate_residuals) ... ok
+test_intermediate_squared_errors (test_regression_eval.TestRegressionEvaluationNormalFixture.test_intermediate_squared_errors) ... ok
+test_mae_exact_fraction (test_regression_eval.TestRegressionEvaluationNormalFixture.test_mae_exact_fraction) ... ok
+test_rmse_exact_sqrt (test_regression_eval.TestRegressionEvaluationNormalFixture.test_rmse_exact_sqrt) ... ok
+test_state_invariants (test_regression_eval.TestRegressionEvaluationNormalFixture.test_state_invariants) ... ok
+test_identical_float_arrays (test_regression_eval.TestRegressionIdenticalArrays.test_identical_float_arrays) ... ok
+test_identical_integer_arrays (test_regression_eval.TestRegressionIdenticalArrays.test_identical_integer_arrays) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0

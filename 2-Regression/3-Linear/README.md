@@ -399,3 +399,47 @@ In this lesson we learned about Linear Regression. There are other important typ
 ## Assignment 
 
 [Build a Model](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Regression Evaluation – Invariant and State Trace
+
+> **Note:** This section is a local simulation/mock demonstration. No model download,
+> paid provider, GPU, or physical device is required. Metrics are computed on synthetic paired observation fixtures.
+
+In regression problems, evaluating model accuracy involves examining residuals (prediction errors).
+This lab traces step-by-step intermediate error computations (residuals, absolute errors, squared errors)
+and verifies mathematical invariants connecting these intermediate states directly to final metrics (MAE, RMSE).
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`math`, `typing`, `unittest`).
+
+### Fixtures and Invariants
+
+| Scenario | `truth` | `prediction` | Intermediate State | MAE | RMSE | Invariant Check |
+|---|---|---|---|---|---|---|
+| **Normal** | `[1, 2, 3]` | `[1, 3, 2]` | Residuals: `[0, 1, -1]`<br>Abs: `[0, 1, 1]` (sum=2)<br>Sq: `[0, 1, 1]` (sum=2) | **2/3** (0.6667) | **sqrt(2/3)** (0.8165) | `MAE <= RMSE` ✓<br>`sum(abs) == n*MAE` ✓ |
+| **Identical** | `[4, 5, 6]` | `[4, 5, 6]` | All residuals 0 | **0.0** | **0.0** | Identical arrays give zero error ✓ |
+| **Mismatched lengths** | `[1, 2, 3]` | `[1, 2]` | N/A | Rejected | Rejected | Raises `ValueError` ✓ |
+| **Empty inputs** | `[]` | `[]` | N/A | Rejected | Rejected | Raises `ValueError` ✓ |
+
+### How to run
+
+```bash
+# From repository root
+python3 2-Regression/3-Linear/applied-labs/r37-t023/example.py
+
+python3 -m unittest discover \
+  -s 2-Regression/3-Linear/applied-labs/r37-t023 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson fits multi-feature scikit-learn Linear and Polynomial models on pumpkin dataset observations.
+This lab focuses cleanly on the arithmetic evaluation phase: calculating exact residual traces and
+enforcing invariant constraints on paired arrays without hardware, package, or training pipeline overhead.
+
+Source files: [`applied-labs/r37-t023/example.py`](applied-labs/r37-t023/example.py) · [`applied-labs/r37-t023/test_regression_eval.py`](applied-labs/r37-t023/test_regression_eval.py)
+
