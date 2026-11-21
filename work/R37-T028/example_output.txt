@@ -1,0 +1,11 @@
+=== Token-Budget Preflight Demo ===
+Prompt: 'one two three four', Budget: 3
+Retained: ['one', 'two', 'three'], Removed count: 1
+
+Empty Prompt, Budget: 3
+Retained: [], Removed count: 0
+
+=== Failure & Recovery Demonstration ===
+step1_negative_budget: {'status': 'CAUGHT_EXPECTED_ERROR', 'error_type': 'ValueError', 'message': 'Invalid budget: -1. Budget must be non-negative.', 'explanation': 'Negative resource budgets violate physical allocation bounds and fail fast before tokenizer execution.'}
+step2_missing_data: {'status': 'CAUGHT_EXPECTED_ERROR', 'error_type': 'ValueError', 'message': 'Invalid input: text cannot be None (missing data).', 'explanation': 'NoneType payload indicates missing or unpopulated request body; rejected at preflight.'}
+step3_recovery: {'status': 'RECOVERED_SUCCESSFULLY', 'result': {'original_token_count': 4, 'budget': 3, 'retained_tokens': ['one', 'two', 'three'], 'removed_token_count': 1, 'is_truncated': True}, 'explanation': 'Valid payload and budget processed cleanly immediately following the failed invocations.'}
