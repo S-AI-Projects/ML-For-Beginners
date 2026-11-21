@@ -157,3 +157,56 @@ Read about Azure Machine Learning's tools to ensure fairness:
 ## Assignment
 
 [Explore RAI Toolbox](assignment.md) 
+
+---
+
+## 🧪 Applied Lab: Allowlisted Action Policy — Compare Two Approaches
+
+> **Note:** This section is a local simulation/mock demonstration. No model download,
+> paid provider, GPU, or physical device is required. The executor is a local stub
+> and all evaluated actions are synthetic test fixtures.
+
+In responsible AI systems, reliability, safety, and accountability require that autonomous
+or tool-augmented agents do not execute unauthorized or malformed operations. This lab
+demonstrates gating every action through an allowlist and parameter-schema check *before*
+reaching any execution layer.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only.
+
+### Policy Rules & Validation Order
+
+1. **Tool-name check:** The requested tool must exist in `ALLOWLIST`. If unknown, reject immediately with `PolicyViolation`.
+2. **Argument-schema check:** All `required_args` defined for the tool must be present in the call arguments. If missing, reject immediately with `PolicyViolation`.
+3. **Execution gating:** Only actions passing both checks reach the `stub_executor`. Rejected actions are dropped before execution.
+
+### Comparison: Approach A (Direct Logic) vs Approach B (Explicit Table)
+
+| Tool | Arguments | Expected Outcome | Approach A (Direct) | Approach B (Table) |
+|---|---|---|---|---|
+| `read_file` | `{"path": "/data/report.csv"}` | **ALLOW** (valid path) | ALLOW (calls stub) | ALLOW |
+| `delete_file` | `{"path": "/data/report.csv"}` | **REJECT** (unknown tool) | PolicyViolation | REJECT: unknown tool |
+| `read_file` | `{}` | **REJECT** (missing arg `path`) | PolicyViolation | REJECT: missing required argument |
+| `write_file` | `{"path": "/out.txt"}` | **REJECT** (missing arg `content`) | PolicyViolation | REJECT: missing required argument |
+| `list_directory` | `{"path": "/data/"}` | **ALLOW** (valid path) | ALLOW (calls stub) | ALLOW |
+
+### How to run
+
+```bash
+# From repo root
+python3 1-Introduction/3-fairness/applied-labs/r37-t022/example.py
+
+python3 -m unittest discover \
+  -s 1-Introduction/3-fairness/applied-labs/r37-t022 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson addresses broad sociotechnical AI harms (allocational harms, dataset bias, representation).
+This lab isolates a single concrete engineering safeguard: deterministic schema validation
+and allowlisting at the boundary between model reasoning and environment action execution.
+
+Source files: [`applied-labs/r37-t022/example.py`](applied-labs/r37-t022/example.py) · [`applied-labs/r37-t022/test_allowlist_policy.py`](applied-labs/r37-t022/test_allowlist_policy.py)
+ 

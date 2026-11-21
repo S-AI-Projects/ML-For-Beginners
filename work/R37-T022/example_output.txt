@@ -1,0 +1,16 @@
+=== Normal case: allowed read_file ===
+  Result : [stub] executed 'read_file' with args {'path': '/data/report.csv'}
+  Executor calls: [{'tool': 'read_file', 'args': {'path': '/data/report.csv'}}]
+
+=== Boundary case: unknown tool 'delete_file' ===
+  PolicyViolation (expected): unknown tool 'delete_file' — not in allowlist. Allowed tools: ['list_directory', 'read_file', 'write_file']
+  Executor calls (must be empty): []
+
+=== Boundary case: missing required argument ===
+  PolicyViolation (expected): missing required argument 'path' for tool 'read_file'. Required: ['path'], provided keys: []
+  Executor calls (must be empty): []
+
+=== Comparison: Approach A vs Approach B ===
+  tool='read_file'     args_keys=['path']        A='ALLOW'                          B='ALLOW'                          ✓
+  tool='delete_file'   args_keys=['path']        A="REJECT: unknown tool 'delete_f" B='REJECT: unknown tool'           ✓
+  tool='read_file'     args_keys=[]              A='REJECT: missing required argum' B='REJECT: missing required argum' ✓
