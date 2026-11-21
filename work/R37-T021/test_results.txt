@@ -1,0 +1,26 @@
+test_precision (test_classification_eval.TestBoundaryAllPredictedPositive.test_precision) ... ok
+test_recall (test_classification_eval.TestBoundaryAllPredictedPositive.test_recall) ... ok
+test_values (test_classification_eval.TestBoundaryAllPredictedPositive.test_values) ... ok
+test_no_fp (test_classification_eval.TestBoundaryNoPredictedPositives.test_no_fp) ... ok
+test_no_tp (test_classification_eval.TestBoundaryNoPredictedPositives.test_no_tp) ... ok
+test_precision_zero_denominator_policy (test_classification_eval.TestBoundaryNoPredictedPositives.test_precision_zero_denominator_policy)
+precision must return 0.0 — not raise — when TP+FP==0. ... WARNING: no positive predictions (TP + FP = 0). Precision set to 0.0 under the documented zero-denominator policy.
+ok
+test_recall_nonzero_because_fn_exists (test_classification_eval.TestBoundaryNoPredictedPositives.test_recall_nonzero_because_fn_exists)
+recall = TP/(TP+FN) = 0/(0+1) = 0.0 ... ok
+test_wrong_precision_expectation_DEMO_FAIL (test_classification_eval.TestDeliberateFailure.test_wrong_precision_expectation_DEMO_FAIL)
+Uses the normal fixture but asserts precision == 0.9 (wrong). ... skipped 'Deliberate-failure demo: remove the @skip decorator to confirm the suite exits non-zero when an assertion fails.'
+test_empty_lists_give_all_zeros (test_classification_eval.TestInvalidInput.test_empty_lists_give_all_zeros) ... ok
+test_length_mismatch_raises (test_classification_eval.TestInvalidInput.test_length_mismatch_raises) ... ok
+test_fn (test_classification_eval.TestNormalCase.test_fn) ... ok
+test_fp (test_classification_eval.TestNormalCase.test_fp) ... ok
+test_precision_is_half (test_classification_eval.TestNormalCase.test_precision_is_half) ... ok
+test_recall_is_half (test_classification_eval.TestNormalCase.test_recall_is_half) ... ok
+test_tn (test_classification_eval.TestNormalCase.test_tn) ... ok
+test_tp (test_classification_eval.TestNormalCase.test_tp) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
