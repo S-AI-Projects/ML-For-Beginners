@@ -1,0 +1,10 @@
+=== Normal Fixture ===
+Truth: [1, 2, 3], Prediction: [1, 3, 2]
+MAE: 0.666667 (Expected: 2/3 = 0.666667)
+RMSE: 0.816497 (Expected: sqrt(2/3) = 0.816497)
+State trace: {'residuals': [0, 1, -1], 'absolute_errors': [0, 1, 1], 'squared_errors': [0, 1, 1], 'sum_absolute_errors': 2, 'sum_squared_errors': 2, 'mse': 0.6666666666666666}
+Invariants: {'non_negative': True, 'mae_le_rmse': True, 'sum_abs_reconciled': True, 'sum_sq_reconciled': True}
+
+=== Identical Fixture ===
+Truth: [10.0, 20.0, 30.0], Prediction: [10.0, 20.0, 30.0]
+MAE: 0.0, RMSE: 0.0
