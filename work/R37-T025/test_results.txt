@@ -1,0 +1,17 @@
+test_dimension_mismatch_raises (test_cosine_sim.TestBoundaryAndInputValidation.test_dimension_mismatch_raises) ... ok
+test_empty_vectors_raise (test_cosine_sim.TestBoundaryAndInputValidation.test_empty_vectors_raise) ... ok
+test_both_zero_vectors_return_sentinel (test_cosine_sim.TestCosineSimilarityContract.test_both_zero_vectors_return_sentinel) ... ok
+test_identical_vectors_yield_one (test_cosine_sim.TestCosineSimilarityContract.test_identical_vectors_yield_one) ... ok
+test_orthogonal_vectors_yield_zero (test_cosine_sim.TestCosineSimilarityContract.test_orthogonal_vectors_yield_zero) ... ok
+test_zero_vector_returns_undefined_sentinel (test_cosine_sim.TestCosineSimilarityContract.test_zero_vector_returns_undefined_sentinel) ... ok
+test_deliberate_wrong_similarity_DEMO_FAIL (test_cosine_sim.TestDeliberateFailure.test_deliberate_wrong_similarity_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+test_adapter_callable_interface (test_cosine_sim.TestOfflineServiceAdapter.test_adapter_callable_interface) ... ok
+test_adapter_lookup_orthogonal_texts (test_cosine_sim.TestOfflineServiceAdapter.test_adapter_lookup_orthogonal_texts) ... ok
+test_adapter_lookup_same_texts (test_cosine_sim.TestOfflineServiceAdapter.test_adapter_lookup_same_texts) ... ok
+test_adapter_zero_vector_sentinel (test_cosine_sim.TestOfflineServiceAdapter.test_adapter_zero_vector_sentinel) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0

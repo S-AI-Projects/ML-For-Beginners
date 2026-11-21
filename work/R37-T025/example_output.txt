@@ -1,0 +1,5 @@
+=== Cosine-Similarity Lookup Demo ===
+[1, 0] vs [1, 0] (same)       : 1.0 (Expected: 1.0)
+[1, 0] vs [0, 1] (orthogonal) : 0.0 (Expected: 0.0)
+[1, 0] vs [0, 0] (zero vector): nan (math.isnan: True)
+Via adapter ('base' vs 'same'): 1.0
