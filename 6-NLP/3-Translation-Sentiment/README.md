@@ -185,3 +185,56 @@ There are many ways to extract sentiment from text. Think of the business applic
 ## Assignment 
 
 [Poetic license](assignment.md)
+
+---
+
+## 🧪 Applied Lab: Token-Budget Preflight — Runnable Concept Example
+
+> **Note:** This section uses a deterministic whitespace-token teaching approximation.
+> It is NOT the model's real tokenizer (which uses BPE/SentencePiece subword algorithms).
+> All behavior is simulated using small local fixtures without GPU, cloud API, or model weights.
+
+In NLP pipelines (such as machine translation and sentiment analysis), input texts must fit within
+finite model context limits. A preflight token budget filter verifies input length, ensures resource boundaries
+are respected, and reports truncation statistics before passing data to downstream model inference.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`typing`, `unittest`).
+
+### Fixtures and Concept Mapping
+
+| Public Interface Element | Type | Lesson Concept Connection |
+|---|---|---|
+| `text` (Input) | `str` | Raw natural language input to be translated or scored for sentiment |
+| `budget` (Input) | `int` | Resource constraint / maximum allowable token window |
+| `retained_tokens` (Output) | `List[str]` | The truncated payload safe to feed downstream |
+| `removed_token_count` (Output) | `int` | Volume of discarded semantic information |
+| `is_truncated` (Output) | `bool` | Signal flag indicating whether input exceeded capacity |
+
+### Contract Verification
+
+| Input Prompt | Budget | Retained Tokens | Removed Count | Status |
+|---|---|---|---|---|
+| `"one two three four"` | 3 | `['one', 'two', 'three']` | 1 | Truncated to budget ✓ |
+| `""` (empty string) | 3 | `[]` | 0 | Empty input retained cleanly ✓ |
+| `"hello world"` | -5 | None | None | **Rejected**: `ValueError` (negative budget) |
+
+### How to run
+
+```bash
+# From repository root
+python3 6-NLP/3-Translation-Sentiment/applied-labs/r37-t029/example.py
+
+python3 -m unittest discover \
+  -s 6-NLP/3-Translation-Sentiment/applied-labs/r37-t029 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson examines full translation models and VADER/TextBlob sentiment analysis with continuous polarity.
+This lab focuses purely on the upfront token budgeting and resource preflight validation layer.
+
+Source files: [`applied-labs/r37-t029/example.py`](applied-labs/r37-t029/example.py) · [`applied-labs/r37-t029/test_token_preflight.py`](applied-labs/r37-t029/test_token_preflight.py)
+

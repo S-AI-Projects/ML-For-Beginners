@@ -1,0 +1,7 @@
+=== Runnable Concept Example: Token-Budget Preflight ===
+Input: 'one two three four', Budget: 3
+Retained: ['one', 'two', 'three']
+Removed count: 1
+Truncated: True
+
+Empty Input: Retained=[], Removed=0
