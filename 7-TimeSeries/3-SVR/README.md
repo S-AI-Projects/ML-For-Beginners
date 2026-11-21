@@ -377,6 +377,56 @@ This lesson was to introduce the application of SVR for Time Series Forecasting.
 
 [A new SVR model](assignment.md)
 
+---
+
+## 🧪 Applied Lab: Retrieval with Source Attribution — Refactor the Teaching Example
+
+> **Note:** This section is a lexical test double, NOT a production vector search.
+> All behavior is simulated/mock using small local fixtures.
+> No model download, paid provider, GPU, or physical device is required.
+
+In information retrieval and RAG pipelines, attribution requires returning document IDs alongside
+matched contents. This lab implements a baseline lexical retriever over a local 3-document fixture,
+extracts the token overlap scoring responsibility into a standalone function (`score_overlap`),
+and mathematically proves before/after ranking equivalence.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`typing`, `unittest`).
+
+### Fixtures and Retrieval Ranking
+
+Corpus:
+- **A**: `"red apple"`
+- **B**: `"green apple"`
+- **C**: `"blue sky"`
+
+| Query | Expected Ranking / Output | Scoring Details & Tie-Breaking |
+|---|---|---|
+| `"red apple"` | `[('A', 2), ('B', 1)]` | A matches 2 words, B matches 1 word; C excluded (0 overlap) |
+| `"ocean"` | `[]` | No words overlap any document |
+| `"apple"` | `[('A', 1), ('B', 1)]` | Tie in score (1 word) broken by document ID ascending ('A' before 'B') |
+
+### How to run
+
+```bash
+# From repository root
+python3 7-TimeSeries/3-SVR/applied-labs/r37-t024/example.py
+
+python3 -m unittest discover \
+  -s 7-TimeSeries/3-SVR/applied-labs/r37-t024 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The lesson focuses on continuous numerical forecasting using Support Vector Regressors (SVR).
+This lab provides a discrete lexical test double designed to evaluate attribution and refactoring
+safety without requiring neural embeddings, vector databases, or training steps.
+
+Source files: [`applied-labs/r37-t024/example.py`](applied-labs/r37-t024/example.py) · [`applied-labs/r37-t024/test_retrieval.py`](applied-labs/r37-t024/test_retrieval.py)
+
+
 
 
 ## Credits
