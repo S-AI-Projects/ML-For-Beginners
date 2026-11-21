@@ -157,3 +157,48 @@ Read about Azure Machine Learning's tools to ensure fairness:
 ## Assignment
 
 [Explore RAI Toolbox](assignment.md) 
+
+---
+
+## 🧪 Applied Lab: Allowlisted Action Policy — Worked Example with Checks
+
+> **Note:** This section demonstrates policy evaluation using a local mock stub executor.
+> All behavior is simulated using small local fixtures.
+> No model download, paid provider, GPU, or physical device is required.
+
+In responsible AI development, autonomous systems that select and execute external tools
+must be constrained to prevent harmful, out-of-scope, or malformed actions. This lab
+implements an explicit allowlist and per-tool schema check that runs before any tool execution.
+Rejected actions fail fast with `PolicyViolation` and are mathematically proven never to invoke the executor.
+
+### Prerequisite
+
+Standard Python 3 (≥ 3.8) only — standard library only (`typing`, `unittest`).
+
+### Worked Input-to-Output Trace
+
+| Action Attempted | Arguments | Evaluation Steps | Result / Outcome |
+|---|---|---|---|
+| `read` | `{"path": "/data/sample.txt"}` | 1. Tool in ALLOWLIST ✓<br>2. Required arg `path` present ✓ | **Executed** via `stub_executor` |
+| `delete` | `{"path": "/data/sample.txt"}` | 1. Tool in ALLOWLIST ✗ | **REJECTED**: `PolicyViolation("unknown tool 'delete'")`<br>Executor call count: 0 |
+| `read` | `{}` | 1. Tool in ALLOWLIST ✓<br>2. Required arg `path` missing ✗ | **REJECTED**: `PolicyViolation("missing required argument 'path'")`<br>Executor call count: 0 |
+
+### How to run
+
+```bash
+# From repository root
+python3 1-Introduction/3-fairness/applied-labs/r37-t026/example.py
+
+python3 -m unittest discover \
+  -s 1-Introduction/3-fairness/applied-labs/r37-t026 \
+  -p "test_*.py" -v
+```
+
+### Where the simplification stops
+
+The main lesson discusses broader sociotechnical harms (stereotyping, allocation, dataset representation).
+This lab isolates a single concrete engineering safeguard: deterministic schema validation and allowlisting
+at the boundary between an AI decision engine and execution runtime.
+
+Source files: [`applied-labs/r37-t026/example.py`](applied-labs/r37-t026/example.py) · [`applied-labs/r37-t026/test_allowlist_worked.py`](applied-labs/r37-t026/test_allowlist_worked.py)
+ 

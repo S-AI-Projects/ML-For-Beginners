@@ -1,0 +1,11 @@
+test_allowed_read_with_valid_path_passes (test_allowlist_worked.TestAllowlistedActionPolicyRegression.test_allowed_read_with_valid_path_passes) ... ok
+test_missing_required_argument_is_rejected (test_allowlist_worked.TestAllowlistedActionPolicyRegression.test_missing_required_argument_is_rejected) ... ok
+test_rejected_actions_never_reach_stub_executor (test_allowlist_worked.TestAllowlistedActionPolicyRegression.test_rejected_actions_never_reach_stub_executor) ... ok
+test_unknown_delete_tool_is_rejected (test_allowlist_worked.TestAllowlistedActionPolicyRegression.test_unknown_delete_tool_is_rejected) ... ok
+test_deliberate_wrong_executor_call_DEMO_FAIL (test_allowlist_worked.TestDeliberateFailure.test_deliberate_wrong_executor_call_DEMO_FAIL) ... skipped 'Deliberate failure demo: remove skip to verify non-zero exit'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK (skipped=1)
+Exit: 0
