@@ -373,3 +373,17 @@ Take [this Learn module](https://docs.microsoft.com/en-us/learn/modules/classify
 ## Assignment 
 
 [Try a different dataset](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T052): Token-Budget Preflight — Boundary-Case Lesson Extension
+
+For an applied hands-on extension demonstrating token budget constraints and boundary validation, see [Applied Lab R37-T052: Token-Budget Preflight](applied-labs/r37-t052/README.md).
+
+- **Contract**: Validates prompt length against a non-negative token budget.
+- **Fixture Examples**:
+  - Budget `3` with `"one two three four"` retains `["one", "two", "three"]` and reports `1` removed token (`truncated=True`).
+  - Empty input `""` retains `[]` and reports `0` removed tokens.
+  - Negative budget (`-1`) is strictly rejected with `ValueError`.
+- **Scope & Limitations**: Uses whitespace tokenization as a teaching approximation; does not simulate production BPE tokenizers or GPU memory buffers.
+- **Run Tests**: `python3 -m unittest discover -s 6-NLP/5-Hotel-Reviews-2/applied-labs/r37-t052 -p "test_*.py"`
