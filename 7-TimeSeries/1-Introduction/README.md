@@ -183,3 +183,17 @@ Although we won't cover them here, neural networks are sometimes used to enhance
 ## Assignment
 
 [Visualize some more time series](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T053): Chronological Evaluation Split — Compare Two Approaches
+
+For an applied hands-on extension demonstrating chronological train/validation/test partitioning and leakage prevention, see [Applied Lab R37-T053: Chronological Evaluation Split](applied-labs/r37-t053/README.md).
+
+- **Contract**: Partitions timestamped observations into earliest 60% train, next 20% validation, and latest 20% test after validating uniqueness.
+- **Fixture Examples**:
+  - 10 ordered observations yield 6 train, 2 validation, 2 test.
+  - Shuffled observations are automatically sorted chronologically before splitting.
+  - Duplicate timestamps are rejected with `ValueError`.
+- **Approaches Compared**: Direct index slicing vs. normalized ordinal rank percentiles.
+- **Run Tests**: `python3 -m unittest discover -s 7-TimeSeries/1-Introduction/applied-labs/r37-t053 -p "test_*.py"`

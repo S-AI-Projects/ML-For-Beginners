@@ -1,0 +1,28 @@
+======================================================================
+TASK EVIDENCE: R37-T053 (Chronological Evaluation Split — Compare Approaches)
+======================================================================
+Date: 2026-11-23T17:51:05.069884+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+10 Ordered Observations: Yields 6 train, 2 val, 2 test (Passed)
+Shuffled Input: Sorted chronologically prior to splitting (Passed)
+Duplicate Timestamps: Rejected with ValueError (Passed)
+Approach Comparison: Direct slicing and independent percentiles agree 100% (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_compare_two_approaches_identical_results (test_example.TestChronologicalSplit) ... ok
+test_deliberate_wrong_result (test_example.TestChronologicalSplit) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_duplicate_timestamps_rejected (test_example.TestChronologicalSplit) ... ok
+test_empty_observations (test_example.TestChronologicalSplit) ... ok
+test_future_leakage_prevented (test_example.TestChronologicalSplit) ... ok
+test_mock_limitations_documented (test_example.TestChronologicalSplit) ... ok
+test_shuffled_input_is_sorted_first (test_example.TestChronologicalSplit) ... ok
+test_ten_ordered_observations_yield_six_two_two (test_example.TestChronologicalSplit) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK (skipped=1)
