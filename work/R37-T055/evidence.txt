@@ -1,0 +1,28 @@
+======================================================================
+TASK EVIDENCE: R37-T055 (Allowlisted Action Policy — Evaluation Experiment)
+======================================================================
+Date: 2026-11-23T17:53:23.368300+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+Allowed read with valid path: Executed with status 'success' (Passed)
+Unknown tool delete: Rejected with DISALLOWED_ACTION (Passed)
+read without path argument: Rejected before execution with SCHEMA_VIOLATION (Passed)
+Evaluation Experiment: 6 actions evaluated (2 allowed, 4 rejected, 66.7% rejection rate) (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_allowed_inspect_tool_succeeds (test_example.TestAllowlistedActionPolicy) ... ok
+test_allowed_read_with_valid_path_succeeds (test_example.TestAllowlistedActionPolicy) ... ok
+test_deliberate_wrong_result (test_example.TestAllowlistedActionPolicy) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_empty_path_string_rejected (test_example.TestAllowlistedActionPolicy) ... ok
+test_evaluation_experiment_matrix (test_example.TestAllowlistedActionPolicy) ... ok
+test_mock_limitations_documented (test_example.TestAllowlistedActionPolicy) ... ok
+test_read_without_path_argument_rejected_before_execution (test_example.TestAllowlistedActionPolicy) ... ok
+test_unknown_tool_delete_is_rejected (test_example.TestAllowlistedActionPolicy) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK (skipped=1)

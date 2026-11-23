@@ -168,4 +168,17 @@ Reference the following materials to learn more about responsible AI and how to 
 
 ## Assignment
 
-[Explore RAI dashboard](assignment.md) 
+[Explore RAI dashboard](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T055): Allowlisted Action Policy — Evaluation Experiment
+
+For an applied hands-on extension demonstrating safe action policy allowlisting, schema enforcement, and evaluation experiments in responsible AI systems, see [Applied Lab R37-T055: Allowlisted Action Policy](applied-labs/r37-t055/README.md).
+
+- **Contract**: Evaluates proposed actions against an explicit allowed tool set and argument schemas before execution.
+- **Fixture Examples**:
+  - Allowed `read` with valid path succeeds with `status="success"`.
+  - Unknown tool `delete` is rejected with `status="rejected"` and error `DISALLOWED_ACTION`.
+  - `read` without a path argument is rejected before execution with `SCHEMA_VIOLATION`.
+- **Run Tests**: `python3 -m unittest discover -s 9-Real-World/2-Debugging-ML-Models/applied-labs/r37-t055 -p "test_*.py"`
