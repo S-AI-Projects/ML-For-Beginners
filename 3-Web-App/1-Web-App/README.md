@@ -343,3 +343,19 @@ There are many ways to build a web app to consume ML models. Make a list of the 
 ## Assignment
 
 [Try a different model](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T051): Typed Tool Dispatch — Offline Service Adapter
+
+For an applied hands-on extension demonstrating local contract validation and tool dispatching in web services, see [Applied Lab R37-T051: Typed Tool Dispatch](applied-labs/r37-t051/README.md).
+
+- **Contract**: Dispatches JSON tool requests for `add(a,b)` and `multiply(a,b)` against an explicit allowlist with strict numeric validation.
+- **Fixture Examples**:
+  - `add(2, 3)` → `5`
+  - `multiply(2, 3)` → `6`
+  - Unknown tool (`divide`) → structured error `UNKNOWN_TOOL`
+  - String argument (`a="2"`) → structured error `INVALID_ARGUMENT`
+- **Scope & Limitations**: Deterministic local contract adapter; does not simulate network transport, authentication, or remote cloud deployment.
+- **Run Tests**: `python3 -m unittest discover -s 3-Web-App/1-Web-App/applied-labs/r37-t051 -p "test_*.py"`
+

@@ -1,0 +1,42 @@
+======================================================================
+TASK EVIDENCE: R37-T051 (Typed Tool Dispatch — Offline Service Adapter)
+======================================================================
+Date: 2026-11-23T17:48:08.107871+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+Input: {'tool': 'add', 'args': {'a': 2, 'b': 3}}
+Expected: 5 | Actual: 5 | Passed: True
+Full Output: {'status': 'success', 'tool': 'add', 'result': 5, 'error': None}
+
+Input: {'tool': 'multiply', 'args': {'a': 2, 'b': 3}}
+Expected: 6 | Actual: 6 | Passed: True
+Full Output: {'status': 'success', 'tool': 'multiply', 'result': 6, 'error': None}
+
+Input: {'tool': 'divide', 'args': {'a': 6, 'b': 2}}
+Expected: UNKNOWN_TOOL | Actual: UNKNOWN_TOOL | Passed: True
+Full Output: {'status': 'error', 'tool': 'divide', 'result': None, 'error': {'code': 'UNKNOWN_TOOL', 'message': "Tool 'divide' is not in the explicit allowlist: ['add', 'multiply']"}}
+
+Input: {'tool': 'add', 'args': {'a': '2', 'b': 3}}
+Expected: INVALID_ARGUMENT | Actual: INVALID_ARGUMENT | Passed: True
+Full Output: {'status': 'error', 'tool': 'add', 'result': None, 'error': {'code': 'INVALID_ARGUMENT', 'message': "Argument 'a' must be numeric (int/float), got str"}}
+
+--- UNIT TEST RUN OUTPUT ---test_add_floating_point (test_example.TestTypedToolDispatch) ... ok
+test_add_valid_integers (test_example.TestTypedToolDispatch) ... ok
+test_boolean_argument_rejection (test_example.TestTypedToolDispatch) ... ok
+test_deliberate_wrong_result (test_example.TestTypedToolDispatch) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_failed_call_halts_subsequent_execution (test_example.TestTypedToolDispatch) ... ok
+test_json_string_invocation (test_example.TestTypedToolDispatch) ... ok
+test_missing_argument (test_example.TestTypedToolDispatch) ... ok
+test_mock_limitations_stated (test_example.TestTypedToolDispatch) ... ok
+test_multiply_valid_integers (test_example.TestTypedToolDispatch) ... ok
+test_string_argument_a_rejection (test_example.TestTypedToolDispatch) ... ok
+test_string_argument_b_rejection (test_example.TestTypedToolDispatch) ... ok
+test_unknown_tool_rejection (test_example.TestTypedToolDispatch) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK (skipped=1)
