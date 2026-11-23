@@ -1,0 +1,28 @@
+======================================================================
+TASK EVIDENCE: R37-T058 (Classification Evaluation — Failure & Recovery)
+======================================================================
+Date: 2026-11-23T17:55:30.490582+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+y_true=[1,1,0,0], y_pred=[1,0,1,0] -> TP=1, FN=1, FP=1, TN=1, Precision=0.5, Recall=0.5 (Passed)
+Zero-Denominator Policy: y_pred=[0,0,0,0] -> Precision=0.0 (Passed)
+Failure Case: y_pred=[1,0] -> Emits LengthMismatchError with guidance (Passed)
+Recovery Case: Next valid input succeeds without error state leak (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_deliberate_wrong_result (test_example.TestClassificationFailureAndRecovery) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_demo_pipeline_demonstrates_recovery (test_example.TestClassificationFailureAndRecovery) ... ok
+test_failure_on_invalid_label (test_example.TestClassificationFailureAndRecovery) ... ok
+test_failure_on_length_mismatch (test_example.TestClassificationFailureAndRecovery) ... ok
+test_mock_limitations_documented (test_example.TestClassificationFailureAndRecovery) ... ok
+test_no_positive_predictions_gives_precision_zero (test_example.TestClassificationFailureAndRecovery) ... ok
+test_seamless_recovery_after_failure (test_example.TestClassificationFailureAndRecovery) ... ok
+test_standard_fixture_accuracy_and_confusion_matrix (test_example.TestClassificationFailureAndRecovery) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK (skipped=1)
