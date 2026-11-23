@@ -318,3 +318,11 @@ Overall, it is important to remember that the success and quality of the learnin
 
 ## Assignment 
 [A More Realistic World](assignment.md)
+
+## Applied Lab: Finite-State Reward Trace & Scenario Assessment (R37-T059)
+For an executable discrete reinforcement learning lab featuring state transitions, terminal handling, bounded 5-step episodes, and scenario assessment checks, see:
+- [Applied Lab R37-T059: Finite-State Reward Trace & Scenario Assessment](applied-labs/r37-t059/README.md)
+  - **Scope**: Deterministic 3-state chain environment (`left`/`right`, terminal state 2, reward 1 on entry, 5-step cap) with executable checks for output prediction, failure diagnosis, and boundary policy verification.
+  - **Prerequisites**: Python 3 standard library; local simulation without GPU or cloud services.
+  - **Invocation**: `python3 -m unittest discover -s 8-Reinforcement/1-QLearning/applied-labs/r37-t059 -p "test_*.py"`
+
