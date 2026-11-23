@@ -1,0 +1,30 @@
+================================================================================
+Task ID: R37-T060
+Issue: #60 (Soumya Pandit — R37-T060: security-scenario rubric — runnable concept example [1-Introduction/1-intro-to-ML])
+Branch: student/e26b07f2265/R37-T060
+Timestamp: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+Python Version: $(python3 --version)
+Git Commit: $(git rev-parse HEAD 2>/dev/null || echo "pre-commit")
+================================================================================
+
+[TEST INVOCATION]
+python3 -m unittest discover -s 1-Introduction/1-intro-to-ML/applied-labs/r37-t060 -p "test_*.py" -v
+
+[TEST EXECUTION RESULTS]
+test_batch_evaluation (test_example.TestSecurityRubricChecker)
+Batch evaluation processes all three scenarios with expected statuses. ... ok
+test_complete_scenario_passes (test_example.TestSecurityRubricChecker)
+A complete scenario with aligned asset, threat, and control passes. ... ok
+test_deliberate_failure_detection (test_example.TestSecurityRubricChecker)
+Demonstrates that asserting wrong outcome fails the test suite. ... ok
+test_missing_asset_fails (test_example.TestSecurityRubricChecker)
+A scenario without an asset fails the structural rubric. ... ok
+test_missing_residual_risk_fails (test_example.TestSecurityRubricChecker)
+A scenario missing residual_risk fails. ... ok
+test_unrelated_control_flagged_for_review (test_example.TestSecurityRubricChecker)
+A control unrelated to the named threat is flagged for review. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

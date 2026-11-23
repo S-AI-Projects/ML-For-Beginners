@@ -148,3 +148,12 @@ Take a [Learning Path](https://docs.microsoft.com/learn/modules/introduction-to-
 # Assignment
 
 [Get up and running](assignment.md)
+
+---
+## Applied Lab: Security-Scenario Rubric Checker (R37-T060)
+For an executable security-scenario rubric checker evaluating ML assets, adversarial threats, security controls, and residual risks, see:
+- [Applied Lab R37-T060: Security-Scenario Rubric Checker](applied-labs/r37-t060/README.md)
+  - **Scope**: Structural evaluation of scenarios with automated verification (`pass`, `fail`, `flagged_for_review`).
+  - **Prerequisites**: Python 3 standard library; local execution without cloud services.
+  - **Invocation**: `python3 -m unittest discover -s 1-Introduction/1-intro-to-ML/applied-labs/r37-t060 -p "test_*.py"`
+
