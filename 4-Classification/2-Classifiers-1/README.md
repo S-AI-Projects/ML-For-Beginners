@@ -239,3 +239,16 @@ Dig a little more into the math behind logistic regression in [this lesson](http
 ## Assignment 
 
 [Study the solvers](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T058): Classification Evaluation — Failure and Recovery Example
+
+For an applied hands-on extension demonstrating classification metrics with structured failure handling and recovery, see [Applied Lab R37-T058: Classification Evaluation Failure & Recovery](applied-labs/r37-t058/README.md).
+
+- **Contract**: Computes confusion matrix, precision, and recall with explicit zero-denominator handling and robust failure recovery.
+- **Fixture Examples**:
+  - `y_true=[1,1,0,0], y_pred=[1,0,1,0]` yields `TP=1, FN=1, FP=1, TN=1` and `precision=recall=0.5`.
+  - When no positive predictions are made, precision defaults to `0.0`.
+  - Length mismatches or invalid labels emit structured error envelopes and recover on the next valid batch.
+- **Run Tests**: `python3 -m unittest discover -s 4-Classification/2-Classifiers-1/applied-labs/r37-t058 -p "test_*.py"`
