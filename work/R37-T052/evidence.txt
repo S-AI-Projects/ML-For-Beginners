@@ -1,0 +1,26 @@
+======================================================================
+TASK EVIDENCE: R37-T052 (Token-Budget Preflight — Boundary-Case Extension)
+======================================================================
+Date: 2026-11-23T17:50:23.271367+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+Prompt: 'one two three four', Budget: 3 -> Retained: ['one', 'two', 'three'], Removed: 1, Truncated: True
+Prompt: '', Budget: 3 -> Retained: [], Removed: 0, Truncated: False
+Prompt: 'test', Budget: -1 -> Raised ValueError as expected
+
+--- UNIT TEST RUN OUTPUT ---
+test_deliberate_wrong_result (test_example.TestTokenBudgetPreflight) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_empty_input_retains_none (test_example.TestTokenBudgetPreflight) ... ok
+test_exact_budget_boundary (test_example.TestTokenBudgetPreflight) ... ok
+test_mock_limitations_stated (test_example.TestTokenBudgetPreflight) ... ok
+test_negative_budget_rejected (test_example.TestTokenBudgetPreflight) ... ok
+test_normal_budget_truncation (test_example.TestTokenBudgetPreflight) ... ok
+test_zero_budget_boundary (test_example.TestTokenBudgetPreflight) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK (skipped=1)
