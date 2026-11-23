@@ -1,0 +1,28 @@
+======================================================================
+TASK EVIDENCE: R37-T054 (Security-Scenario Rubric — Invariant & State Trace)
+======================================================================
+Date: 2026-11-23T17:52:26.373220+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+Complete Scenario: Passed with status 'passed' (Passed)
+Missing Asset: Failed with status 'failed' (Passed)
+Unrelated Control: Flagged with status 'flagged_for_review' (Passed)
+State Trace Invariant: 4 steps recorded, intermediate matches final (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_all_predefined_scenarios_pass (test_example.TestSecurityScenarioRubric) ... ok
+test_complete_scenario_passes (test_example.TestSecurityScenarioRubric) ... ok
+test_deliberate_wrong_result (test_example.TestSecurityScenarioRubric) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_missing_asset_key_fails (test_example.TestSecurityScenarioRubric) ... ok
+test_mock_limitations_documented (test_example.TestSecurityScenarioRubric) ... ok
+test_scenario_without_asset_fails (test_example.TestSecurityScenarioRubric) ... ok
+test_state_trace_recorded (test_example.TestSecurityScenarioRubric) ... ok
+test_unrelated_control_flagged_for_review (test_example.TestSecurityScenarioRubric) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK (skipped=1)

@@ -145,3 +145,16 @@ The Wayfair data science team has several interesting videos on how they use ML 
 ## Assignment
 
 [A ML scavenger hunt](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T054): Security-Scenario Rubric — Invariant and State Trace
+
+For an applied hands-on extension demonstrating automated security scenario rubric checking and state tracing, see [Applied Lab R37-T054: Security-Scenario Rubric](applied-labs/r37-t054/README.md).
+
+- **Contract**: Evaluates `asset`, `threat`, `control`, and `residual_risk` fields against structural and relevance rules with step-by-step state traces.
+- **Fixture Examples**:
+  - Complete, relevant scenario passes with `status="passed"`.
+  - Scenario without an asset fails with `status="failed"`.
+  - Control unrelated to the threat is flagged with `status="flagged_for_review"`.
+- **Run Tests**: `python3 -m unittest discover -s 9-Real-World/1-Applications/applied-labs/r37-t054 -p "test_*.py"`
