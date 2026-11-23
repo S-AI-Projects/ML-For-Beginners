@@ -1,0 +1,27 @@
+======================================================================
+TASK EVIDENCE: R37-T056 (Classification Evaluation — Refactor Teaching Example)
+======================================================================
+Date: 2026-11-23T17:54:07.949201+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+y_true=[1,1,0,0], y_pred=[1,0,1,0] -> TP=1, FN=1, FP=1, TN=1, Precision=0.5, Recall=0.5 (Passed)
+Zero-Denominator Case: y_pred=[0,0,0,0] -> Precision=0.0 under documented policy (Passed)
+Length Mismatch: Raised ValueError as expected (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_all_positive_predictions (test_example.TestClassificationEvaluationRefactored) ... ok
+test_deliberate_wrong_result (test_example.TestClassificationEvaluationRefactored) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_invalid_label_value_raises_value_error (test_example.TestClassificationEvaluationRefactored) ... ok
+test_length_mismatch_raises_value_error (test_example.TestClassificationEvaluationRefactored) ... ok
+test_mock_limitations_documented (test_example.TestClassificationEvaluationRefactored) ... ok
+test_no_positive_predictions_gives_precision_zero (test_example.TestClassificationEvaluationRefactored) ... ok
+test_presentation_layer_formatting (test_example.TestClassificationEvaluationRefactored) ... ok
+test_standard_fixture (test_example.TestClassificationEvaluationRefactored) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK (skipped=1)

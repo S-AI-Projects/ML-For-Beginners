@@ -312,3 +312,15 @@ While this lesson just touched on the utility of creating a recommendation syste
 ## Assignment 
 
 [Build a new recommender](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T056): Classification Evaluation — Refactor Teaching Example
+
+For an applied hands-on extension demonstrating modular binary classification metrics and explicit zero-denominator handling, see [Applied Lab R37-T056: Classification Evaluation](applied-labs/r37-t056/README.md).
+
+- **Contract**: Computes confusion matrix, precision, and recall for binary predictions with an explicit zero-denominator policy.
+- **Fixture Examples**:
+  - `y_true=[1,1,0,0], y_pred=[1,0,1,0]` gives `TP=1, FN=1, FP=1, TN=1` and `precision=recall=0.5`.
+  - When no positive predictions exist (`y_pred=[0,0,0,0]`), precision defaults to `0.0`.
+- **Run Tests**: `python3 -m unittest discover -s 4-Classification/4-Applied/applied-labs/r37-t056 -p "test_*.py"`
