@@ -1,0 +1,34 @@
+================================================================================
+Task ID: R37-T059
+Issue: #59 (Soumya Pandit — R37-T059: finite-state reward trace — scenario assessment [8-Reinforcement/1-QLearning])
+Branch: student/e26b07f2265/R37-T059
+Timestamp: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+Python Version: $(python3 --version)
+Git Commit: $(git rev-parse HEAD 2>/dev/null || echo "pre-commit")
+================================================================================
+
+[TEST INVOCATION]
+python3 -m unittest discover -s 8-Reinforcement/1-QLearning/applied-labs/r37-t059 -p "test_*.py" -v
+
+[TEST EXECUTION RESULTS]
+test_deliberate_failure_detection (test_example.TestThreeStateChainEnv)
+Verifies that deliberate assertion mismatches cause test failures. ... ok
+test_goal_path_right_right (test_example.TestThreeStateChainEnv)
+From state 0, ['right', 'right'] ends at terminal state 2 with total reward 1. ... ok
+test_oscillation_until_cap (test_example.TestThreeStateChainEnv)
+Oscillating between states 0 and 1 stops at step cap 5. ... ok
+test_q1_prediction_check (test_example.TestThreeStateChainEnv)
+Executable check for Q1: output prediction matches ground truth. ... ok
+test_q2_failure_diagnosis_check (test_example.TestThreeStateChainEnv)
+Executable check for Q2: diagnosis flags clamped boundary timeout. ... ok
+test_q3_boundary_policy_check (test_example.TestThreeStateChainEnv)
+Executable check for Q3: verifies clamp_at_zero as boundary policy. ... ok
+test_repeated_left_hits_step_cap (test_example.TestThreeStateChainEnv)
+Repeated 'left' from state 0 stays at 0 and ends at step cap 5 with reward 0. ... ok
+test_single_right_intermediate (test_example.TestThreeStateChainEnv)
+A single 'right' reaches state 1 with 0 reward and not done. ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK
