@@ -373,3 +373,16 @@ Take [this Learn module](https://docs.microsoft.com/en-us/learn/modules/classify
 ## Assignment 
 
 [Try a different dataset](assignment.md)
+
+---
+
+## 🧪 Applied Lab (R37-T057): Token-Budget Preflight — Worked Example with Checks
+
+For an applied hands-on extension demonstrating a published worked input-to-output explanation and regression test suite, see [Applied Lab R37-T057: Token-Budget Preflight Worked Example](applied-labs/r37-t057/README.md).
+
+- **Contract**: Step-by-step worked example validating prompt length against token budgets.
+- **Fixture Examples**:
+  - Budget `3` with `"one two three four"` retains `["one", "two", "three"]` and reports `1` removed token (`truncated=True`).
+  - Empty input `""` retains `[]` and reports `0` removed tokens.
+  - Negative budget (`-1`) raises `ValueError`.
+- **Run Tests**: `python3 -m unittest discover -s 6-NLP/5-Hotel-Reviews-2/applied-labs/r37-t057 -p "test_*.py"`
