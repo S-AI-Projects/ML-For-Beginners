@@ -1,0 +1,26 @@
+======================================================================
+TASK EVIDENCE: R37-T057 (Token-Budget Preflight — Worked Example with Checks)
+======================================================================
+Date: 2026-11-23T17:54:42.902781+00:00
+Platform: macOS-26.6.2-arm64-arm-64bit
+Python Version: 3.9.6 (default, May 22 2026, 11:13:45) 
+[Clang 21.0.0 (clang-2100.1.1.101)]
+
+--- FIXTURE VERIFICATION ---
+Canonical Worked Example: Prompt 'one two three four', Budget 3 -> Retained ['one', 'two', 'three'], Removed 1 (Passed)
+Empty Input: Retained [], Removed 0 (Passed)
+Negative Budget: Rejected with ValueError (Passed)
+
+--- UNIT TEST RUN OUTPUT ---
+test_boundary_zero_budget (test_example.TestTokenBudgetWorkedExample) ... ok
+test_canonical_worked_example_regression (test_example.TestTokenBudgetWorkedExample) ... ok
+test_deliberate_wrong_result (test_example.TestTokenBudgetWorkedExample) ... skipped 'Deliberate failure test: demonstrates framework exits non-zero on failure'
+test_empty_input_retains_none (test_example.TestTokenBudgetWorkedExample) ... ok
+test_exact_budget_match (test_example.TestTokenBudgetWorkedExample) ... ok
+test_mock_limitations_stated (test_example.TestTokenBudgetWorkedExample) ... ok
+test_negative_budget_rejected (test_example.TestTokenBudgetWorkedExample) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK (skipped=1)
