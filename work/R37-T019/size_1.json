@@ -1,0 +1,10 @@
+{
+  "checked": 1,
+  "outcomes": [
+    {
+      "name": "fictional-education-progress",
+      "status": "PASS",
+      "reason": "required fields present and no fixture mismatch detected"
+    }
+  ]
+}

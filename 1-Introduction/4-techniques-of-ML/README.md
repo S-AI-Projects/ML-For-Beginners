@@ -101,6 +101,10 @@ This is the moment where you can use completely new data to test your model's ac
 
 In these lessons, you will discover how to use these steps to prepare, build, test, evaluate, and predict - all the gestures of a data scientist and more, as you progress in your journey to become a 'full stack' ML engineer.
 
+## Applied example: checking scenario rubrics
+
+The [local applied lab](applied-labs/r37-t013/README.md) uses three fictional scenarios to connect data preparation, model evaluation, and prediction to assets, threats, controls, and residual risks. A small deterministic checker verifies that these fields are present and that a control's declared category is listed for its threat category. This illustrates how documenting assumptions and evaluating a process can make a rubric explicit; it does not train or assess an ML model. The checker cannot judge whether an explanation is accurate, whether a control works in practice, or whether a residual risk is acceptable. Human review must judge the reasoning. All examples are mock scenarios and make no claim about real hardware or cloud services.
+
 ---
 
 ## 🚀Challenge

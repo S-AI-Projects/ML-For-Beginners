@@ -339,3 +339,11 @@ You should see something like this:
 We have now learned how to train agents to achieve good results just by providing them a reward function that defines the desired state of the game, and by giving them an opportunity to intelligently explore the search space. We have successfully applied the Q-Learning algorithm in the cases of discrete and continuous environments, but with discrete actions.
 
 It's important to also study situations where action state is also continuous, and when observation space is much more complex, such as the image from the Atari game screen. In those problems we often need to use more powerful machine learning techniques, such as neural networks, in order to achieve good results. Those more advanced topics are the subject of our forthcoming more advanced AI course.
+
+## Applied local example: a bounded state chain
+
+[Run the three-state chain example](applied-labs/r37-t011/README.md). It models the lesson's discrete states, left/right actions, transition observations, reward and terminal handling in a deterministic local fixture. From state 0, `right right` reaches terminal state 2 and earns 1 only on entry; five `left` actions remain at state 0 and earn 0. The episode is capped at five actions.
+
+This is an explicitly labeled **simulation/mock**, not Gym, CartPole physics, or a trained agent. It illustrates only the control flow and reward/termination contract; it does not model continuous observations, dynamics, learning, or hardware. It uses Python 3 standard library only and needs a local checkout. Run `python3 8-Reinforcement/2-Gym/applied-labs/r37-t011/example.py right right` for the terminal result, or `python3 8-Reinforcement/2-Gym/applied-labs/r37-t011/example.py left left left left left` for the bounded result.
+
+The fixture has states `0`, `1`, and terminal `2`; actions move one state left or right and clamp at the endpoints. The `right right` invocation outputs `{"final_state": 2, "steps": 2, "terminated": true, "total_reward": 1, "trace": [0, 1, 2]}`. Five `left` actions output `{"final_state": 0, "steps": 5, "terminated": false, "total_reward": 0, "trace": [0, 0, 0, 0, 0, 0]}`. The trace is the observed state sequence, including the initial state. Prerequisite: Python 3 standard library and a local checkout.

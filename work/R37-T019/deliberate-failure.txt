@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/sanskarsoni/Documents/Codex/2026-11-21/student-sanskar-soni-task-r37-t019/repo/work/R37-T019/check_fixture.py", line 11, in <module>
+    assert statuses == expected["size_3"], f"expected {expected['size_3']}, got {statuses}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected ['PASS', 'FAIL', 'REVIEW'], got ['FAIL', 'FAIL', 'REVIEW']
+Expected non-zero exit for deliberately wrong result: PASS
